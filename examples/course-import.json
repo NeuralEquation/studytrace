@@ -1,0 +1,14 @@
+{
+  "name": "自分の情報演習",
+  "subject": "information",
+  "defaultMode": "video",
+  "units": [
+    {
+      "name": "自分で決める単元名",
+      "items": [
+        { "title": "自分で登録する映像授業", "type": "video", "studyMode": "video" },
+        { "title": "自分で登録する関連演習", "type": "programming", "studyMode": "practice" }
+      ]
+    }
+  ]
+}

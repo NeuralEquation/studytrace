@@ -1,0 +1,8259 @@
+[
+  {
+    "name": "特別応用講座【数学】（講義カタログ）",
+    "subject": "mathematics",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 数学総論 / 数学基礎",
+        "items": [
+          {
+            "title": "例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 数学総論 / 論理と同値",
+        "items": [
+          {
+            "title": "例題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 数学総論 / 演習問題（第1章）",
+        "items": [
+          {
+            "title": "演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 存在条件 / 最大・最小",
+        "items": [
+          {
+            "title": "例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 存在条件 / 軌跡・領域",
+        "items": [
+          {
+            "title": "例題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 存在条件 / 演習問題（第2章）",
+        "items": [
+          {
+            "title": "演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 図形 / 平面図形",
+        "items": [
+          {
+            "title": "例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 図形 / 空間図形",
+        "items": [
+          {
+            "title": "例題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 図形 / 演習問題（第3章）",
+        "items": [
+          {
+            "title": "演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 離散数学 / 整数・数列",
+        "items": [
+          {
+            "title": "例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 離散数学 / 場合の数・確率",
+        "items": [
+          {
+            "title": "例題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 離散数学 / 演習問題（第4章）",
+        "items": [
+          {
+            "title": "演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 極限・微積分（理系） / 極限・微分法",
+        "items": [
+          {
+            "title": "例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 極限・微積分（理系） / 積分法",
+        "items": [
+          {
+            "title": "例題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 極限・微積分（理系） / 面積・体積",
+        "items": [
+          {
+            "title": "例題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "例題15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 極限・微積分（理系） / 演習問題（第5章）",
+        "items": [
+          {
+            "title": "演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "難関演習模擬試験 / 第1回",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問 (2)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第5問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "難関演習模擬試験 / 第2回",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第5問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "難関演習模擬試験 / 第3回",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第5問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "難関演習模擬試験 / 第4回",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第5問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "難関演習模擬試験 / 第5回",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第5問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "最難関修了試験 / 第1回（文系）",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "最難関修了試験 / 第2回（文系）",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "最難関修了試験 / 第3回（文系）",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "最難関修了試験 / 第1回（理系）",
+        "items": [
+          {
+            "title": "第1問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第2問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第3問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第4問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第5問",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "第6問",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【電磁気学】（講義カタログ）",
+    "subject": "physics",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 電気 / 【重力場】1-1.重力場の導入",
+        "items": [
+          {
+            "title": "1-1 【講義】重力場の導入",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-2 【例題】重力場の導入",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-3 【練習】重力場の導入",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【重力場】1-2.外力の仕事と位置エネルギー",
+        "items": [
+          {
+            "title": "1-4 【講義】外力の仕事と位置エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-5 【例題】外力の仕事と位置エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-6 【練習】外力の仕事と位置エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【重力場】1-3.万有引力による位置エネルギー",
+        "items": [
+          {
+            "title": "1-7 【講義】万有引力による位置エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-8 【例題】万有引力による位置エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-9 【練習】万有引力による位置エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電場】1-4.静電気力",
+        "items": [
+          {
+            "title": "1-10 【講義】静電気力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-11 【例題】静電気力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-12 【練習】静電気力",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電場】1-5.電場の導入",
+        "items": [
+          {
+            "title": "1-13 【講義】電場の導入",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-14 【例題】電場の導入",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-15 【練習】電場の導入",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電場】1-6.電気力線",
+        "items": [
+          {
+            "title": "1-16 【講義】電気力線",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-17 【例題】電気力線",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-18 【練習】電気力線",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電場】1-7.電気力線の本数",
+        "items": [
+          {
+            "title": "1-19 【講義】電気力線の本数",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-20 【例題】電気力線の本数",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-21 【練習】電気力線の本数",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電場】1-8.ガウスの法則",
+        "items": [
+          {
+            "title": "1-22 【全体像】ガウスの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-23 【講義】ガウスの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-24 【例題】ガウスの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-25 【練習】ガウスの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電位】1-9.静電エネルギー",
+        "items": [
+          {
+            "title": "1-26 【講義】静電エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-27 【例題】静電エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-28 【練習】静電エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電位】1-10.電位",
+        "items": [
+          {
+            "title": "1-29 【講義】電位",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-30 【例題】電位",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-31 【練習】電位",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電位】1-11.電位のイメージ",
+        "items": [
+          {
+            "title": "1-32 【講義】電位のイメージ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-33 【例題】電位のイメージ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-34 【練習】電位のイメージ",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電位】1-12.電場と電位の関係",
+        "items": [
+          {
+            "title": "1-35 【講義】電場と電位の関係",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-36 【例題】電場と電位の関係",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-37 【練習】電場と電位の関係",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 【電位】1-13.等電位線",
+        "items": [
+          {
+            "title": "1-38 【講義】等電位線",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-39 【例題】等電位線",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-40 【練習】等電位線",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 電気 / 第1章 REVIEW講義",
+        "items": [
+          {
+            "title": "1-41 【REVIEW】第1章",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【回路の基本】2-1.電圧と電流",
+        "items": [
+          {
+            "title": "2-1 【講義】電圧と電流",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-2 【例題】電圧と電流",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-3 【練習】電圧と電流",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【回路の基本】2-2.キルヒホッフの法則",
+        "items": [
+          {
+            "title": "2-4 【講義】キルヒホッフの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-5 【例題】キルヒホッフの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-6 【練習】キルヒホッフの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【回路の基本】2-3.電荷保存則",
+        "items": [
+          {
+            "title": "2-7 【講義】電荷保存則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-8 【例題】電荷保存則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-9 【練習】電荷保存則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【磁場】2-4.磁場中の荷電子の運動",
+        "items": [
+          {
+            "title": "2-10 【講義】磁場中の荷電子の運動",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-11 【例題】磁場中の荷電子の運動",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-12 【練習】磁場中の荷電子の運動",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【磁場】2-5.アンペールの法則",
+        "items": [
+          {
+            "title": "2-13 【講義】アンペールの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-14 【例題+練習】アンペールの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【磁場】2-6.磁場の種類",
+        "items": [
+          {
+            "title": "2-15 【講義】磁場の種類",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-16 【例題】磁場の種類",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-17 【練習】磁場の種類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【磁場】2-7.電流が受ける力",
+        "items": [
+          {
+            "title": "2-18 【講義】電流が受ける力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-19 【例題】電流が受ける力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-20 【練習】電流が受ける力",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【磁場】2-8.導体棒の起電力",
+        "items": [
+          {
+            "title": "2-21 【講義】導体棒の起電力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-22 【例題】導体棒の起電力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-23 【練習】導体棒の起電力",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【変動する電磁場】2-9.誘導電場",
+        "items": [
+          {
+            "title": "2-24 【講義】誘導電場",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-25 【例題】誘導電場",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-26 【練習】誘導電場",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【変動する電磁場】2-10.ファラデーの法則",
+        "items": [
+          {
+            "title": "2-27 【講義】ファラデーの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-28 【例題】ファラデーの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-29 【練習】ファラデーの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【変動する電磁場】2-11.自己誘導",
+        "items": [
+          {
+            "title": "2-30 【講義】自己誘導",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-31 【例題】自己誘導",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-32 【練習】自己誘導",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 【変動する電磁場】2-12.電磁波",
+        "items": [
+          {
+            "title": "2-33 【講義】電磁波",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 磁気 / 第2章 REVIEW講義",
+        "items": [
+          {
+            "title": "2-34 【REVIEW】第2章",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質と電磁気学 / 【物質と電磁気学】3-1.静電誘導と誘電分極",
+        "items": [
+          {
+            "title": "3-1 【例題】静電誘導と誘電分極",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-2 【練習】静電誘導と誘電分極",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質と電磁気学 / 【物質と電磁気学】3-2.コンデンサーの基本",
+        "items": [
+          {
+            "title": "3-3 【例題】コンデンサーの基本",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-4 【練習】コンデンサーの基本",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質と電磁気学 / 【物質と電磁気学】3-3.コンデンサー回路",
+        "items": [
+          {
+            "title": "3-5 【例題】コンデンサー回路",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-6 【練習】コンデンサー回路",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質と電磁気学 / 【物質と電磁気学】3-4.コンデンサーの変化",
+        "items": [
+          {
+            "title": "3-7 【例題】コンデンサーの変化",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-8 【練習】コンデンサーの変化",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質と電磁気学 / 【物質と電磁気学】3章REVIEW",
+        "items": [
+          {
+            "title": "3-9 【物質と電磁気学】3章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 演習問題 / 演習問題",
+        "items": [
+          {
+            "title": "4-1 静電気",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-2 静磁場",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-3 電磁誘導1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-4 電磁誘導2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-5 コンデンサーの解き方",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 5-1.静電気とコンデンサー",
+        "items": [
+          {
+            "title": "5-1 電場と電位1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-2 静電気1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-3 静電気2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-4 静電気3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-5 コンデンサー1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-6 コンデンサー2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-7 コンデンサー3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-8 コンデンサー4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-9 コンデンサー5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-10 コンデンサー6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-11 コンデンサー7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 5-2.回路",
+        "items": [
+          {
+            "title": "5-12 直流回路1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-13 直流回路2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-14 直流回路3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-15 直流回路4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-16 直流回路5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-17 コンデンサー回路1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-18 コンデンサー回路2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-19 コンデンサー回路3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-20 コンデンサー回路4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-21 非直線抵抗1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-22 ダイオード1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-23 ダイオード2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-24 ダイオード3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 5-3.静磁場と電磁誘導",
+        "items": [
+          {
+            "title": "5-25 静磁場1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-26 導体棒の起電力1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-27 導体棒の起電力2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-28 導体棒の起電力3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-29 導体棒の起電力4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-30 導体棒の起電力5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-31 導体棒の起電力6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-32 導体棒の起電力7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-33 ファラデーの法則1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-34 ファラデーの法則2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-35 ァラデーの法則3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-36 コイルの回路1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-37 コイルの回路2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 5-4.荷電粒子の運動と交流回路",
+        "items": [
+          {
+            "title": "5-38 荷電粒子の運動1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-39 荷電粒子の運動2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-40 荷電粒子の運動3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-41 交流1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-42 交流2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題",
+        "items": [
+          {
+            "title": "6-1 発展問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-2 発展問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-3 発展問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-4 発展問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-5 発展問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-6 発展問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-7 発展問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-8 発展問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-9 発展問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【力学】（講義カタログ）",
+    "subject": "physics",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 物理と数学 / 【1.物理で使う数学】",
+        "items": [
+          {
+            "title": "1-1 微分",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-2 合成関数の微分と積の微分公式",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-3 積分",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-4 dydxの取り扱い",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-5 ベクトルの基本的性質",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-6 ベクトルの成分表示",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-7 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 物理と数学 / 【2.位置と速度と加速度】",
+        "items": [
+          {
+            "title": "1-8 速度の定義",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-9 速度から位置を求める",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-10 加速度",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-11 加速度の定義",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-12 加速度から速度を求める",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-13 物理量とベクトル",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-14 相対速度",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-15 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 等加速度運動と運動の法則 / 【1.等加速度運動】",
+        "items": [
+          {
+            "title": "2-1 等加速度運動の基本",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-2 放物線",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-3 vtグラフ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-4 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 等加速度運動と運動の法則 / 【2.運動の法則】",
+        "items": [
+          {
+            "title": "2-5 力と加速度の関係",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-6 力の性質",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-7 重力と垂直抗力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-8 張力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-9 摩擦力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-10 最大静止摩擦力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-11 弾性力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-12 運動の法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-13 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 保存則と単振動 / 【1.仕事と力学的エネルギー】",
+        "items": [
+          {
+            "title": "3-1 運動方程式の限界とエネルギーの導入",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-2 力学的エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-3 力学的エネルギー保存則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-4 仕事",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-5 仕事とエネルギーの関係",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-6 垂直抗力と張力の仕事",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-7 仕事と力学的エネルギーの関係の導出",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-8 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 保存則と単振動 / 【2.運動量と力積】",
+        "items": [
+          {
+            "title": "3-9 運動量",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-10 運動量保存則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-11 運動量と力積の関係",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-12 衝突",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-13 衝突2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-14 運動量と力積の関係の導出",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-15 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 保存則と単振動 / 【3.単振動】",
+        "items": [
+          {
+            "title": "3-16 単振動型の微分方程式の解",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-17 単振動の解",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-18 単振動",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-19 単振動の力学的エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-20 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 その他の運動 / 円運動と慣性力と万有引力",
+        "items": [
+          {
+            "title": "4-1 円運動",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-2 慣性力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-3 遠心力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-4 万有引力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-5 ケプラーの法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-6 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 演習問題 / 演習問題",
+        "items": [
+          {
+            "title": "まとめ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "演習問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 実践問題 / 1.運動方程式と束縛条件",
+        "items": [
+          {
+            "title": "6-1 運動方程式と系1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-2 放物線1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-3 放物線2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-4 単振動1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-5 単振動2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-6 単振動3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-7 空気抵抗を受ける運動1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-8 摩擦力1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-9 摩擦力2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-10 摩擦力3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-11 束縛条件1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-12 束縛条件2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 実践問題 / 2.保存則",
+        "items": [
+          {
+            "title": "6-13 仕事とエネルギー1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-14 仕事とエネルギー2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-15 運動量と力積1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-16 運動量と力積2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-17 保存則1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-18 保存則2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-19 保存則3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-20 保存則4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-21 円運動1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-22 円運動2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-23 円運動3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 実践問題 / 3.相対運動と回転運動",
+        "items": [
+          {
+            "title": "6-24 相対運動1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-25 相対運動2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-26 慣性力1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-27 慣性力2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-28 慣性力3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-29 遠心力1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-30 回転運動1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-31 回転運動2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-32 回転運動3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-33 回転運動4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-34 万有引力1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 実践問題 / 4.重心運動と近似",
+        "items": [
+          {
+            "title": "6-35 重心系1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-36 重心系2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-37 重心系3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-38 重心系4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-39 重心系5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-40 重心系6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-41 重心系7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-42 近似1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-43 近似2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-44 近似3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-45 近似4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 発展問題 / 発展問題",
+        "items": [
+          {
+            "title": "7-1 発展問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-2 発展問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-3 発展問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-4 発展問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-5 発展問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-6 発展問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-7 発展問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-8 発展問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-9 発展問題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-10 発展問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第0章 オリエンテーション / オリエンテーション",
+        "items": [
+          {
+            "title": "オリエンテーション",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【数C】（講義カタログ）",
+    "subject": "mathematics",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 平面ベクトル / 1-1【ベクトルの成分と演算】",
+        "items": [
+          {
+            "title": "1-1 ベクトルの相等(例題1-1)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-2 (練習1-1)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-3 ベクトルの図示(例題1-2)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-4 (練習1-2)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-5 ベクトルの演算(例題1-3 )",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-6 (練習1-3)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-7 ベクトルの分解(例題1-4 )",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-8 (練習1-4)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-9 ベクトルと証明(例題1-5)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-10 (練習1-5)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-11 ベクトルの成分と大きさ(例題1-6 )",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-12 (練習1-6)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-13 ベクトルの成分と演算、単位ベクトル(例題1-7)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-14 (練習1-7)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-15 ベクトルの成分と平行条件(例題1-8 )",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-16 (練習1-8)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-17 ベクトルと平行四辺形の頂点(例題1-9)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-18 (練習1-9)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-20 演習1-1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-21 演習1-2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-22 演習1-3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-23 演習1-4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-24 演習1-5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-25 演習1-6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-26 演習1-7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-19 REVIEW ベクトルの成分と演算",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 平面ベクトル / 1-2【ベクトルの内積】",
+        "items": [
+          {
+            "title": "1-27 定義によるベクトルの内積(例題1-10)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-28 (練習1-10)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-29 成分によるベクトルの内積(例題1-11)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-30 (練習1-11)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-31 2つのベクトルのなす角(例題1-12)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-32 (練習1-12)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-33 ベクトルの垂直条件(例題1-13)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-34 (練習1-13)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-35 内積の演算方法(例題1-14)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-36 (練習1-14)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-37 内積とベクトルの大きさ(1)(例題1-15)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-38 (練習1-15)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-39 内積と三角形の面積(例題1-16)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-40 (練習1-16)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-41 内積と不等式の証明(例題1-17)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-42 (練習1-17)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-43 内積とベクトルの大きさ(2)(例題1-18)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-44 (練習1-18)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-46 演習1-8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-47 演習1-9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-48 演習1-10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-49 演習1-11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-50 演習1-12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-51 演習1-13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-45 REVIEW ベクトルの内積",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 平面ベクトル / 1-3【位置ベクトル、ベクトルと図形】",
+        "items": [
+          {
+            "title": "1-52 分点と重心の位置ベクトル(例題1-18)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-53 (練習1-18)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-54 交点の位置ベクトル(1)(例題1-19)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-55 (練習1-19)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-56 交点の位置ベクトル(2)(例題1-20)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-57 (練習1-20)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-58 共線条件、点の一致証明(例題1-21)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-59 (練習1-21)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-60 位置ベクトルと点の位置(例題1-22)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-61 (練習1-22)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-62 垂心の位置ベクトル(例題1-23)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-63 (練習1-23)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-64 内心の位置ベクトル(例題1-24)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-65 (練習1-24)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-66 外心の位置ベクトル(例題1-25)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-67 (練習1-25)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-68 外心に関するベクトルの問題(例題1-26)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-69 (練習1-26)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-70 ベクトルと角の二等分線(例題1-27)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-71 (練習1-27)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-72 ベクトルを利用した等式の証明(例題1-28)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-73 (練習1-28)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-74 内積と三角形の形状(例題1-29)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-75 (練習1-29)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-76 正射影ベクトルと利用(例題1-30)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-77 (練習1-30)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-79 演習1-14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-80 演習1-15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-81 演習1-16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-82 演習1-17",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-83 演習1-18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-84 演習1-19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-85 演習1-20",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-86 演習1-21",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-87 演習1-22",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-88 演習1-23",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-78 REVIEW 位置ベクトル、ベクトルと図形",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 平面ベクトル / 1-4【ベクトル方程式】",
+        "items": [
+          {
+            "title": "1-89 直線ベクトル方程式(例題1-31)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-90 (練習1-31)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-91 直線と法線ベクトル(例題1-32)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-92 (練習1-32)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-93 ベクトルの終点の存在範囲と斜交座標(例題1-33 )",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-94 (練習1-33)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-95 ベクトルの終点の存在範囲と一文字固定(例題1-34 )",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-96 (練習1-34)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-97 円のベクトル方程式(例題1-35)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-98 (練習1-35)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-99 ベクトル方程式と軌跡(例題1-36)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-100 (練習1-36)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-102 演習1-24",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-103 演習1-25",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-104 演習1-26",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-105 演習1-27",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-106 演習1-28",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-107 演習1-29",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-101 REVIEW ベクトル方程式",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 平面ベクトル / 1-5 章末問題",
+        "items": [
+          {
+            "title": "1-108 章末1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-109 章末2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-110 章末3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-111 章末4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 空間ベクトル / 2-1【空間座標とベクトルの成分】",
+        "items": [
+          {
+            "title": "2-1 空間の点の座標(例題2-1)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-2 (練習2-1)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-3 空間における2点間の距離(例題2-2)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-4 (練習2-2)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-5 等距離にある空間上の点(例題2-3)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-6 (練習2-3)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-7 空間における分点の座標(例題2-4)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-8 (練習2-4)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-9 空間ベクトルの基本(例題2-5)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-10 (練習2-5)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-11 空間ベクトルの成分(例題2-6)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-12 (練習2-6)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-13 空間ベクトルの平行(例題2-7)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-14 (練習2-7)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-15 空間ベクトルの大きさの応用(例題2-8)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-16 (練習2-8)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-18 演習2-1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-19 演習2-2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-20 演習2-3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-21 演習2-4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-22 演習2-5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-17 REVIEW 空間座標とベクトルの成分",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 空間ベクトル / 2-2【空間ベクトルの内積と位置ベクトル】",
+        "items": [
+          {
+            "title": "2-23 空間ベクトルの内積(1)(例題2-9)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-24 (練習2-9)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-25 空間ベクトルの内積(2)(例題2-10)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-26 (練習2-10)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-27 2つのベクトルに垂直なベクトルと外積(例題2-11)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-28 (練習2-11)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-29 空間ベクトルの等式の証明(例題2-12)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-30 (練習2-12)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-31 空間における点の一致の証明(例題2-13)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-32 (練習2-13)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-34 演習2-6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-35 演習2-7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-36 演習2-8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-37 演習2-9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-38 演習2-10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-33 REVIEW 空間ベクトルの内積と位置ベクトル",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 空間ベクトル / 2-3【空間ベクトルの応用】",
+        "items": [
+          {
+            "title": "2-39 共線条件(1)(例題2-14)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-40 (練習2-14)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-41 共線条件(2)(例題2-15)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-42 (練習2-15)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-43 共面条件(1)(例題2-16)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-44 (練習2-16)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-45 共面条件(2)(例題2-17)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-46 (練習2-17)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-47 空間における2直線の交点(例題2-18)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-48 (練習2-18)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-49 直線と平面の交点の位置ベクトル(1)(例題2-19)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-50 (練習2-19)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-51 直線と平面の交点の位置ベクトル(2)(例題2-20)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-52 (練習2-20)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-53 空間における垂線(例題2-21)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-54 (練習2-21)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-56 演習2-11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-57 演習2-12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-58 演習2-13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-59 演習2-14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-60 演習2-15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-61 演習2-16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-62 演習2-17",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-63 演習2-18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-55 REVIEW 空間ベクトルの応用",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 空間ベクトル / 2-4【座標空間の図形】",
+        "items": [
+          {
+            "title": "2-64 座標軸に垂直な平面の方程式(例題2-22)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-65 (練習2-22)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-66 球面の方程式(1)(例題2-23)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-67 (練習2-23)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-68 球面の方程式(2)(例題2-24)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-69 (練習2-24)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-70 球面の切り口(例題2-25)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-71 (練習2-25)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-72 平面の方程式(1)(例題2-26)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-73 (練習2-26)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-74 平面の方程式(2)(例題2-27)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-75 (練習2-27)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-76 点と平面の距離(例題2-28)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-77 (練習2-28)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-78 空間における直線の方程式(例題2-29)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-79 (練習2-29)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-80 空間における直線の媒介変数表示(例題2-30)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-81 (練習2-30)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-82 2平面の交線と束の利用(例題2-31)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-83 (練習2-31)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-85 演習2-19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-86 演習2-20",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-87 演習2-21",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-88 演習2-22",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-89 演習2-23",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-84 REVIEW 座標空間の図形",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 空間ベクトル / 2-5【章末問題】",
+        "items": [
+          {
+            "title": "2-90 章末5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-91 章末6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-92 章末7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-93 章末8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-94 章末9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-1【複素数平面】",
+        "items": [
+          {
+            "title": "3-1 導入,例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-2 例題2,3 練習1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-3 例題4~6 練習2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-4 例題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-5 例題8 練習3,4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-6 例題9 練習5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-7 例題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-8 練習6~8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-9 例題11 練習9,10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-2【複素数の極形式と複素数の積・商】",
+        "items": [
+          {
+            "title": "3-10 例題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-11 例題13 練習11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-12 例題14 練習12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-13 例題15,16 練習13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-14 例題17 練習14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-15 例題18 練習15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-16 例題19 練習16",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-3【ド・モアブルの定理】",
+        "items": [
+          {
+            "title": "3-17 例題20,21",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-18 練習17,18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-19 例題22,練習19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-20 例題23,練習20",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-21 例題24,練習21",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-22 例題25,練習22",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-23 例題26",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-4【REVIEW・演習問題1】",
+        "items": [
+          {
+            "title": "3-25 演習1,2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-26 演習3,4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-27 演習5,6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-28 演習7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-29 演習8,9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-30 演習10,11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-31 演習12,13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-32 演習14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-33 演習15,16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-34 演習17",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-24 REVIEW 複素数平面1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-5【複素数平面上の図形】",
+        "items": [
+          {
+            "title": "3-35 例題1,2,練習1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-36 例題3,4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-37 例題5,練習2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-38 例題6,練習3,4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-6【複素数と角】",
+        "items": [
+          {
+            "title": "3-39 例題7,練習5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-40 例題8,練習6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-41 例題9,練習7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-42 例題10,練習8,9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-43 例題11,練習10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-7【複素数平面における軌跡】",
+        "items": [
+          {
+            "title": "3-44 例題12,練習11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-45 例題13,練習12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-46 例題14,練習13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-47 例題15,練習14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-8【REVIEW・演習問題2】",
+        "items": [
+          {
+            "title": "3-49 演習1,2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-50 演習3,4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-51 演習5,6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-52 演習7,8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-53 演習9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-54 演習10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-55 演習11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-56 演習12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-57 演習13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-48 REVIEW 複素数平面2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 複素数平面 / 3-9【実践問題】",
+        "items": [
+          {
+            "title": "3-58 実践問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-59 実践問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-60 実践問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-61 実践問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-62 実践問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-63 実践問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-64 実践問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-65 実践問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-66 実践問題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-67 実践問題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-68 実践問題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-69 実践問題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-70 実践問題13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-71 実践問題14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-72 実践問題15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-73 実践問題16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-74 実践問題17",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-75 実践問題18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-76 実践問題19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-77 実践問題20",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-1【第1節 楕円】",
+        "items": [
+          {
+            "title": "4-1 例題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-2 例題2,練習1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-3 例題3,練習2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-4 例題4,5,練習3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-5 例題6,練習4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-6 例題7,練習5,6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-2【双曲線】",
+        "items": [
+          {
+            "title": "4-7 例題8,練習7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-8 例題9,練習8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-9 例題10,練習9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-10 例題11,練習10,11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-3【放物線】",
+        "items": [
+          {
+            "title": "4-11 例題12,練習12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-12 例題13,練習13,14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-4【二次曲線の種々の問題】",
+        "items": [
+          {
+            "title": "4-13 例題14,練習15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-14 例題15,練習16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-15 例題16,練習17,18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-16 例題17,練習19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-17 練習20,21",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-18 例題18,練習22",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-5【楕円の性質】",
+        "items": [
+          {
+            "title": "4-19 例題19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-20 例題20,練習23",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-6【REVIEW・演習問題1】",
+        "items": [
+          {
+            "title": "4-22 演習1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-23 演習2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-24 演習3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-25 演習4,5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-26 演習6,7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-27 演習8,9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-28 演習10,11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-29 演習12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-30 演習13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-31 演習14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-21 REVIEW①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-7【媒介変数表示された関数】",
+        "items": [
+          {
+            "title": "4-32 例題1,練習1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-33 練習2,3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-34 例題2,練習4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-35 例題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-36 練習5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-8【極座標と極方程式】",
+        "items": [
+          {
+            "title": "4-37 例題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-38 例題5,練習6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-39 例題6,練習7,8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-9【REVIEW・演習問題2】",
+        "items": [
+          {
+            "title": "4-41 演習1,2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-42 演習3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-43 演習4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-44 演習5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-45 演習6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-46 演習7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-47 演習8,9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-40 REVIEW②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 式と曲線 / 4-10【実践問題】",
+        "items": [
+          {
+            "title": "4-48 実践1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-49 実践2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-50 実践3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-51 実践4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-52 実践5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-53 実践6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-54 実践7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-55 実践8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-56 実践9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-57 実践10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-58 実践11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-59 実践12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-60 実践13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-61 実践14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-62 実践15",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第0章 オリエンテーション / オリエンテーション",
+        "items": [
+          {
+            "title": "オリエンテーション",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底演習講座【場合の数・確率】（講義カタログ）",
+    "subject": "mathematics",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "■応用に繋がる重要基本問題 / 重要基本問題1~5",
+        "items": [
+          {
+            "title": "1-1 基本問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-2 基本問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-3 基本問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-4 基本問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-5 基本問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-6 REVIEW(基本問題1~5)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用に繋がる重要基本問題 / 重要基本問題6~10",
+        "items": [
+          {
+            "title": "1-7 基本問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-8 基本問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-9 基本問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-10 基本問題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-11 基本問題10",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-12 REVIEW(基本問題6~10)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用に繋がる重要基本問題 / 重要基本問題11~15",
+        "items": [
+          {
+            "title": "1-13 基本問題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-14 基本問題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-15 基本問題13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-16 基本問題 14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-17 基本問題15",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-18 REVIEW(基本問題11〜15)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用に繋がる重要基本問題 / 重要基本問題16~20",
+        "items": [
+          {
+            "title": "1-19 基本問題16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-20 基本問題17",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-21 基本問題18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-22 基本問題19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-23 基本問題20",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題1~5",
+        "items": [
+          {
+            "title": "2-1 応用問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-2 応用問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-3 応用問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-4 応用問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-5 応用問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題6~10",
+        "items": [
+          {
+            "title": "2-6 応用問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-7 応用問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-8 応用問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-9 応用問題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-10 応用問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題11~15",
+        "items": [
+          {
+            "title": "2-11 応用問題11",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-12 応用問題12",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-13 応用問題13",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-14 応用問題14",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-15 応用問題15",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題16~20",
+        "items": [
+          {
+            "title": "2-16 応用問題16",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-17 応用問題17",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-18 応用問題18",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-19 応用問題19",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-20 応用問題20",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題21~25",
+        "items": [
+          {
+            "title": "2-21 応用問題21",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-22 応用問題22",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-23 応用問題23",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-24 応用問題24",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-25 応用問題25",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題26~30",
+        "items": [
+          {
+            "title": "2-26 応用問題26",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-27 応用問題27",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-28 応用問題28",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-29 応用問題29",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-30 応用問題30",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題36~40",
+        "items": [
+          {
+            "title": "2-36 応用問題36",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-37 応用問題37",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-38 応用問題38",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-39 応用問題39",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-40 応用問題40",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題41~45",
+        "items": [
+          {
+            "title": "2-41 応用問題41",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-42 応用問題42",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-43 応用問題43",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-44 応用問題44",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-45 応用問題45",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■応用力を磨く厳選良問集 / 応用問題31-35",
+        "items": [
+          {
+            "title": "2-31 応用問題31",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-32 応用問題32",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-33 応用問題33",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-34 応用問題34",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-35 応用問題35",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■思考力を鍛える発展問題 / 発展問題1~5",
+        "items": [
+          {
+            "title": "発展問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "■思考力を鍛える発展問題 / 発展問題6~10",
+        "items": [
+          {
+            "title": "発展問題6",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題7",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題8",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題9",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "発展問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【熱・波動】（講義カタログ）",
+    "subject": "physics",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "1章【熱力学】例題練習 / 1節 状態量と状態方程式",
+        "items": [
+          {
+            "title": "1-1.状態方程式",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-2.状態の変化",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-3.様々なグラフ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW 状態量と状態方程式",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "1章【熱力学】例題練習 / 2節 仕事とエネルギー",
+        "items": [
+          {
+            "title": "1-4.エネルギー等分配の法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-5.内部エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-6.気体がする仕事",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-7.熱力学第一法則",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-8.熱量",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-9.断熱変化",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW 仕事とエネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "1章【熱力学】例題練習 / 3節 その他の熱力学",
+        "items": [
+          {
+            "title": "1-10.圧力と浮力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-11.気体分子論",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "1-13.比熱と熱容量",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW その他の熱力学",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "2章【熱力学】演習問題 / 演習問題",
+        "items": [
+          {
+            "title": "2-1.演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-2.演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-3.演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-4.演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-5.演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "2-6.演習問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "3章【熱力学】実践問題 / 1節 状態の決定と熱サイクル",
+        "items": [
+          {
+            "title": "3-1. 熱サイクルの基本",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-2. 圧力の読み取り",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-3. 1次関数の変化",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-4. 断熱変化",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-5.分数関数の変化",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "3章【熱力学】実践問題 / 2節 熱力学応用",
+        "items": [
+          {
+            "title": "3-6.断熱変化における気体分子論",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-7.微小変化の扱い",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-8. 傾きが負の一次関数の変化",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-9. 仕事とエネルギーの関係1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-10. 仕事とエネルギーの関係2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-11.水圧",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "3-12. 気球",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "4章【熱力学】発展問題 / 1節 発展問題",
+        "items": [
+          {
+            "title": "4-1.液面が振動するときの浮力",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-2.ばねつきピストン",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-3.連結されたピストン",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-4.傾きが負の一次関数の変化一般",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-5.カルノーサイクル",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "4-6.平均自由行程",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "5章【波動】例題練習 / 1節  波の一般論",
+        "items": [
+          {
+            "title": "5-1. 波のグラフ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-2. y-xグラフとy-tグラフ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-3. 重ね合わせの原理",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-4. 定常波",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-5. 共鳴",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW 波の一般論",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "5章【波動】例題練習 / 2節 具体的な波",
+        "items": [
+          {
+            "title": "5-6.縦波と横波",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-7.定常波の疎密",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-8.力学的波動(横波)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-9.力学的波動(縦波)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-10.電磁波",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW 具体的な波",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "5章【波動】例題練習 / 3節 波の現象論(力学的波動)",
+        "items": [
+          {
+            "title": "5-11.ホイヘンスの原理",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-12.干渉の基本",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-13.干渉の基本2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-14.ドップラー効果",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW 波の現象論(力学的波動)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "5章【波動】例題練習 / 4節 波の現象論(光学)",
+        "items": [
+          {
+            "title": "5-15.光の屈折",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-16.レンズ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-17.くさび形の干渉",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-18.ニュートンリングと薄膜",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "5-19.二重スリット",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "REVIEW 波の現象論(光学)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "6章【波動】演習問題 / 演習問題",
+        "items": [
+          {
+            "title": "6-1.演習問題1",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-2.演習問題2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-3.演習問題3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-4.演習問題4",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-5.演習問題5",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "6-6.演習問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "7章【波動】実践問題 / 1節 力学的波動",
+        "items": [
+          {
+            "title": "7-1.波の式",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-2.波の式2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-3.波の式3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-4.平面波",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-5.干渉(力学的波動)",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-6.ドップラー効果",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-7.ドップラー効果2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-8.ドップラー効果3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "7章【波動】実践問題 / 2節 光学",
+        "items": [
+          {
+            "title": "7-9.光の干渉",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-10.光の干渉2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-11.光の干渉3",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-12.スリットの干渉",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-13.スリットの干渉2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-14.回折格子",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-15.回折格子2",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-16.幾何光学",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "7-17.レンズの原理",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "8章【波動】発展問題 / 1節 発展問題",
+        "items": [
+          {
+            "title": "8-1.横波の速さの導出",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-2.風が吹く場合のドップラー効果",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-3.人工衛星の仰角の測定",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-4.複数の波源による水面波の干渉",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-5.経路差の異なる複スリット",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-6.反射型の回折格子",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-7.一様でない屈折率をもつレンズ",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-8.レンズを用いた干渉計",
+            "type": "video",
+            "studyMode": "video"
+          },
+          {
+            "title": "8-9.偏光",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【理論化学】（講義カタログ）",
+    "subject": "chemistry",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 化学を学ぶために / 1-1.計算の基礎",
+        "items": [
+          {
+            "title": "1-1.計算の基礎",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 化学を学ぶために / 1-2.原子",
+        "items": [
+          {
+            "title": "1-2.原子",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 化学を学ぶために / 1-3.周期表",
+        "items": [
+          {
+            "title": "1-3.周期表",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 化学を学ぶために / 1-4.物質量",
+        "items": [
+          {
+            "title": "1-4.物質量",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 化学を学ぶために / 第1章REVIEW",
+        "items": [
+          {
+            "title": "第1章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-1.価電子と化学結合",
+        "items": [
+          {
+            "title": "2-1.価電子と化学結合",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-2.共有結合と分子",
+        "items": [
+          {
+            "title": "2-2.共有結合と分子",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-3.分子の形",
+        "items": [
+          {
+            "title": "2-3.分子の形",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-4.イオン",
+        "items": [
+          {
+            "title": "2-4.イオン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-5.電気陰性度と極性",
+        "items": [
+          {
+            "title": "2-5.電気陰性度と極性",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-6.結晶とアモルファス",
+        "items": [
+          {
+            "title": "2-6.結晶とアモルファス",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-7.金属結晶",
+        "items": [
+          {
+            "title": "2-7.金属結晶",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-8.イオン結晶",
+        "items": [
+          {
+            "title": "2-8.イオン結晶",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-9.結晶格子",
+        "items": [
+          {
+            "title": "2-9.結晶格子",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-10.共有結合の結晶",
+        "items": [
+          {
+            "title": "2-10.共有結合の結晶",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 2-11.分子間力と分子結晶",
+        "items": [
+          {
+            "title": "2-11.分子間力と分子結晶",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 固体の構造 / 第2章 REVIEW",
+        "items": [
+          {
+            "title": "第2章 REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質の状態変化 / 3-1.粒子の熱運動",
+        "items": [
+          {
+            "title": "3-1.粒子の熱運動",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質の状態変化 / 3-2.三態の変化とエネルギー",
+        "items": [
+          {
+            "title": "3-2.三態の変化とエネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質の状態変化 / 3-3.気液平衡",
+        "items": [
+          {
+            "title": "3-3.気液平衡",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質の状態変化 / 3-4.蒸気圧",
+        "items": [
+          {
+            "title": "3-4.蒸気圧",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質の状態変化 / 3-5.物質の状態図",
+        "items": [
+          {
+            "title": "3-5.物質の状態図",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 物質の状態変化 / 第3章REVIEW",
+        "items": [
+          {
+            "title": "第3章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 気体 / 4-1.ボイル・シャルルの法則",
+        "items": [
+          {
+            "title": "4-1.ボイル・シャルルの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 気体 / 4-2.気体のグラフ",
+        "items": [
+          {
+            "title": "4-2.気体のグラフ",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 気体 / 4-3.気体の状態方程式",
+        "items": [
+          {
+            "title": "4-3.気体の状態方程式",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 気体 / 4-4.混合気体の圧力",
+        "items": [
+          {
+            "title": "4-4.混合気体の圧力",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 気体 / 4-5.実在気体と理想気体",
+        "items": [
+          {
+            "title": "4-5.実在気体と理想気体",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 気体 / 第4章REVIEW",
+        "items": [
+          {
+            "title": "第4章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-1.化学反応式",
+        "items": [
+          {
+            "title": "5-1.化学反応式",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-2.水溶液の濃度",
+        "items": [
+          {
+            "title": "5-2.水溶液の濃度",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-3.酸と塩基",
+        "items": [
+          {
+            "title": "5-3.酸と塩基",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-4.水素イオン濃度とpH",
+        "items": [
+          {
+            "title": "5-4.水素イオン濃度とpH",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-5.酸塩基反応",
+        "items": [
+          {
+            "title": "5-5.酸塩基反応",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-6.酸化と還元",
+        "items": [
+          {
+            "title": "5-6.酸化と還元",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 5-7.酸化還元反応",
+        "items": [
+          {
+            "title": "5-7.酸化還元反応",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 化学反応の基礎 / 第5章REVIEW",
+        "items": [
+          {
+            "title": "第5章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-1.固体の溶解度",
+        "items": [
+          {
+            "title": "6-1.固体の溶解度",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-2.気体の溶解度とヘンリーの法則",
+        "items": [
+          {
+            "title": "6-2.気体の溶解度とヘンリーの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-3.希薄溶液の性質（蒸気圧降下）",
+        "items": [
+          {
+            "title": "6-3.希薄溶液の性質（蒸気圧降下）",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-4.希薄溶液の性質（沸点上昇と凝固点降下）",
+        "items": [
+          {
+            "title": "6-4.希薄溶液の性質（沸点上昇と凝固点降下）",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-5.希薄溶液の性質（浸透圧）",
+        "items": [
+          {
+            "title": "6-5.希薄溶液の性質（浸透圧）",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-6.コロイド",
+        "items": [
+          {
+            "title": "6-6.コロイド",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-7.コロイド溶液の性質",
+        "items": [
+          {
+            "title": "6-7.コロイド溶液の性質",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 6-8.親水コロイドと疎水コロイド",
+        "items": [
+          {
+            "title": "6-8.親水コロイドと疎水コロイド",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 溶液 / 第6章REVIEW",
+        "items": [
+          {
+            "title": "第6章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-1.化学反応と熱",
+        "items": [
+          {
+            "title": "7-1.化学反応と熱",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-2.エンタルピー変化と化学反応式",
+        "items": [
+          {
+            "title": "7-2.エンタルピー変化と化学反応式",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-3.エンタルピーの種類",
+        "items": [
+          {
+            "title": "7-3.エンタルピーの種類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-4.ヘスの法則",
+        "items": [
+          {
+            "title": "7-4.ヘスの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-5.ヘスの法則の利用",
+        "items": [
+          {
+            "title": "7-5.ヘスの法則の利用",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-6.結合エネルギー",
+        "items": [
+          {
+            "title": "7-6.結合エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-7.エントロピー",
+        "items": [
+          {
+            "title": "7-7.エントロピー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 7-8.化学反応と光",
+        "items": [
+          {
+            "title": "7-8.化学反応と光",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第7章 化学反応とエネルギー / 第7章REVIEW",
+        "items": [
+          {
+            "title": "第7章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 8-1.電池のしくみ",
+        "items": [
+          {
+            "title": "8-1.電池のしくみ",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 8-2.ダニエル電池",
+        "items": [
+          {
+            "title": "8-2.ダニエル電池",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 8-3.実用電池",
+        "items": [
+          {
+            "title": "8-3.実用電池",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 8-4.水溶液の電気分解",
+        "items": [
+          {
+            "title": "8-4.水溶液の電気分解",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 8-5.ファラデーの法則",
+        "items": [
+          {
+            "title": "8-5.ファラデーの法則",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 8-6.電気分解の利用",
+        "items": [
+          {
+            "title": "8-6.電気分解の利用",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第8章 電池と電気分解 / 第8章REVIEW",
+        "items": [
+          {
+            "title": "第8章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第9章 化学反応の速さとしくみ / 9-1.化学反応の速さ",
+        "items": [
+          {
+            "title": "9-1.化学反応の速さ",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第9章 化学反応の速さとしくみ / 9-2.反応条件と反応速度",
+        "items": [
+          {
+            "title": "9-2.反応条件と反応速度",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第9章 化学反応の速さとしくみ / 9-3.活性化エネルギー",
+        "items": [
+          {
+            "title": "9-3.活性化エネルギー",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第9章 化学反応の速さとしくみ / 第9章REVIEW",
+        "items": [
+          {
+            "title": "第9章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-1.可逆反応と化学平衡",
+        "items": [
+          {
+            "title": "10-1.可逆反応と化学平衡",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-2.平衡定数",
+        "items": [
+          {
+            "title": "10-2.平衡定数",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-3.ルシャトリエの原理",
+        "items": [
+          {
+            "title": "10-3.ルシャトリエの原理",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-4.ルシャトリエの原理の応用",
+        "items": [
+          {
+            "title": "10-4.ルシャトリエの原理の応用",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-5.電離平衡",
+        "items": [
+          {
+            "title": "10-5.電離平衡",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-6.弱酸・弱塩基の遊離",
+        "items": [
+          {
+            "title": "10-6.弱酸・弱塩基の遊離",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-7.塩の加水分解",
+        "items": [
+          {
+            "title": "10-7.塩の加水分解",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-8.緩衝液",
+        "items": [
+          {
+            "title": "10-8.緩衝液",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 10-9.溶解度積",
+        "items": [
+          {
+            "title": "10-9.溶解度積",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第10章 化学平衡 / 第10章REVIEW",
+        "items": [
+          {
+            "title": "第10章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題1",
+        "items": [
+          {
+            "title": "実践問題1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題2",
+        "items": [
+          {
+            "title": "実践問題2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題3",
+        "items": [
+          {
+            "title": "実践問題3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題4",
+        "items": [
+          {
+            "title": "実践問題4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題5",
+        "items": [
+          {
+            "title": "実践問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題6",
+        "items": [
+          {
+            "title": "実践問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題7",
+        "items": [
+          {
+            "title": "実践問題7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題8",
+        "items": [
+          {
+            "title": "実践問題8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題9",
+        "items": [
+          {
+            "title": "実践問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題10",
+        "items": [
+          {
+            "title": "実践問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題11",
+        "items": [
+          {
+            "title": "実践問題11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題12",
+        "items": [
+          {
+            "title": "実践問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題13",
+        "items": [
+          {
+            "title": "実践問題13",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題14",
+        "items": [
+          {
+            "title": "実践問題14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題15",
+        "items": [
+          {
+            "title": "実践問題15",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題16",
+        "items": [
+          {
+            "title": "実践問題16",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題17",
+        "items": [
+          {
+            "title": "実践問題17",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題18",
+        "items": [
+          {
+            "title": "実践問題18",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題19",
+        "items": [
+          {
+            "title": "実践問題19",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題20",
+        "items": [
+          {
+            "title": "実践問題20",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題21",
+        "items": [
+          {
+            "title": "実践問題21",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題22",
+        "items": [
+          {
+            "title": "実践問題22",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題23",
+        "items": [
+          {
+            "title": "実践問題23",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題24",
+        "items": [
+          {
+            "title": "実践問題24",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第11章 実践問題 / 実践問題25",
+        "items": [
+          {
+            "title": "実践問題25",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題1",
+        "items": [
+          {
+            "title": "発展問題1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題2",
+        "items": [
+          {
+            "title": "発展問題2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題3",
+        "items": [
+          {
+            "title": "発展問題3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題4",
+        "items": [
+          {
+            "title": "発展問題4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題5",
+        "items": [
+          {
+            "title": "発展問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題6",
+        "items": [
+          {
+            "title": "発展問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題7",
+        "items": [
+          {
+            "title": "発展問題7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題8",
+        "items": [
+          {
+            "title": "発展問題8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題9",
+        "items": [
+          {
+            "title": "発展問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題10",
+        "items": [
+          {
+            "title": "発展問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題11",
+        "items": [
+          {
+            "title": "発展問題11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題12",
+        "items": [
+          {
+            "title": "発展問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題13",
+        "items": [
+          {
+            "title": "発展問題13",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第12章 発展問題 / 発展問題14",
+        "items": [
+          {
+            "title": "発展問題14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【有機化学】（講義カタログ）",
+    "subject": "chemistry",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 脂肪族化合物 / 1-1.有機化合物の特徴と分類",
+        "items": [
+          {
+            "title": "有機化合物の特徴と分類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-2.有機化合物の構造",
+        "items": [
+          {
+            "title": "有機化合物の構造",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-3.炭化水素の名称と分類",
+        "items": [
+          {
+            "title": "炭化水素の名称と分類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-4.成分元素の検出と構造決定",
+        "items": [
+          {
+            "title": "成分元素の検出と構造決定",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 第1章REVIEW①",
+        "items": [
+          {
+            "title": "第1章REVIEW①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-5.アルカン",
+        "items": [
+          {
+            "title": "アルカン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-6.アルケンとアルキン",
+        "items": [
+          {
+            "title": "アルケンとアルキン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-7.エチレンとアセチレン",
+        "items": [
+          {
+            "title": "エチレンとアセチレン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-8.アルコールとエーテル",
+        "items": [
+          {
+            "title": "アルコールとエーテル",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-9.アルデヒドとケトン",
+        "items": [
+          {
+            "title": "アルデヒドとケトン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-10.カルボン酸",
+        "items": [
+          {
+            "title": "カルボン酸",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 第1章REVIEW②",
+        "items": [
+          {
+            "title": "第1章REVIEW②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-11.エステル",
+        "items": [
+          {
+            "title": "エステル",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-12.油脂",
+        "items": [
+          {
+            "title": "油脂",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 1-13.セッケンと合成洗剤",
+        "items": [
+          {
+            "title": "セッケンと合成洗剤",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 脂肪族化合物 / 第1章REVIEW③",
+        "items": [
+          {
+            "title": "第1章REVIEW③",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-1.芳香族炭化水素",
+        "items": [
+          {
+            "title": "芳香族炭化水素",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-2.ベンゼン",
+        "items": [
+          {
+            "title": "ベンゼン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-3.フェノール類",
+        "items": [
+          {
+            "title": "フェノール類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-4.フェノール",
+        "items": [
+          {
+            "title": "フェノール",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-5.芳香族カルボン酸",
+        "items": [
+          {
+            "title": "芳香族カルボン酸",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-6.サリチル酸",
+        "items": [
+          {
+            "title": "サリチル酸",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-7.芳香族アミン",
+        "items": [
+          {
+            "title": "芳香族アミン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-8.アゾ化合物",
+        "items": [
+          {
+            "title": "アゾ化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 第2章REVIEW①",
+        "items": [
+          {
+            "title": "第2章REVIEW①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-9.芳香族化合物の系統分離",
+        "items": [
+          {
+            "title": "芳香族化合物の系統分離",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 2-10.芳香族化合物の構造決定",
+        "items": [
+          {
+            "title": "2-10. 芳香族化合物の構造決定",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 芳香族化合物 / 第2章REVIEW②",
+        "items": [
+          {
+            "title": "第2章REVIEW②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-1.高分子化合物",
+        "items": [
+          {
+            "title": "高分子化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-2.縮合重合による合成繊維",
+        "items": [
+          {
+            "title": "縮合重合による合成繊維",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-3.付加重合による合成繊維",
+        "items": [
+          {
+            "title": "付加重合による合成繊維",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-4.熱可塑性樹脂",
+        "items": [
+          {
+            "title": "熱可塑性樹脂",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-5.熱硬化性樹脂",
+        "items": [
+          {
+            "title": "熱硬化性樹脂",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 第3章REVIEW①",
+        "items": [
+          {
+            "title": "第3章REVIEW①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-6.イオン交換樹脂",
+        "items": [
+          {
+            "title": "イオン交換樹脂",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-7.天然ゴムと合成ゴム",
+        "items": [
+          {
+            "title": "天然ゴムと合成ゴム",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 3-8.機能性高分子化合物",
+        "items": [
+          {
+            "title": "機能性高分子化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 合成高分子化合物 / 第3章REVIEW②",
+        "items": [
+          {
+            "title": "第3章REVIEW②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-1.単糖類",
+        "items": [
+          {
+            "title": "単糖類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-2.二糖類",
+        "items": [
+          {
+            "title": "二糖類",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-3.多糖類(デンプン)",
+        "items": [
+          {
+            "title": "多糖類(デンプン)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-4.多糖類(セルロース)",
+        "items": [
+          {
+            "title": "多糖類(セルロース)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 第4章REVIEW①",
+        "items": [
+          {
+            "title": "第4章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-5.アミノ酸",
+        "items": [
+          {
+            "title": "アミノ酸",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-6.アミノ酸の電離平衡と等電点",
+        "items": [
+          {
+            "title": "アミノ酸の電離平衡と等電点",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-7.ペプチドとタンパク質の構造",
+        "items": [
+          {
+            "title": "ペプチドとタンパク質の構造",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-8.タンパク質の分類と性質",
+        "items": [
+          {
+            "title": "タンパク質の分類と性質",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 第4章REVIEW②",
+        "items": [
+          {
+            "title": "第4章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-9.酵素",
+        "items": [
+          {
+            "title": "酵素",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 4-10.核酸",
+        "items": [
+          {
+            "title": "核酸",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 天然高分子化合物 / 第4章REVIEW③",
+        "items": [
+          {
+            "title": "第4章REVIEW",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題1",
+        "items": [
+          {
+            "title": "実践問題1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題2",
+        "items": [
+          {
+            "title": "実践問題2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題3",
+        "items": [
+          {
+            "title": "実践問題3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題4",
+        "items": [
+          {
+            "title": "実践問題4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題5",
+        "items": [
+          {
+            "title": "実践問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題6",
+        "items": [
+          {
+            "title": "実践問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題7",
+        "items": [
+          {
+            "title": "実践問題7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題8",
+        "items": [
+          {
+            "title": "実践問題8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題9",
+        "items": [
+          {
+            "title": "実践問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題10",
+        "items": [
+          {
+            "title": "実践問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題11",
+        "items": [
+          {
+            "title": "実践問題11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題12",
+        "items": [
+          {
+            "title": "実践問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題13",
+        "items": [
+          {
+            "title": "実践問題13",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題14",
+        "items": [
+          {
+            "title": "実践問題14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題15",
+        "items": [
+          {
+            "title": "実践問題15",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題16",
+        "items": [
+          {
+            "title": "実践問題16",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題17",
+        "items": [
+          {
+            "title": "実践問題17",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題18",
+        "items": [
+          {
+            "title": "実践問題18",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題19",
+        "items": [
+          {
+            "title": "実践問題19",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題20",
+        "items": [
+          {
+            "title": "実践問題20",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題21",
+        "items": [
+          {
+            "title": "実践問題21",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題22",
+        "items": [
+          {
+            "title": "実践問題22",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題23",
+        "items": [
+          {
+            "title": "実践問題23",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題24",
+        "items": [
+          {
+            "title": "実践問題24",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題25",
+        "items": [
+          {
+            "title": "実践問題25 (2)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題26",
+        "items": [
+          {
+            "title": "実践問題26",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第5章 実践問題 / 実践問題27",
+        "items": [
+          {
+            "title": "実践問題27",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題1",
+        "items": [
+          {
+            "title": "発展問題1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題2",
+        "items": [
+          {
+            "title": "発展問題2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題3",
+        "items": [
+          {
+            "title": "発展問題3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題4",
+        "items": [
+          {
+            "title": "発展問題4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題5",
+        "items": [
+          {
+            "title": "発展問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題6",
+        "items": [
+          {
+            "title": "発展問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題7",
+        "items": [
+          {
+            "title": "発展問題7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題8",
+        "items": [
+          {
+            "title": "発展問題8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題9",
+        "items": [
+          {
+            "title": "発展問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題10",
+        "items": [
+          {
+            "title": "発展問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題11",
+        "items": [
+          {
+            "title": "発展問題11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題12",
+        "items": [
+          {
+            "title": "発展問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題13",
+        "items": [
+          {
+            "title": "発展問題13",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第6章 発展問題 / 発展問題14",
+        "items": [
+          {
+            "title": "発展問題14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "徹底基礎講座【無機化学】（講義カタログ）",
+    "subject": "chemistry",
+    "defaultMode": "video",
+    "externalUrl": "https://konojyuku.com/mypage",
+    "units": [
+      {
+        "name": "第1章 非金属元素 / 1-1.周期表",
+        "items": [
+          {
+            "title": "1-1.周期表",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-2.1族水素と18族貴ガス",
+        "items": [
+          {
+            "title": "1-2.1族水素と18族貴ガス",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-3.17族ハロゲン",
+        "items": [
+          {
+            "title": "1-3.17族ハロゲン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-4.ハロゲンの化合物",
+        "items": [
+          {
+            "title": "1-4.ハロゲンの化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 第1章REVIEW①",
+        "items": [
+          {
+            "title": "第1章REVIEW①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-5.16族酸素と硫黄",
+        "items": [
+          {
+            "title": "1-5.16族酸素と硫黄",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-6.硫黄の化合物",
+        "items": [
+          {
+            "title": "1-6.硫黄の化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-7.硫酸の工業的製法(接触法)",
+        "items": [
+          {
+            "title": "1-7.硫酸の工業的製法(接触法)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 第1章REVIEW②",
+        "items": [
+          {
+            "title": "第1章REVIEW②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-8.15族窒素とその化合物",
+        "items": [
+          {
+            "title": "1-8.15族窒素とその化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-9.アンモニアと工業的製法(ハーバー・ボッシュ法)",
+        "items": [
+          {
+            "title": "1-9.アンモニアと工業的製法(ハーバー・ボッシュ法)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-10.硝酸と工業的製法(オストワルト法)",
+        "items": [
+          {
+            "title": "1-10.硝酸と工業的製法(オストワルト法)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-11.15族リンとその化合物",
+        "items": [
+          {
+            "title": "1-11.15族リンとその化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 第1章REVIEW③",
+        "items": [
+          {
+            "title": "第1章REVIEW③",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-12.14族炭素とその化合物",
+        "items": [
+          {
+            "title": "1-12.14族炭素とその化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-13.14族ケイ素とその化合物",
+        "items": [
+          {
+            "title": "1-13.14族ケイ素とその化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 1-14.気体の製法と性質",
+        "items": [
+          {
+            "title": "1-14.気体の製法と性質",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第1章 非金属元素 / 第1章REVIEW④",
+        "items": [
+          {
+            "title": "第1章REVIEW④",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-1.1族アルカリ金属",
+        "items": [
+          {
+            "title": "2-1.1族アルカリ金属",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-2.アルカリ金属の化合物",
+        "items": [
+          {
+            "title": "2-2.アルカリ金属の化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-3.工業的製法：炭酸ナトリウム(アンモニアソーダ法)",
+        "items": [
+          {
+            "title": "2-3.炭酸ナトリウムの工業的製法（アンモニアソーダ法）",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-4.工業的製法：水酸化ナトリウム(陽イオン交換膜法)",
+        "items": [
+          {
+            "title": "2-4.水酸化ナトリウムの工業的製法（陽イオン交換膜法）",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-5.2族アルカリ土類金属",
+        "items": [
+          {
+            "title": "2-5.2族アルカリ土類金属",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW①",
+        "items": [
+          {
+            "title": "第2章REVIEW①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-6.カルシウムの化合物",
+        "items": [
+          {
+            "title": "2-6.カルシウムの化合物",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW②",
+        "items": [
+          {
+            "title": "第2章REVIEW②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-7.錯イオン",
+        "items": [
+          {
+            "title": "2-7.錯イオン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-8.両性元素(Al, Zn, Sn, Pb)",
+        "items": [
+          {
+            "title": "2-8.両性元素（Al, Zn, Sn, Pb）",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-9.工業的製法：アルミニウムの製錬",
+        "items": [
+          {
+            "title": "2-9.アルミニウムの製錬",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW③",
+        "items": [
+          {
+            "title": "第2章REVIEW③",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-10.鉄,コバルト,ニッケル",
+        "items": [
+          {
+            "title": "2-10.鉄,コバルト,ニッケル",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-11.工業的製法：鉄の製錬",
+        "items": [
+          {
+            "title": "2-11.工業的製法：鉄の製錬",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW④",
+        "items": [
+          {
+            "title": "第2章REVIEW④",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-12.銅,銀,金",
+        "items": [
+          {
+            "title": "2-12.銅,銀,金",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-13.工業的製法：銅の製錬",
+        "items": [
+          {
+            "title": "2-13.工業的製法：銅の製錬",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW⑤",
+        "items": [
+          {
+            "title": "第2章REVIEW⑤",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-14.クロム,マンガン",
+        "items": [
+          {
+            "title": "2-14.クロム,マンガン",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-15.その他の遷移金属(Cd, Hg, Ti)",
+        "items": [
+          {
+            "title": "2-15.その他の遷移金属(Cd, Hg, Ti)",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW⑥",
+        "items": [
+          {
+            "title": "第2章REVIEW⑥",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-16.金属イオンの分離①",
+        "items": [
+          {
+            "title": "2-16.金属イオンの分離①",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-17.金属イオンの分離②",
+        "items": [
+          {
+            "title": "2-17.金属イオンの分離②",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 2-18.金属イオンの分離③",
+        "items": [
+          {
+            "title": "2-18.金属イオンの分離③",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第2章 金属元素 / 第2章REVIEW⑦",
+        "items": [
+          {
+            "title": "第2章REVIEW⑦",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題1",
+        "items": [
+          {
+            "title": "実践問題1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題2",
+        "items": [
+          {
+            "title": "実践問題2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題3",
+        "items": [
+          {
+            "title": "実践問題3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題4",
+        "items": [
+          {
+            "title": "実践問題4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題5",
+        "items": [
+          {
+            "title": "実践問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題6",
+        "items": [
+          {
+            "title": "実践問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題7",
+        "items": [
+          {
+            "title": "実践問題7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題8",
+        "items": [
+          {
+            "title": "実践問題8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題9",
+        "items": [
+          {
+            "title": "実践問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題10",
+        "items": [
+          {
+            "title": "実践問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題11",
+        "items": [
+          {
+            "title": "実践問題11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題12",
+        "items": [
+          {
+            "title": "実践問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題13",
+        "items": [
+          {
+            "title": "実践問題13",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題14",
+        "items": [
+          {
+            "title": "実践問題14",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題15",
+        "items": [
+          {
+            "title": "実践問題15",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題16",
+        "items": [
+          {
+            "title": "実践問題16",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題17",
+        "items": [
+          {
+            "title": "実践問題17",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題18",
+        "items": [
+          {
+            "title": "実践問題18",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題19",
+        "items": [
+          {
+            "title": "実践問題19",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題20",
+        "items": [
+          {
+            "title": "実践問題20",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題21",
+        "items": [
+          {
+            "title": "実践問題21",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題22",
+        "items": [
+          {
+            "title": "実践問題22",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題23",
+        "items": [
+          {
+            "title": "実践問題23",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題24",
+        "items": [
+          {
+            "title": "実践問題24",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第3章 実践問題 / 実践問題25",
+        "items": [
+          {
+            "title": "実践問題25",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題1",
+        "items": [
+          {
+            "title": "発展問題1",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題2",
+        "items": [
+          {
+            "title": "発展問題2",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題3",
+        "items": [
+          {
+            "title": "発展問題3",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題4",
+        "items": [
+          {
+            "title": "発展問題4",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題5",
+        "items": [
+          {
+            "title": "発展問題5",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題6",
+        "items": [
+          {
+            "title": "発展問題6",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題7",
+        "items": [
+          {
+            "title": "発展問題7",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題8",
+        "items": [
+          {
+            "title": "発展問題8",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題9",
+        "items": [
+          {
+            "title": "発展問題9",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題10",
+        "items": [
+          {
+            "title": "発展問題10",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題11",
+        "items": [
+          {
+            "title": "発展問題11",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題12",
+        "items": [
+          {
+            "title": "発展問題12",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      },
+      {
+        "name": "第4章 発展問題 / 発展問題13",
+        "items": [
+          {
+            "title": "発展問題13",
+            "type": "video",
+            "studyMode": "video"
+          }
+        ]
+      }
+    ]
+  }
+]
