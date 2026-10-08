@@ -1,3 +1,7 @@
+# 公開状況（2026-10-08）
+
+https://neuralequation.github.io/studytrace/ で公開済み。`NeuralEquation/studytrace` のmainへpushし、GitHub Actions run 37771557385で67テスト・ビルド・Pagesデプロイが成功しました。公開URLで初期設定画面の表示を確認しました。以下の「未公開」「公開URL未確認」は公開前の検証履歴です。
+
 # 授業一覧・記録管理の修正確認（2026-10-08）
 
 ## 今回の確認
