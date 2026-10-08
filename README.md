@@ -8,6 +8,8 @@
 
 公開URL: https://NeuralEquation.github.io/studytrace/
 
+「インストール済み」と表示されて追加できない場合は、[インストール専用ページ](https://neuralequation.github.io/studytrace/install.html)をChromeなどの通常タブで開いてください。古い画面が出る場合や更新待ちの場合は、学習を保存してすべてのStudyTraceのタブ・アプリを閉じ、このページを開き直します。サイトデータや学習記録を消す必要はありません。解消しない場合は、専用ページの確認情報をコピーできます。
+
 - Android: Chromeで開き、メニューの「ホーム画面に追加」または「アプリをインストール」。
 - iPhone / iPad: Safariで開き、共有メニューから「ホーム画面に追加」。
 - 初回はオンラインで開いて読み込みを完了してください。その後はアプリ本体と学習記録をオフラインで利用できます。
@@ -141,6 +143,8 @@ Viteの相対baseとHashRouterを使用するため、`https://<user>.github.io/
 
 PWAはビルド時にアプリ資産をプリキャッシュします。初回オンライン読込後、アプリ本体をオフラインで利用できます。外部教材はキャッシュしません。更新中に学習を中断させないため、自動でタブを再読み込みしません。
 
+PWAのIDは `/studytrace/` に固定しています。manifestの `id: "./"` はmanifestの場所ではなくオリジン直下の `/` に解決され、同じGitHub Pagesホストの別アプリと衝突します。`studytrace.webmanifest` は通常画面とインストール専用ページで共用し、起動先は同じ保存領域の `index.html?launch=pwa` です。専用ページとそのスクリプトはプリキャッシュ・画面フォールバックの対象から外し、最新のインストール案内を取得します。
+
 ## 検証
 
-`npm test` と `npm run build` で確認できます。実ブラウザ確認の範囲と未確認事項は `VERIFICATION.md` に記録します。
+`npm test` と `npm run build` で確認できます。ビルド後の `npm run verify:pwa` ではPWAのID、起動先、アイコン、専用ページのキャッシュ除外を検証します。GitHub Actionsでもデプロイ前に実行します。実ブラウザ確認の範囲と未確認事項は `VERIFICATION.md` に記録します。

@@ -23,14 +23,17 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "prompt",
+      manifestFilename: "studytrace.webmanifest",
       includeAssets: ["icon.svg", "apple-touch-icon.png"],
       manifest: {
         name: "StudyTrace",
         short_name: "StudyTrace",
         description: "日々の学びを、次の指導へ。",
         lang: "ja",
-        id: "./",
-        start_url: "./",
+        // Manifest IDs resolve against the origin, not the manifest directory.
+        // Keep this stable and distinct from other apps on the same Pages host.
+        id: "/studytrace/",
+        start_url: "./index.html?launch=pwa",
         scope: "./",
         display: "standalone",
         background_color: "#f7f8f4",
@@ -49,7 +52,9 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,woff2}"],
+        globIgnores: ["**/install.html", "**/install.js"],
         navigateFallback: "index.html",
+        navigateFallbackDenylist: [/\/install\.html$/],
         cleanupOutdatedCaches: false,
       },
     }),

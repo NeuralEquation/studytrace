@@ -105,3 +105,13 @@ GitHubリポジトリの作成・push・公開は行っていません。配信�
 - Stopped the preview server, confirmed no listening socket, then reloaded the course page and navigated all seven routes successfully using the PWA cache. Synthetic two-course data remained present.
 - Physical Android/iOS installation, touch and device-specific safe-area behavior remain unverified.
 - Verification screenshots and local source-audit outputs remain local under ignored `verification/`.
+
+# 2026-10-08 PWA installation identity fix
+
+- Reproduced the original manifest `id: "./"` resolving to the origin root in Chromium 151. This can collide with another installed PWA on the same GitHub Pages host. The essay repository had fixed the same ID issue and added a fresh installation entry.
+- Changed the stable application ID to `/studytrace/`, moved the manifest URL to `studytrace.webmanifest`, and set the launch URL to `index.html?launch=pwa` within the existing scope and storage origin.
+- Added `install.html` and `install.js`. Both are excluded from precaching; installer navigations bypass the app-shell fallback. A missing install prompt shows manual instructions, without claiming the app is installed. Waiting updates are observed without sending `SKIP_WAITING` or reloading study tabs.
+- `npm test`: all 67 tests passed. `npm run build` and `npm run verify:pwa` passed. The PWA build check now runs before deployment in GitHub Actions.
+- Browser verification used a fresh persistent Chromium profile and a local HTTP server under `/studytrace/`: the corrected ID, shared manifest on both pages, launch URL, and empty Chrome installability-error list were verified. Controlled navigation reached the installer; manual instructions, prompt dismissal, and installation-completion event handling worked at a 390px mobile viewport.
+- Verified offline cold launch with the PWA query URL; an IndexedDB settings record, another app's cache, and its `/essay/` Service Worker registration survived installer use. A changed worker stayed waiting while an existing study tab remained open.
+- Install prompt choices and completion events were simulated for interaction checks. Installation onto a physical Android/iOS device and launch from the OS home screen remain unverified.
