@@ -23,7 +23,12 @@ import {
 import { activeData } from "../features/study/records";
 import { Records } from "../pages/Study/Records";
 import { useData } from "../db/useData";
-import { useUI } from "../stores/ui";
+import { action, useUI } from "../stores/ui";
+import {
+  ensureInorganicCourse,
+  inorganicUpdateKey,
+} from "../features/courses/catalog";
+import { stopDisallowedTimers } from "../features/study/session";
 import { Onboarding } from "../pages/Onboarding";
 import { Today } from "../pages/Today/Today";
 import { Courses } from "../pages/Courses/Courses";
@@ -90,6 +95,19 @@ function Content() {
   const data = rawData ? activeData(rawData) : undefined;
   const location = useLocation();
   const [offline, setOffline] = useState(!navigator.onLine);
+  useEffect(() => {
+    void action(() => stopDisallowedTimers());
+  }, []);
+  const needsInorganic =
+    !!data?.courses.length &&
+    !data.settings.some((s) => s.key === inorganicUpdateKey && s.value);
+  useEffect(() => {
+    if (needsInorganic)
+      void action(
+        () => ensureInorganicCourse(),
+        "無機化学の授業一覧を確認・追加しました。既存の記録は保持しています。",
+      );
+  }, [needsInorganic]);
   useEffect(() => {
     const fn = () => setOffline(!navigator.onLine);
     window.addEventListener("online", fn);

@@ -2,6 +2,53 @@ import type { Attempt, StudyItem } from "../../types/model";
 import { attemptSchema, sessionSchema } from "../../types/model";
 import { db } from "../../db/database";
 import { now, uid, elapsed } from "../../utils/time";
+import { canTimeItem } from "./timerPolicy";
+export async function startTimedStudy(item: StudyItem) {
+  return db.transaction(
+    "rw",
+    [db.studySessions, db.settings, db.studyItems, db.units, db.courses],
+    async () => {
+      const stored = await db.studyItems.get(item.id);
+      if (
+        !stored ||
+        !canTimeItem(
+          stored,
+          await db.courses.get(stored.courseId),
+          await db.units.get(stored.unitId),
+        )
+      )
+        throw new Error(
+          "時間計測は現在、化学の実践問題・発展問題だけ有効です。日付と結果を直接記録してください。",
+        );
+      return startStudy(item);
+    },
+  );
+}
+export async function stopDisallowedTimers() {
+  await db.transaction(
+    "rw",
+    [db.studySessions, db.studyItems, db.units, db.courses],
+    async () => {
+      for (const session of await db.studySessions.toArray()) {
+        if (session.source !== "timer" || session.endedAt || session.deletedAt)
+          continue;
+        const item = session.itemId
+          ? await db.studyItems.get(session.itemId)
+          : undefined;
+        if (
+          item &&
+          canTimeItem(
+            item,
+            await db.courses.get(item.courseId),
+            await db.units.get(item.unitId),
+          )
+        )
+          continue;
+        await stopStudy(session.id);
+      }
+    },
+  );
+}
 export function newAttempt(item: StudyItem, id: string): Attempt {
   const base = {
     id,

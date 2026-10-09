@@ -186,6 +186,35 @@ export async function addCatalog(catalogId: string, existingId?: string) {
     return added;
   });
 }
+// One-time, user-requested inclusion. Keep legacy IDs, records and mappings untouched.
+export const inorganicUpdateKey = "catalog-inorganic-2026-10-09";
+export async function ensureInorganicCourse() {
+  return db.transaction("rw", db.tables, async () => {
+    if ((await db.settings.get(inorganicUpdateKey))?.value) return;
+    const courses = await db.courses.toArray();
+    if (!courses.length) return;
+    const exact = courses.filter(
+      (c) =>
+        c.catalogId === "inorganic" || c.name === "徹底基礎講座【無機化学】",
+    );
+    const legacy = courses.filter(
+      (c) =>
+        c.subject === "chemistry" && /無機化学/.test(c.name) && !c.catalogId,
+    );
+    const existing = exact[0] ?? (legacy.length === 1 ? legacy[0] : undefined);
+    // Ambiguous legacy names need the visible import/mapping UI; never guess a mapping.
+    if (!exact.length && legacy.length > 1) {
+      await db.settings.put({
+        key: inorganicUpdateKey,
+        value: "multiple-existing",
+      });
+      return;
+    }
+    await addCatalog("inorganic", existing?.id);
+    if (existing) await db.courses.update(existing.id, { archived: false });
+    await db.settings.put({ key: inorganicUpdateKey, value: true });
+  });
+}
 // Explicit selection only: never match a legacy ordinal to a lesson index.
 export async function assignLesson(
   itemId: string,

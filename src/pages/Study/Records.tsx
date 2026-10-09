@@ -3,15 +3,20 @@ import { Link, useNavigate } from "react-router-dom";
 import type { AppData, Attempt, StudySession } from "../../types/model";
 import { modeNames } from "../../types/model";
 import { PageHeader, Empty } from "../../components/ui";
-import { clock } from "../../utils/time";
+import { clock, localDate } from "../../utils/time";
 import { RecordEditor } from "./RecordEditor";
 import { setRecordDeleted } from "../../features/study/records";
-import { startStudy } from "../../features/study/session";
+import { startTimedStudy as startStudy } from "../../features/study/session";
+import { timerAllowed } from "../../features/study/timerPolicy";
+import { AddRecord } from "./AddRecord";
+import { DailyStudyTime } from "../Today/DailyStudyTime";
 import { action } from "../../stores/ui";
 import { attemptDescription } from "../../features/study/description";
 
 export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
   const [trash, setTrash] = useState(false);
+  const [adding, setAdding] = useState(false);
+  const [date, setDate] = useState("");
   const [search, setSearch] = useState("");
   const [editing, setEditing] = useState<string>();
   const [confirm, setConfirm] = useState<string>();
@@ -30,6 +35,11 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
   const visible = rows
     .filter(
       (r) =>
+        !date ||
+        localDate(r.session?.startedAt ?? r.attempt!.createdAt) === date,
+    )
+    .filter(
+      (r) =>
         (!itemId || (r.attempt?.itemId ?? r.session?.itemId) === itemId) &&
         !!(r.attempt?.deletedAt || r.session?.deletedAt) === trash,
     )
@@ -46,8 +56,8 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
         .includes(search),
     )
     .sort((a, b) =>
-      (b.attempt?.createdAt ?? b.session!.startedAt).localeCompare(
-        a.attempt?.createdAt ?? a.session!.startedAt,
+      (b.session?.startedAt ?? b.attempt!.createdAt).localeCompare(
+        a.session?.startedAt ?? a.attempt!.createdAt,
       ),
     );
   return (
@@ -58,10 +68,36 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
         <PageHeader
           title="学習記録"
           eyebrow="RECORDS"
-          description="時間と結果を直す、もう一度測る、不要な記録を削除する。"
+          description="今日・前日以前の記録を追加し、日付・時間・結果を編集できます。"
+        />
+      )}
+      {!itemId && <DailyStudyTime data={data} />}
+      <button className="secondary" onClick={() => setAdding(!adding)}>
+        過去日・今日の記録を追加
+      </button>
+      {adding && (
+        <AddRecord
+          data={data}
+          itemId={itemId}
+          onDone={() => setAdding(false)}
         />
       )}
       <div className="toolbar">
+        <label>
+          記録の日付
+          <input
+            aria-label="記録の日付"
+            type="date"
+            value={date}
+            onInput={(e) => setDate(e.currentTarget.value)}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </label>
+        {date && (
+          <button className="secondary" onClick={() => setDate("")}>
+            全日付を表示
+          </button>
+        )}
         <input
           aria-label="記録を検索"
           placeholder="授業名・メモを検索"
@@ -96,7 +132,7 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
             <div className="record-summary">
               <div>
                 <small>
-                  {new Date(a?.createdAt ?? s!.startedAt).toLocaleString()} ·{" "}
+                  {new Date(s?.startedAt ?? a!.createdAt).toLocaleString()} ·{" "}
                   {modeNames[a?.mode ?? s!.mode]}
                 </small>
                 {item && (
@@ -121,7 +157,9 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
                       : "時間の手入力"}{" "}
                   ·{" "}
                   <strong>
-                    {clock(s?.durationSeconds ?? a?.durationSeconds ?? 0)}
+                    {a && a.durationSeconds === undefined && !s?.durationSeconds
+                      ? "未計測"
+                      : clock(s?.durationSeconds ?? a?.durationSeconds ?? 0)}
                   </strong>
                 </p>
                 {(a?.notes ?? s?.note) && (
@@ -160,7 +198,7 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
                         時間・結果を編集
                       </button>
                     )}
-                    {item && !pending && (
+                    {item && !pending && timerAllowed(data, item) && (
                       <button
                         className="secondary"
                         onClick={() =>

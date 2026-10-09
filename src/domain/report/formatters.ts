@@ -13,6 +13,7 @@ import {
 import { dateRange, clock, humanTime, localDate } from "../../utils/time";
 import { compressItemNumbers } from "./compressItemNumbers";
 import { selectNotableAttempts } from "./selectNotableAttempts";
+import { reportedStudyTimes } from "../../features/study/dailyTime";
 export function formatMathWeeklyReport(
   attempts: ModeAttempt<"reproduction">[],
   data: AppData,
@@ -157,10 +158,13 @@ export function formatDailyStudyTimes(
   end: string,
   daily: boolean,
 ) {
-  const times = studyTimes(data.studySessions, start, end);
+  const times = reportedStudyTimes(data, start, end);
   const days = dateRange(start, end);
   return [
     "【勉強時間】",
+    ...(times.manual.length
+      ? ["日別の手入力合計を優先（個別の記録時間との重複加算なし）"]
+      : []),
     ...(daily
       ? days.map(
           (d) =>
@@ -350,6 +354,7 @@ export function buildWeeklyProgressReport(
   ];
   if (questions.length)
     lines.push("", "【次回相談したいこと】", ...questions.map((q) => "・" + q));
-  if (!summary.length) lines.push("", "この期間の記録はまだありません。");
+  if (!summary.length && !reportedStudyTimes(data, start, end).manual.length)
+    lines.push("", "この期間の記録はまだありません。");
   return { text: lines.join("\n"), warnings, summary };
 }

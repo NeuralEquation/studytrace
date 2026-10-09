@@ -8,6 +8,7 @@ import { buildWeeklyProgressReport } from "../../domain/report/formatters";
 import { db } from "../../db/database";
 import { action } from "../../stores/ui";
 import { localDate, now } from "../../utils/time";
+import { DailyStudyTime } from "../Today/DailyStudyTime";
 export function WeeklyReport({ data }: { data: AppData }) {
   const [params, setParams] = useSearchParams();
   const today = localDate();
@@ -43,6 +44,7 @@ export function WeeklyReport({ data }: { data: AppData }) {
         title="週間進捗報告"
         description="1週間の変化を、伝わる文章に。確認して、編集して、そのままコピー。"
       />
+      <DailyStudyTime data={data} />
       <div className="card report-period">
         <Field label="保存した報告">
           <select

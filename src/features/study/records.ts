@@ -1,7 +1,77 @@
 import { db } from "../../db/database";
 import { attemptSchema, sessionSchema } from "../../types/model";
-import type { AppData, Attempt, StudySession } from "../../types/model";
+import type {
+  AppData,
+  Attempt,
+  StudySession,
+  StudyItem,
+} from "../../types/model";
 import { now } from "../../utils/time";
+
+export async function addManualRecord(
+  item: StudyItem,
+  attempt: Attempt,
+  startedAt: string,
+  durationSeconds: number,
+  note: string,
+  includeInCoachReport: boolean,
+) {
+  const endedAt = new Date(
+    new Date(startedAt).getTime() + durationSeconds * 1000,
+  ).toISOString();
+  const parsed = attemptSchema.parse({
+    ...attempt,
+    itemId: item.id,
+    mode: item.studyMode,
+    sessionId: attempt.id,
+    createdAt: endedAt,
+    durationSeconds: durationSeconds > 0 ? durationSeconds : undefined,
+    notes: note,
+    includeInCoachReport,
+  });
+  if (
+    parsed.mode === "past_exam" &&
+    (parsed.score > parsed.maxScore ||
+      parsed.sections.some((s) => s.score > s.maxScore))
+  )
+    throw new Error("得点が満点を超えています");
+  const session = sessionSchema.parse({
+    id: parsed.id,
+    itemId: item.id,
+    courseId: item.courseId,
+    mode: item.studyMode,
+    startedAt,
+    endedAt,
+    durationSeconds,
+    source: "manual",
+    note,
+    includeInCoachReport,
+  });
+  await db.transaction(
+    "rw",
+    [db.studyItems, db.units, db.courses, db.studySessions, db.attempts],
+    async () => {
+      const current = await db.studyItems.get(item.id);
+      const unit = current && (await db.units.get(current.unitId));
+      const course = current && (await db.courses.get(current.courseId));
+      if (
+        !current ||
+        current.archived ||
+        !unit ||
+        unit.archived ||
+        !course ||
+        course.archived ||
+        current.studyMode !== item.studyMode ||
+        current.courseId !== item.courseId
+      )
+        throw new Error("授業が変更されています。選び直してください。");
+      // Atomic and idempotent for repeated submissions from the same form.
+      if (await db.attempts.get(parsed.id)) return;
+      await db.studySessions.add(session);
+      await db.attempts.add(parsed);
+    },
+  );
+}
 
 export function activeData(data: AppData): AppData {
   const removed = new Set(
@@ -75,7 +145,8 @@ export async function editRecord(
           sessionId: a.sessionId,
           mode: a.mode,
           createdAt: endedAt,
-          durationSeconds: edit.durationSeconds,
+          durationSeconds:
+            edit.durationSeconds > 0 ? edit.durationSeconds : undefined,
           notes: edit.note,
           includeInCoachReport: edit.includeInCoachReport,
           updatedAt,

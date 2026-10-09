@@ -2429,6 +2429,10 @@ details[open] > summary::before {
   margin-top: 8px;
   overflow-wrap: anywhere;
 }
+.daily-study-time { margin: 0 0 24px; }
+.daily-study-time > p { line-height: 1.8; }
+.daily-study-time details { margin-top: 16px; }
+.daily-time-history { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
 /* Keep controls clear of phone notches and the home indicator in installed mode. */
 @media (max-width: 720px) {

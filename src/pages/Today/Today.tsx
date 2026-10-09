@@ -20,10 +20,13 @@ import {
 } from "../../domain/study";
 import { localDate, humanTime } from "../../utils/time";
 import { ManualStudy } from "./ManualStudy";
+import { DailyStudyTime } from "./DailyStudyTime";
+import { reportedStudyTimes } from "../../features/study/dailyTime";
 export function Today({ data }: { data: AppData }) {
   const [manual, setManual] = useState(false);
   const today = localDate();
   const times = studyTimes(data.studySessions, today, today);
+  const reportTime = reportedStudyTimes(data, today, today);
   const aa = attemptsInPeriod(data, today, today);
   const sprint = data.sprints
     .filter((s) => s.startDate <= today && s.endDate >= today)
@@ -60,6 +63,7 @@ export function Today({ data }: { data: AppData }) {
         }
       />
       {manual && <ManualStudy data={data} onDone={() => setManual(false)} />}
+      <DailyStudyTime data={data} />
       <div className="today-layout">
         <div className="today-main">
           <section className="sprint-banner">
@@ -239,8 +243,12 @@ export function Today({ data }: { data: AppData }) {
         <aside className="today-aside">
           <section className="card time-card">
             <span className="eyebrow">TODAY'S STUDY TIME</span>
-            <div className="time-total">{humanTime(times.total)}</div>
-            <p>今日の積み重ね</p>
+            <div className="time-total">{humanTime(reportTime.total)}</div>
+            <p>
+              {reportTime.manual.length
+                ? "日別の手入力合計 · 以下は個別記録の内訳"
+                : "今日の積み重ね"}
+            </p>
             <div className="time-bars">
               {Object.entries(subjectNames).map(([subject, name]) => {
                 const seconds = data.courses

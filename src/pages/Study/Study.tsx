@@ -8,14 +8,10 @@ import type {
   StudySession,
   Bottleneck,
 } from "../../types/model";
-import {
-  attemptSchema,
-  bottleneckNames,
-  modeNames,
-} from "../../types/model";
+import { attemptSchema, bottleneckNames, modeNames } from "../../types/model";
 import { PageHeader, Empty, ExternalLink, Field } from "../../components/ui";
 import {
-  startStudy,
+  startTimedStudy as startStudy,
   stopStudy,
   finishStudy,
   newAttempt,
@@ -34,6 +30,8 @@ import {
 } from "recharts";
 import { Records } from "./Records";
 import { ModeForm } from "./ModeForm";
+import { timerAllowed } from "../../features/study/timerPolicy";
+import { RecordEditor } from "./RecordEditor";
 export function Study({
   data,
   rawData = data,
@@ -42,6 +40,7 @@ export function Study({
   rawData?: AppData;
 }) {
   const { id } = useParams();
+  const [entryVersion, setEntryVersion] = useState(0);
   const item = data.studyItems.find((i) => i.id === id);
   if (!item)
     return (
@@ -59,6 +58,7 @@ export function Study({
     .sort(chronological);
   const pb = personalBest(history);
   const last = history.at(-1);
+  const timing = timerAllowed(data, item);
   return (
     <>
       <PageHeader
@@ -81,7 +81,19 @@ export function Study({
           item={item}
           session={session}
           data={data}
+          timing={timing}
         />
+      ) : !timing ? (
+        <section>
+          <p className="muted">
+            この授業の時間計測は休止中です。学習日と結果を記録してください。
+          </p>
+          <RecordEditor
+            key={item.id + ":" + entryVersion}
+            createItem={item}
+            onDone={() => setEntryVersion((n) => n + 1)}
+          />
+        </section>
       ) : (
         <section className="card start-card">
           {item.studyMode === "speed" && (
@@ -115,29 +127,32 @@ export function Study({
           </button>
         </section>
       )}
-      {item.studyMode === "speed" && history.length > 1 && (
-        <section className="card">
-          <h2>所要時間の推移</h2>
-          <ResponsiveContainer width="100%" height={220}>
-            <LineChart
-              data={history.map((a, i) => ({
-                回: i + 1,
-                秒: a.durationSeconds ?? 0,
-              }))}
-            >
-              <XAxis dataKey="回" />
-              <YAxis />
-              <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="秒"
-                stroke="#285bb5"
-                strokeWidth={2}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </section>
-      )}
+      {item.studyMode === "speed" &&
+        history.filter((a) => a.durationSeconds !== undefined).length > 1 && (
+          <section className="card">
+            <h2>所要時間の推移</h2>
+            <ResponsiveContainer width="100%" height={220}>
+              <LineChart
+                data={history
+                  .filter((a) => a.durationSeconds !== undefined)
+                  .map((a, i) => ({
+                    回: i + 1,
+                    秒: a.durationSeconds ?? 0,
+                  }))}
+              >
+                <XAxis dataKey="回" />
+                <YAxis />
+                <Tooltip />
+                <Line
+                  type="monotone"
+                  dataKey="秒"
+                  stroke="#285bb5"
+                  strokeWidth={2}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </section>
+        )}
       <Records data={rawData} itemId={item.id} />
     </>
   );
@@ -146,10 +161,12 @@ function ActiveStudy({
   item,
   session,
   data,
+  timing,
 }: {
   item: StudyItem;
   session: StudySession;
   data: AppData;
+  timing: boolean;
 }) {
   const navigate = useNavigate();
   const [tick, setTick] = useState(Date.now());
@@ -165,9 +182,17 @@ function ActiveStudy({
   const [note, setNote] = useState("");
   const [saved, setSaved] = useState(true);
   useEffect(() => {
+    if (!timing) {
+      if (!session.endedAt)
+        void action(
+          () => stopStudy(session.id),
+          "休止対象の以前の計測を終了しました。結果を保存してください。",
+        );
+      return;
+    }
     const timer = setInterval(() => setTick(Date.now()), 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [timing, session.id, session.endedAt]);
   const seconds = session.endedAt
     ? session.durationSeconds
     : elapsed(session.startedAt, tick);

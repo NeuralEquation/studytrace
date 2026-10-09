@@ -14,17 +14,17 @@ import { PageHeader, Stat, Progress, Field } from "../../components/ui";
 import {
   courseProgress,
   attemptsInPeriod,
-  studyTimes,
   recallScore,
 } from "../../domain/study";
 import { localDate, dateRange, humanTime } from "../../utils/time";
 import { Link } from "react-router-dom";
+import { reportedStudyTimes } from "../../features/study/dailyTime";
 export function Analytics({ data }: { data: AppData }) {
   const d = new Date();
   d.setDate(d.getDate() - 6);
   const [start, setStart] = useState(localDate(d));
   const [end, setEnd] = useState(localDate());
-  const times = studyTimes(data.studySessions, start, end);
+  const times = reportedStudyTimes(data, start, end);
   const aa = attemptsInPeriod(data, start, end);
   const bottlenecks = data.bottlenecks.filter((b) =>
     aa.some((a) => a.id === b.attemptId),
@@ -81,11 +81,14 @@ export function Analytics({ data }: { data: AppData }) {
             </ResponsiveContainer>
           </div>
           <p className="muted">
-            日付をまたぐ学習は、開始日のローカル日付に全時間を計上します。
+            日別の手入力合計を優先します。未入力の日は個別記録の時間を使います。日付をまたぐ個別記録は開始日に計上します。
           </p>
         </section>
         <section className="card">
-          <h2>教科別の学習時間</h2>
+          <h2>教科別の記録時間</h2>
+          <p className="muted">
+            個別記録の内訳です。日別合計は教科に配分しないため、合計と一致しない場合があります。
+          </p>
           {Object.entries(subjectNames).map(([s, label]) => {
             const seconds = data.courses
               .filter((c) => c.subject === s)
@@ -96,7 +99,10 @@ export function Analytics({ data }: { data: AppData }) {
                   <span>{label}</span>
                   <strong>{humanTime(seconds)}</strong>
                 </div>
-                <Progress value={seconds} max={times.total} />
+                <Progress
+                  value={seconds}
+                  max={Object.values(times.byCourse).reduce((n, s) => n + s, 0)}
+                />
               </div>
             );
           })}
