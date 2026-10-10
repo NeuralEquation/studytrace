@@ -16,6 +16,7 @@ import {
 } from "../features/backup/backup";
 import { fixture, math, speed, withSession, stamp } from "./fixtures";
 import type { SprintGoal } from "../types/model";
+import { japanStamp } from "../utils/time";
 describe("chemistry PB", () => {
   it("only compares fully correct attempts and same item", () => {
     const previous = speed({
@@ -149,8 +150,8 @@ it("aggregates manual time, assigns overnight to start date, excludes unfinished
       id: "s",
       courseId: "mathematics",
       mode: "reproduction",
-      startedAt: new Date("2026-10-07T23:50:00").toISOString(),
-      endedAt: new Date("2026-10-08T00:20:00").toISOString(),
+      startedAt: japanStamp("2026-10-07", "23:50"),
+      endedAt: japanStamp("2026-10-08", "00:20"),
       durationSeconds: 1800,
       source: "timer",
       includeInCoachReport: false,
@@ -178,6 +179,10 @@ it("aggregates manual time, assigns overnight to start date, excludes unfinished
   const t = studyTimes(d.studySessions, "2026-10-07", "2026-10-07");
   expect(t.total).toBe(2400);
   expect(t.byCourse).toEqual({ mathematics: 1800, chemistry: 600 });
+  expect(t.byDay).toEqual({ "2026-10-07": 2400 });
+  expect(
+    studyTimes(d.studySessions, "2026-10-08", "2026-10-08").total,
+  ).toBe(0);
 });
 it("sprint count deduplicates same problem, not attempt count", () => {
   const d = fixture();

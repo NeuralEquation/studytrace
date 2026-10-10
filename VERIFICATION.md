@@ -1,3 +1,32 @@
+# JSTテストのUTC互換性修正（2026-10-10）
+
+- 対象コミット：`8e35c025e00c0267d6e95fbbc0a76dcb5a4eed5d`。Actions run [38021410649](https://github.com/NeuralEquation/studytrace/actions/runs/38021410649) のbuildはテスト2件で失敗し、deployは未実行。ローカルでも`TZ=UTC`で111成功・2失敗を再現した。
+- 原因はdomain/reportの旧テストがOSローカル時刻で日時を生成していたこと。`japanStamp()`で10/7 23:50〜10/8 00:20 JSTを明示。本番のJST集計と既存の期待値（合計2400秒、再現可能1/1題、演習1回）は変更していない。
+- 同じテスト内で、開始日の数学1800秒・完全独力1題・日別30分と、翌日への時間・演習の二重計上がないことを追加確認。全テスト数は113件のまま。
+- PowerShellでは`$env:TZ = 'UTC'; npm test`と`$env:TZ = 'Asia/Tokyo'; npm test`を別プロセスで実行。両方とも5ファイル・113成功・0失敗（計画関連29件を含む）。
+- `npm run build`、`npm run build:html`、`npm run verify:pwa`すべて成功。単一HTMLの内容差分なし。既存の500KB超チャンク注意は継続。
+- ActionsのbuildジョブにもUTC・Asia/Tokyoの全テストと単一HTMLビルドを追加。両テスト・Web/HTMLビルド・PWA検証を通過してからPagesへ進む。
+- 本番ソース・IndexedDB・既存記録・Sprint・化学ノルマ・PWA ID・依存関係/lockfileに変更なし。
+
+## 依存関係の監査
+
+2026-10-10に公式npmレジストリで読み取り監査を実行。`npm audit`は終了コード1で3件（moderate 1・critical 2）、`npm audit --omit=dev`は終了コード0で0件。
+
+| パッケージ | 導入版 | 監査の重大度 | 依存経路 |
+| --- | --- | --- | --- |
+| `vitest` | 3.2.7 | critical（配下の影響を含む） | devDependency |
+| `@vitest/mocker` | 3.2.7 | moderate | vitest配下 |
+| `tinypool` | 1.1.1 | critical | vitest配下 |
+
+- [Vitest / mockerのファイル読取](https://github.com/advisories/GHSA-82fw-gwwq-j7x9)：開発サーバーのモック登録経路でファイル許可範囲の検証が不足。公開した該当WebSocketへ接続できること等が前提。このリポジトリはNode環境の`vitest run`を使用し、製品コードからモック用プラグインを使っていない。
+- [Tinypool worker options](https://github.com/advisories/GHSA-5gmw-xhrv-c9v3)・[run options](https://github.com/advisories/GHSA-85c8-ppgw-ccpr)：別の経路でprototype pollutionが成立すると、Nodeワーカーで任意コード実行につながる問題。開発環境・CI側のリスクは残る。
+- 本番依存の監査0件、依存経路、製品ソースに該当importがないことから、今回検出した3パッケージは公開PWA/単一HTMLの実行依存には含まれないと判断。開発依存の危険性が解消されたという意味ではない。
+- auditはVitest 5.0.3へのメジャー更新を提案。互換性確認が必要な別作業として記録し、今回はパッケージを更新せず、`npm audit fix --force`も実行していない。
+
+以下は当時の検証履歴です。直前の113成功報告はWindowsのローカル環境だけで、UTCでの成功やPagesデプロイ完了を示すものではありません。
+
+---
+
 # 学習計画・休日・優先順位・記録UI（2026-10-10）
 
 ## 基準と調査結果

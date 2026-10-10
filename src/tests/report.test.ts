@@ -7,6 +7,7 @@ import {
   formatPhysicsWeeklyReport,
 } from "../domain/report/formatters";
 import { fixture, math, speed, stamp, withSession } from "./fixtures";
+import { japanStamp } from "../utils/time";
 const options = {
   start: "2026-10-07",
   end: "2026-10-14",
@@ -15,16 +16,34 @@ const options = {
 };
 it("counts midnight-crossing results and cumulative mastery on the session start day", () => {
   const d = fixture();
-  const a = math({ createdAt: new Date(2026, 9, 8, 0, 10).toISOString() });
+  const a = math({
+    createdAt: japanStamp("2026-10-08", "00:20"),
+    durationSeconds: 1800,
+  });
   withSession(d, a, "mathematics");
-  d.studySessions[0].startedAt = new Date(2026, 9, 7, 23, 50).toISOString();
+  d.studySessions[0].startedAt = japanStamp("2026-10-07", "23:50");
   d.studySessions[0].endedAt = a.createdAt;
-  const text = buildWeeklyProgressReport(d, {
+  const report = buildWeeklyProgressReport(d, {
     ...options,
     end: "2026-10-07",
-  }).text;
+  });
+  const { text } = report;
   expect(text).toContain("再現可能：1/1題");
   expect(text).toContain("演習回数：1回");
+  expect(text).toContain("完全独力で完答：1題");
+  expect(text).toContain("10/07　30分");
+  expect(report.summary).toContainEqual({
+    subject: "mathematics",
+    count: 1,
+    seconds: 1800,
+  });
+  const nextDay = buildWeeklyProgressReport(d, {
+    ...options,
+    start: "2026-10-08",
+    end: "2026-10-08",
+  });
+  expect(nextDay.summary).toEqual([]);
+  expect(nextDay.text).toContain("10/08　0分");
 });
 it("separates first chemistry records from improvements", () => {
   const d = fixture();

@@ -20,8 +20,16 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm test
+      - name: Test (UTC)
+        run: npm test
+        env:
+          TZ: UTC
+      - name: Test (Asia/Tokyo)
+        run: npm test
+        env:
+          TZ: Asia/Tokyo
       - run: npm run build
+      - run: npm run build:html
       - run: npm run verify:pwa
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
