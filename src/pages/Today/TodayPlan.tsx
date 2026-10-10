@@ -9,6 +9,7 @@ import type { TodayTask } from "../../domain/planning";
 import { studyDay, holidayCoverage } from "../../domain/calendar";
 import { localDate, humanTime } from "../../utils/time";
 import { reportedStudyTimes } from "../../features/study/dailyTime";
+import { RememberedDetails } from "../../components/RememberedDetails";
 export function Today({ data }: { data: AppData }) {
   const today = localDate(),
     day = studyDay(today),
@@ -185,12 +186,17 @@ export function Today({ data }: { data: AppData }) {
         if (!rows.length) return null;
         const content = <div className="task-grid">{rows.map(taskCard)}</div>;
         return n >= 2 ? (
-          <details className="task-group" key={title} open={n === 3}>
+          <RememberedDetails
+            className="task-group"
+            key={title}
+            viewKey={"today:group:" + n}
+            defaultOpen={n === 3}
+          >
             <summary>
               {title}（{rows.length}）
             </summary>
             {content}
-          </details>
+          </RememberedDetails>
         ) : (
           <section key={title}>
             <div className="section-heading">

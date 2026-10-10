@@ -4,6 +4,8 @@ import { registerSW } from "virtual:pwa-register";
 import { App } from "./app/App";
 import { useUI } from "./stores/ui";
 import "./styles.css";
+import { restoreLastView } from "./features/navigation/viewState";
+restoreLastView();
 registerSW({
   onNeedRefresh() {
     useUI

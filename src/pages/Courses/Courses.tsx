@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowRight, Plus, BookOpen } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  BookPlus,
+  FolderPlus,
+  Pencil,
+  Settings2,
+  ChevronRight,
+  ChevronsUpDown,
+} from "lucide-react";
 import type { AppData, StudyItem, Unit } from "../../types/model";
 import { subjectNames, modeNames } from "../../types/model";
 import {
@@ -25,21 +34,43 @@ import {
   deleteUnusedUnit,
   unitDeletionInfo,
 } from "../../features/courses/deleteUnit";
+import { useViewState } from "../../features/navigation/useViewState";
 export function Courses({ data }: { data: AppData }) {
   const { id } = useParams();
   const [showCatalog, setShowCatalog] = useState(false);
-  const [subject, setSubject] = useState("");
-  const [expand, setExpand] = useState(false);
+  const viewKey = "library:" + (id ?? "all") + ":";
+  const [subject, setSubject] = useViewState(viewKey + "subject", "");
+  const [chapters, setChapters] = useViewState<Record<string, boolean>>(
+    viewKey + "chapters",
+    {},
+  );
+  const [units, setUnits] = useViewState<Record<string, boolean>>(
+    viewKey + "units",
+    {},
+  );
+  const [managing, setManaging] = useViewState(viewKey + "managing", false);
   const [editing, setEditing] = useState(false);
   const [unitEdit, setUnitEdit] = useState<Unit | "new" | null>(null);
   const [itemEdit, setItemEdit] = useState<{
     unitId: string;
     item?: StudyItem;
   } | null>(null);
-  const [search, setSearch] = useState("");
-  const [showArchived, setShowArchived] = useState(false);
+  const [search, setSearch] = useViewState(viewKey + "search", "");
+  const [showArchived, setShowArchived] = useViewState(
+    viewKey + "archived",
+    false,
+  );
   const [deletingUnit, setDeletingUnit] = useState<string | null>(null);
   const course = data.courses.find((c) => c.id === id);
+  function setAll(open: boolean) {
+    const rows = data.units.filter((u) => u.courseId === id);
+    setChapters(
+      Object.fromEntries(
+        rows.map((u) => [u.chapter || "その他・既存の登録", open]),
+      ),
+    );
+    setUnits(Object.fromEntries(rows.map((u) => [u.id, open])));
+  }
   if (id && !course)
     return (
       <Empty to="/courses">
@@ -72,10 +103,21 @@ export function Courses({ data }: { data: AppData }) {
             : "学習する講座を選んでください。"
         }
         actions={
-          <button onClick={() => setEditing(!editing)}>
-            <Plus size={16} />
-            {course ? "教材を編集" : "教材を追加"}
-          </button>
+          course ? (
+            <button
+              className="secondary"
+              aria-pressed={managing}
+              onClick={() => setManaging(!managing)}
+            >
+              <Settings2 size={17} />
+              {managing ? "管理を終了" : "教材を管理"}
+            </button>
+          ) : (
+            <button onClick={() => setEditing(!editing)}>
+              <BookPlus size={18} />
+              教材を追加
+            </button>
+          )
         }
       />
       {!course && (
@@ -103,39 +145,54 @@ export function Courses({ data }: { data: AppData }) {
           </select>
         </div>
       )}
-      {(showCatalog || !!course) && (
+      {(showCatalog || (!!course && managing)) && (
         <CatalogPanel data={data} course={course} />
       )}
-      {editing && (
+      {editing && (!course || managing) && (
         <CourseEditor course={course} onDone={() => setEditing(false)} />
       )}
-      <div className="toolbar">
-        <label className="check">
-          <input
-            type="checkbox"
-            checked={showArchived}
-            onChange={(e) => setShowArchived(e.target.checked)}
-          />
-          非表示の教材・単元・項目も表示
-        </label>
+      <div className="toolbar library-breadcrumb">
+        {(!course || managing) && (
+          <>
+            <label className="check">
+              <input
+                type="checkbox"
+                checked={showArchived}
+                onChange={(e) => setShowArchived(e.target.checked)}
+              />
+              非表示の教材・単元・項目も表示
+            </label>
+          </>
+        )}
         {course && (
           <>
             <Link to="/courses">← 教材一覧</Link>
             <ExternalLink url={course.externalUrl} />
-            <button
-              className="text-button"
-              onClick={() =>
-                void action(
-                  () =>
-                    db.courses.update(course.id, {
-                      archived: !course.archived,
-                    }),
-                  "教材の表示状態を更新しました",
-                )
-              }
-            >
-              {course.archived ? "教材を復元" : "教材をアーカイブ"}
-            </button>
+            {managing && (
+              <>
+                <button
+                  className="secondary"
+                  onClick={() => setEditing(!editing)}
+                >
+                  <Pencil size={16} />
+                  教材情報を編集
+                </button>
+                <button
+                  className="text-button"
+                  onClick={() =>
+                    void action(
+                      () =>
+                        db.courses.update(course.id, {
+                          archived: !course.archived,
+                        }),
+                      "教材の表示状態を更新しました",
+                    )
+                  }
+                >
+                  {course.archived ? "教材を復元" : "教材をアーカイブ"}
+                </button>
+              </>
+            )}
           </>
         )}
       </div>
@@ -207,7 +264,7 @@ export function Courses({ data }: { data: AppData }) {
         </div>
       ) : (
         <>
-          <div className="stats-grid">
+          <div className="stats-grid library-progress">
             <Stat label="取り組み済み" value={`${p.attempted} / ${p.total}`} />
             <Stat label="完了" value={p.completed} />
             {course.subject === "mathematics" ? (
@@ -245,19 +302,30 @@ export function Courses({ data }: { data: AppData }) {
               )}
             </p>
           )}
-          <div className="toolbar">
+          <div className="library-toolbar">
             <input
               aria-label="授業を検索"
               placeholder="授業名・章・節を検索"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <button className="secondary" onClick={() => setUnitEdit("new")}>
-              <Plus size={16} />
-              節を追加
-            </button>
+            {managing && (
+              <button className="secondary" onClick={() => setUnitEdit("new")}>
+                <FolderPlus size={17} />
+                節を追加
+              </button>
+            )}
+            <div className="library-expand-actions" aria-label="章と節の開閉">
+              <button className="text-button" onClick={() => setAll(true)}>
+                <ChevronsUpDown size={16} />
+                すべて開く
+              </button>
+              <button className="text-button" onClick={() => setAll(false)}>
+                すべて折りたたむ
+              </button>
+            </div>
           </div>
-          {unitEdit && (
+          {managing && unitEdit && (
             <UnitEditor
               key={unitEdit === "new" ? "new" : unitEdit.id}
               courseId={course.id}
@@ -265,11 +333,9 @@ export function Courses({ data }: { data: AppData }) {
               onDone={() => setUnitEdit(null)}
             />
           )}
-          <div className="toolbar">
-            <button className="secondary" onClick={() => setExpand(!expand)}>
-              {expand ? "すべて折りたたむ" : "すべて開く"}
-            </button>
-          </div>
+          <p className="library-hint">
+            章・節を開いて授業を選択できます。開閉状態と検索条件は自動で保持します。
+          </p>
           <div className="unit-list">
             {[
               ...new Set(
@@ -293,12 +359,22 @@ export function Courses({ data }: { data: AppData }) {
             ].map((chapter) => (
               <details
                 className="chapter-group"
-                key={chapter + expand + !!search}
-                open={expand || !!search || undefined}
+                key={chapter}
+                open={!!search || chapters[chapter] === true}
+                onToggle={(e) => {
+                  const open = e.currentTarget.open;
+                  if (!search)
+                    setChapters((current) =>
+                      current[chapter] === open
+                        ? current
+                        : { ...current, [chapter]: open },
+                    );
+                }}
               >
                 <summary>
-                  {chapter}
-                  <span>
+                  <ChevronRight className="disclosure-chevron" size={18} />
+                  <span className="disclosure-title">{chapter}</span>
+                  <span className="disclosure-meta">
                     {
                       data.units.filter(
                         (u) =>
@@ -329,55 +405,78 @@ export function Courses({ data }: { data: AppData }) {
                   .map((u) => (
                     <details
                       className="card unit-card"
-                      key={u.id + expand + !!search}
-                      open={expand || !!search || undefined}
+                      key={u.id}
+                      open={!!search || units[u.id] === true}
+                      onToggle={(e) => {
+                        const open = e.currentTarget.open;
+                        if (!search)
+                          setUnits((current) =>
+                            current[u.id] === open
+                              ? current
+                              : { ...current, [u.id]: open },
+                          );
+                      }}
                     >
                       <summary>
-                        <span>
+                        <ChevronRight
+                          className="disclosure-chevron"
+                          size={17}
+                        />
+                        <span className="disclosure-title">
                           {u.name}
                           {u.archived ? "（非表示）" : ""}
                         </span>
-                        <small>
-                          {visible.filter((i) => i.unitId === u.id).length}授業
+                        <small className="disclosure-meta">
+                          {
+                            visible.filter(
+                              (i) =>
+                                i.unitId === u.id &&
+                                itemComplete(i, data.attempts),
+                            ).length
+                          }{" "}
+                          / {visible.filter((i) => i.unitId === u.id).length}{" "}
+                          完了
                         </small>
                       </summary>
-                      <div className="row">
-                        <small>節の管理</small>
-                        <div className="actions">
-                          <button
-                            className="text-button"
-                            onClick={() => setUnitEdit(u)}
-                          >
-                            編集
-                          </button>
-                          <button
-                            className="text-button"
-                            onClick={() =>
-                              void action(() =>
-                                db.units.update(u.id, {
-                                  archived: !u.archived,
-                                }),
-                              )
-                            }
-                          >
-                            {u.archived ? "復元" : "非表示"}
-                          </button>
-                          <button
-                            className="text-button"
-                            aria-label={u.name + "を削除"}
-                            onClick={() => setDeletingUnit(u.id)}
-                          >
-                            削除
-                          </button>
-                          <button
-                            className="secondary"
-                            onClick={() => setItemEdit({ unitId: u.id })}
-                          >
-                            授業を追加
-                          </button>
+                      {managing && (
+                        <div className="row unit-management">
+                          <small>節の管理</small>
+                          <div className="actions">
+                            <button
+                              className="text-button"
+                              onClick={() => setUnitEdit(u)}
+                            >
+                              編集
+                            </button>
+                            <button
+                              className="text-button"
+                              onClick={() =>
+                                void action(() =>
+                                  db.units.update(u.id, {
+                                    archived: !u.archived,
+                                  }),
+                                )
+                              }
+                            >
+                              {u.archived ? "復元" : "非表示"}
+                            </button>
+                            <button
+                              className="text-button"
+                              aria-label={u.name + "を削除"}
+                              onClick={() => setDeletingUnit(u.id)}
+                            >
+                              削除
+                            </button>
+                            <button
+                              className="secondary"
+                              onClick={() => setItemEdit({ unitId: u.id })}
+                            >
+                              授業を追加
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      {deletingUnit === u.id && (
+                      )}
+                      {managing && deletingUnit === u.id && (
                         <section
                           className="warning"
                           aria-label="単元の削除確認"
@@ -438,7 +537,7 @@ export function Courses({ data }: { data: AppData }) {
                           </div>
                         </section>
                       )}
-                      {itemEdit?.unitId === u.id && (
+                      {managing && itemEdit?.unitId === u.id && (
                         <ItemEditor
                           key={itemEdit.item?.id ?? "new"}
                           course={course}
@@ -496,31 +595,35 @@ export function Courses({ data }: { data: AppData }) {
                                   {i.archived ? " · アーカイブ" : ""}
                                 </small>
                               </Link>
-                              <button
-                                className="text-button"
-                                aria-label={i.title + "を編集"}
-                                onClick={() =>
-                                  setItemEdit({ unitId: u.id, item: i })
-                                }
-                              >
-                                編集
-                              </button>
-                              <button
-                                className="text-button"
-                                aria-label={
-                                  i.title +
-                                  (i.archived ? "を復元" : "をアーカイブ")
-                                }
-                                onClick={() =>
-                                  void action(() =>
-                                    db.studyItems.update(i.id, {
-                                      archived: !i.archived,
-                                    }),
-                                  )
-                                }
-                              >
-                                {i.archived ? "復元" : "非表示"}
-                              </button>
+                              {managing && (
+                                <>
+                                  <button
+                                    className="text-button"
+                                    aria-label={i.title + "を編集"}
+                                    onClick={() =>
+                                      setItemEdit({ unitId: u.id, item: i })
+                                    }
+                                  >
+                                    編集
+                                  </button>
+                                  <button
+                                    className="text-button"
+                                    aria-label={
+                                      i.title +
+                                      (i.archived ? "を復元" : "をアーカイブ")
+                                    }
+                                    onClick={() =>
+                                      void action(() =>
+                                        db.studyItems.update(i.id, {
+                                          archived: !i.archived,
+                                        }),
+                                      )
+                                    }
+                                  >
+                                    {i.archived ? "復元" : "非表示"}
+                                  </button>
+                                </>
+                              )}
                               <Link
                                 className="icon-button"
                                 aria-label={i.title + "を開始"}

@@ -12,12 +12,14 @@ import { AddRecord } from "./AddRecord";
 import { StudyTimePage } from "./StudyTimePage";
 import { action } from "../../stores/ui";
 import { attemptDescription } from "../../features/study/description";
+import { useViewState } from "../../features/navigation/useViewState";
 
 export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
-  const [trash, setTrash] = useState(false);
-  const [adding, setAdding] = useState(false);
-  const [date, setDate] = useState("");
-  const [search, setSearch] = useState("");
+  const viewKey = "records:" + (itemId ?? "all") + ":";
+  const [trash, setTrash] = useViewState(viewKey + "trash", false);
+  const [adding, setAdding] = useViewState(viewKey + "adding", false);
+  const [date, setDate] = useViewState(viewKey + "date", "");
+  const [search, setSearch] = useViewState(viewKey + "search", "");
   const [editing, setEditing] = useState<string>();
   const [confirm, setConfirm] = useState<string>();
   const navigate = useNavigate();

@@ -330,6 +330,10 @@ export const draftSchema = z.object({
   edited: z.boolean(),
   detail: z.enum(["compact", "detailed"]),
   daily: z.boolean(),
+  sourceFingerprint: z
+    .string()
+    .regex(/^[a-f0-9]{64}$/)
+    .optional(),
 });
 export type Subject = (typeof subjects)[number];
 export type StudyMode = (typeof modes)[number];

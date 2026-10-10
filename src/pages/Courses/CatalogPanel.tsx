@@ -7,6 +7,7 @@ import {
 } from "../../features/courses/catalog";
 import { action } from "../../stores/ui";
 import { Field } from "../../components/ui";
+import { RememberedDetails } from "../../components/RememberedDetails";
 export function CatalogPanel({
   data,
   course,
@@ -72,7 +73,10 @@ export function CatalogPanel({
       ),
   );
   return (
-    <details className="card catalog-panel">
+    <RememberedDetails
+      className="card catalog-panel"
+      viewKey={"catalog:" + course.id}
+    >
       <summary>
         授業一覧の取り込み・既存記録の引き継ぎ{" "}
         <small>{source.lessons.length}授業</small>
@@ -190,6 +194,6 @@ export function CatalogPanel({
       <small>
         変更前のデータは「設定」の取り込み前バックアップに保存します。
       </small>
-    </details>
+    </RememberedDetails>
   );
 }

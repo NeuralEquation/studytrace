@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { Play, Square, Flag, AlertCircle } from "lucide-react";
+import {
+  Link,
+  useParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
+import {
+  Play,
+  Square,
+  Flag,
+  AlertCircle,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
 import type {
   AppData,
   Attempt,
@@ -19,7 +31,7 @@ import {
 import { personalBest, chronological } from "../../domain/study";
 import { db } from "../../db/database";
 import { action, useUI } from "../../stores/ui";
-import { clock, now, uid, elapsed } from "../../utils/time";
+import { clock, now, uid, elapsed, localDate } from "../../utils/time";
 import {
   LineChart,
   Line,
@@ -32,6 +44,13 @@ import { Records } from "./Records";
 import { ModeForm } from "./ModeForm";
 import { timerAllowed } from "../../features/study/timerPolicy";
 import { RecordEditor } from "./RecordEditor";
+import { ItemNavigation } from "./ItemNavigation";
+import {
+  itemNeighbors,
+  itemGoals,
+  studyPath,
+} from "../../features/study/itemNavigation";
+import { StudyGoals } from "./StudyGoals";
 export function Study({
   data,
   rawData = data,
@@ -40,7 +59,17 @@ export function Study({
   rawData?: AppData;
 }) {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const [params, setParams] = useSearchParams();
   const [entryVersion, setEntryVersion] = useState(0);
+  const [recorded, setRecorded] = useState(false);
+  useEffect(() => {
+    if (recorded) {
+      const saved = document.getElementById("study-saved");
+      saved?.focus({ preventScroll: true });
+      saved?.scrollIntoView({ block: "center" });
+    }
+  }, [recorded]);
   const item = data.studyItems.find((i) => i.id === id);
   if (!item)
     return (
@@ -59,6 +88,10 @@ export function Study({
   const pb = personalBest(history);
   const last = history.at(-1);
   const timing = timerAllowed(data, item);
+  const date = localDate();
+  const goals = itemGoals(data, item, date);
+  const goal = goals.find((g) => g.id === params.get("goal"));
+  const { next } = itemNeighbors(data, item, goal);
   return (
     <>
       <PageHeader
@@ -74,59 +107,119 @@ export function Study({
           />
         }
       />
-      <Link to={"/courses/" + item.courseId}>← 教材へ</Link>
-      {session ? (
-        <ActiveStudy
-          key={session.id}
-          item={item}
-          session={session}
-          data={data}
-          timing={timing}
-        />
-      ) : !timing ? (
-        <section>
-          <p className="muted">
-            この授業の時間計測は休止中です。学習日と結果を記録してください。
-          </p>
-          <RecordEditor
-            key={item.id + ":" + entryVersion}
-            createItem={item}
-            onDone={() => setEntryVersion((n) => n + 1)}
-          />
+      <StudyGoals
+        data={data}
+        goals={goals}
+        selected={goal}
+        date={date}
+        onSelect={(id) => setParams(id ? { goal: id } : {})}
+      />
+      <ItemNavigation data={data} item={item} goal={goal} />
+      {recorded ? (
+        <section
+          id="study-saved"
+          tabIndex={-1}
+          className="card study-saved"
+          role="status"
+        >
+          <CheckCircle2 size={28} />
+          <div>
+            <h2>記録しました</h2>
+            <p>
+              「{item.title}
+              」の結果を保存しました。続けて次の授業・問題に進めます。
+            </p>
+          </div>
+          <div className="actions">
+            {next && (
+              <Link
+                className="button"
+                to={studyPath(next, goal?.id)}
+                aria-label={"次へ：" + next.title}
+              >
+                次へ：{next.title}
+                <ArrowRight size={18} />
+              </Link>
+            )}
+            <button
+              className="secondary"
+              onClick={() => {
+                setRecorded(false);
+                setEntryVersion((n) => n + 1);
+              }}
+            >
+              同じ問題をもう一度記録
+            </button>
+          </div>
         </section>
       ) : (
-        <section className="card start-card">
-          {item.studyMode === "speed" && (
-            <div className="pb-summary">
-              <div>
-                Current best
-                <strong>{pb.best === undefined ? "—" : clock(pb.best)}</strong>
-              </div>
-              <div>
-                Last attempt
-                <strong>
-                  {last?.durationSeconds === undefined
-                    ? "—"
-                    : clock(last.durationSeconds)}
-                </strong>
-              </div>
-            </div>
+        <>
+          {session ? (
+            <ActiveStudy
+              key={session.id}
+              item={item}
+              session={session}
+              data={data}
+              timing={timing}
+              nextItem={next}
+              goalId={goal?.id}
+              onSaved={() => setRecorded(true)}
+            />
+          ) : !timing ? (
+            <section>
+              <p className="muted">
+                この授業の時間計測は休止中です。学習日と結果を記録してください。
+              </p>
+              <RecordEditor
+                key={item.id + ":" + entryVersion}
+                createItem={item}
+                onDone={() => setEntryVersion((n) => n + 1)}
+                onSaved={() => setRecorded(true)}
+                onSaveNext={
+                  next ? () => navigate(studyPath(next, goal?.id)) : undefined
+                }
+              />
+            </section>
+          ) : (
+            <section className="card start-card">
+              {item.studyMode === "speed" && (
+                <div className="pb-summary">
+                  <div>
+                    Current best
+                    <strong>
+                      {pb.best === undefined ? "—" : clock(pb.best)}
+                    </strong>
+                  </div>
+                  <div>
+                    Last attempt
+                    <strong>
+                      {last?.durationSeconds === undefined
+                        ? "—"
+                        : clock(last.durationSeconds)}
+                    </strong>
+                  </div>
+                </div>
+              )}
+              <h2>
+                {item.studyMode === "deep_recall"
+                  ? "白紙から、設定と解法を説明する。"
+                  : "準備ができたら、始めましょう。"}
+              </h2>
+              <p>開始時刻は自動保存されます。画面を閉じても再開できます。</p>
+              <button
+                className="large-button"
+                onClick={() => void action(() => startStudy(item))}
+              >
+                <Play size={20} />
+                {item.studyMode === "deep_recall"
+                  ? "START DEEP STUDY"
+                  : "START"}
+              </button>
+            </section>
           )}
-          <h2>
-            {item.studyMode === "deep_recall"
-              ? "白紙から、設定と解法を説明する。"
-              : "準備ができたら、始めましょう。"}
-          </h2>
-          <p>開始時刻は自動保存されます。画面を閉じても再開できます。</p>
-          <button
-            className="large-button"
-            onClick={() => void action(() => startStudy(item))}
-          >
-            <Play size={20} />
-            {item.studyMode === "deep_recall" ? "START DEEP STUDY" : "START"}
-          </button>
-        </section>
+        </>
       )}
+      <ItemNavigation data={data} item={item} goal={goal} />
       {item.studyMode === "speed" &&
         history.filter((a) => a.durationSeconds !== undefined).length > 1 && (
           <section className="card">
@@ -162,11 +255,17 @@ function ActiveStudy({
   session,
   data,
   timing,
+  nextItem,
+  goalId,
+  onSaved,
 }: {
   item: StudyItem;
   session: StudySession;
   data: AppData;
   timing: boolean;
+  nextItem?: StudyItem;
+  goalId?: string;
+  onSaved: () => void;
 }) {
   const navigate = useNavigate();
   const [tick, setTick] = useState(Date.now());
@@ -204,7 +303,7 @@ function ActiveStudy({
       setSaved(true);
     });
   }
-  async function save() {
+  async function save(next = false) {
     setBusy(true);
     await action(async () => {
       await finishStudy(value);
@@ -226,7 +325,8 @@ function ActiveStudy({
         useUI
           .getState()
           .notify("学習を保存しました。今日の積み重ねに反映しました。");
-      navigate("/");
+      if (next && nextItem) navigate(studyPath(nextItem, goalId));
+      else onSaved();
     });
     setBusy(false);
   }
@@ -282,7 +382,11 @@ function ActiveStudy({
           className="card mode-form"
           onSubmit={(e) => {
             e.preventDefault();
-            void save();
+            void save(
+              (e.nativeEvent as SubmitEvent).submitter?.getAttribute(
+                "value",
+              ) === "next",
+            );
           }}
         >
           <ModeForm value={value} onChange={change} />
@@ -310,10 +414,19 @@ function ActiveStudy({
             </small>
           </div>
           <button className="large-button full" disabled={busy}>
-            {session.endedAt
-              ? "結果を保存してTodayへ"
-              : "終了・結果を保存してTodayへ"}
+            {session.endedAt ? "結果を保存" : "終了・結果を保存"}
           </button>
+          {nextItem && (
+            <button
+              type="submit"
+              value="next"
+              className="secondary full"
+              disabled={busy}
+            >
+              {session.endedAt ? "保存して次へ" : "終了・保存して次へ"}
+              <ArrowRight size={18} />
+            </button>
+          )}
         </form>
       </div>
       <aside>

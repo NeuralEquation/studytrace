@@ -12,7 +12,17 @@ import {
 import { action } from "../../stores/ui";
 import { localDate } from "../../utils/time";
 import { Link } from "react-router-dom";
+import {
+  dataSnapshot,
+  fingerprint,
+  readBackupMarker,
+  writeBackupMarker,
+  useFingerprint,
+} from "../../features/backup/status";
 export function Settings({ data }: { data: AppData }) {
+  const [backupMarker, setBackupMarker] = useState(readBackupMarker);
+  const [markerWarning, setMarkerWarning] = useState("");
+  const currentFingerprint = useFingerprint(dataSnapshot(data));
   const [mode, setMode] = useState<"merge" | "replace">("merge");
   const [json, setJson] = useState("");
   const [pending, setPending] = useState<unknown>();
@@ -76,17 +86,48 @@ export function Settings({ data }: { data: AppData }) {
         <section className="card">
           <h2>データを保存する</h2>
           <p>全教材・全記録・週間報告の下書きをJSONにまとめます。</p>
+          <div className="callout" role="status" aria-label="バックアップ状況">
+            <strong>ブラウザ内の記録は自動保存されています。</strong>
+            <p>
+              {backupMarker
+                ? `最後のJSON書き出し：${new Date(backupMarker.exportedAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}（日本時間）`
+                : "このブラウザでのJSON書き出し履歴はありません。"}
+            </p>
+            {backupMarker && (
+              <p>
+                {!currentFingerprint
+                  ? "バックアップとの差分を確認中…"
+                  : currentFingerprint === backupMarker.fingerprint
+                    ? "書き出し後のデータ変更はありません。"
+                    : "書き出し後にデータが更新されています。新しいJSONバックアップを書き出してください。"}
+              </p>
+            )}
+            <small>
+              書き出し日時はダウンロード開始時の記録です。ファイルの保存完了と保存場所はご自身で確認してください。入力途中の手入力下書きと画面の状態は、このブラウザだけに保持されます。
+            </small>
+            {markerWarning && <p>{markerWarning}</p>}
+          </div>
           <div className="stack">
             <button
               onClick={() =>
-                void action(
-                  async () =>
-                    download(
-                      "StudyTrace-" + localDate() + ".json",
-                      JSON.stringify(await makeBackup(), null, 2),
-                    ),
-                  "バックアップを書き出しました",
-                )
+                void action(async () => {
+                  const backup = await makeBackup();
+                  const hash = await fingerprint(dataSnapshot(backup.data));
+                  download(
+                    "StudyTrace-" + localDate() + ".json",
+                    JSON.stringify(backup, null, 2),
+                  );
+                  const marker = {
+                    exportedAt: backup.exportedAt,
+                    fingerprint: hash,
+                  };
+                  setBackupMarker(marker);
+                  setMarkerWarning(
+                    writeBackupMarker(marker)
+                      ? ""
+                      : "書き出し履歴を保持できません。JSONファイルを保管してください。",
+                  );
+                }, "バックアップを書き出しました")
               }
             >
               JSONバックアップを書き出す

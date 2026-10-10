@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Copy, RefreshCw } from "lucide-react";
 import type { AppData, ReportDraft } from "../../types/model";
@@ -9,6 +9,10 @@ import { db } from "../../db/database";
 import { action } from "../../stores/ui";
 import { localDate, now, humanTime, shiftDate } from "../../utils/time";
 import { reportedStudyTimes } from "../../features/study/dailyTime";
+import {
+  reportSourceSnapshot,
+  useFingerprint,
+} from "../../features/backup/status";
 export function WeeklyReport({ data }: { data: AppData }) {
   const [params, setParams] = useSearchParams();
   const today = localDate();
@@ -124,10 +128,32 @@ function ReportBody({
   const [daily, setDaily] = useState(existing?.daily ?? true);
   const [edited, setEdited] = useState(existing?.edited ?? false);
   const [confirmRegenerate, setConfirmRegenerate] = useState(false);
+  const [showLatest, setShowLatest] = useState(false);
   const [status, setStatus] = useState(existing ? "保存済み" : "");
+  const baseline = useRef({
+    sourceFingerprint: existing?.sourceFingerprint,
+    generatedAt: existing?.generatedAt,
+    detail: existing?.detail ?? detail,
+    daily: existing?.daily ?? daily,
+  });
   const result = buildWeeklyProgressReport(data, { start, end, detail, daily });
+  const sourceFingerprint = useFingerprint(reportSourceSnapshot(data));
+  const stale =
+    !!existing?.sourceFingerprint &&
+    !!sourceFingerprint &&
+    existing.sourceFingerprint !== sourceFingerprint;
+  const optionsChanged =
+    !!existing && (existing.detail !== detail || existing.daily !== daily);
   const id = existing?.id ?? start + "_" + end;
   function save(value: string, isEdited: boolean) {
+    if (!isEdited)
+      baseline.current = {
+        sourceFingerprint: sourceFingerprint || undefined,
+        generatedAt: now(),
+        detail,
+        daily,
+      };
+    const generated = { ...baseline.current };
     setText(value);
     setEdited(isEdited);
     setStatus("保存中…");
@@ -137,11 +163,12 @@ function ReportBody({
         startDate: start,
         endDate: end,
         text: value,
-        generatedAt: isEdited ? (existing?.generatedAt ?? now()) : now(),
+        generatedAt: generated.generatedAt ?? now(),
         updatedAt: now(),
         edited: isEdited,
-        detail,
-        daily,
+        detail: generated.detail,
+        daily: generated.daily,
+        sourceFingerprint: generated.sourceFingerprint,
       });
       setStatus("保存済み");
     });
@@ -166,6 +193,31 @@ function ReportBody({
         </aside>
       )}
       <section className="card">
+        {text && (stale || optionsChanged || !existing?.sourceFingerprint) && (
+          <aside className="warning" role="status">
+            <strong>
+              {stale
+                ? "元記録が更新されています"
+                : optionsChanged
+                  ? "報告の生成条件が変わっています"
+                  : "この報告は元記録との更新状況を確認できません"}
+            </strong>
+            <p>
+              保存した提出文を保持しています。最新の生成内容を確認し、必要な場合だけ再生成してください。
+            </p>
+            <button
+              className="secondary"
+              onClick={() => setShowLatest((v) => !v)}
+            >
+              {showLatest ? "最新内容を閉じる" : "最新の生成内容と比較"}
+            </button>
+          </aside>
+        )}
+        {showLatest && (
+          <Field label="最新の生成内容（比較用）">
+            <textarea className="report-text" readOnly value={result.text} />
+          </Field>
+        )}
         <div className="toolbar">
           <Field label="詳しさ">
             <select
@@ -185,6 +237,7 @@ function ReportBody({
             日別の学習時間も含める
           </label>
           <button
+            disabled={!sourceFingerprint}
             onClick={() => {
               if (edited) setConfirmRegenerate(true);
               else save(result.text, false);

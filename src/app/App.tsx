@@ -38,6 +38,7 @@ import { Analytics } from "../pages/Analytics/Analytics";
 import { Coach } from "../pages/Coach/Coach";
 import { WeeklyReport } from "../pages/Coach/WeeklyReport";
 import { Settings } from "../pages/Settings/Settings";
+import { ViewMemory } from "../features/navigation/ViewMemory";
 class ErrorBoundary extends Component<
   { children: ReactNode },
   { error: string }
@@ -117,9 +118,6 @@ function Content() {
       window.removeEventListener("offline", fn);
     };
   }, []);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
   if (!data)
     return <div className="loading">StudyTraceを読み込んでいます…</div>;
   if (
@@ -134,6 +132,7 @@ function Content() {
     );
   return (
     <div className="app-shell">
+      <ViewMemory />
       <a
         href="#main-content"
         className="skip-link"
