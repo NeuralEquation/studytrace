@@ -267,7 +267,16 @@ export const goalSchema = z.object({
     "specific_task",
   ]),
   title: z.string().min(1),
-  target: nonneg,
+  target: nonneg.optional(),
+  scope: z
+    .object({
+      courseIds: z.array(id),
+      unitIds: z.array(id).optional(),
+      itemIds: z.array(id).optional(),
+    })
+    .optional(),
+  weeklyPeriod: z.enum(["calendar", "sprint"]).optional(),
+  weeklyRange: target.optional(),
   weekdays: target.optional(),
   weekends: target.optional(),
   itemId: id.optional(),

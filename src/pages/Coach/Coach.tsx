@@ -10,7 +10,7 @@ import {
 import { PageHeader, Field } from "../../components/ui";
 import { db } from "../../db/database";
 import { action } from "../../stores/ui";
-import { localDate, now, uid } from "../../utils/time";
+import { localDate, now, uid, japanTime, japanStamp } from "../../utils/time";
 export function Coach({ data }: { data: AppData }) {
   const [edit, setEdit] = useState<string | null>(null);
   const session = data.coachSessions.find((s) => s.id === edit);
@@ -49,7 +49,10 @@ export function Coach({ data }: { data: AppData }) {
                       title: f.get("title"),
                       notes: f.get("notes"),
                       nextSessionAt: f.get("next")
-                        ? new Date(String(f.get("next"))).toISOString()
+                        ? japanStamp(
+                            String(f.get("next")).slice(0, 10),
+                            String(f.get("next")).slice(11),
+                          )
                         : undefined,
                     }),
                   );
@@ -79,9 +82,7 @@ export function Coach({ data }: { data: AppData }) {
                     session?.nextSessionAt
                       ? localDate(session.nextSessionAt) +
                         "T" +
-                        new Date(session.nextSessionAt)
-                          .toTimeString()
-                          .slice(0, 5)
+                        japanTime(session.nextSessionAt)
                       : ""
                   }
                 />

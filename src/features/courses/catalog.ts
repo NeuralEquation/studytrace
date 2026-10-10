@@ -242,7 +242,9 @@ export async function assignLesson(
         (await db.studySessions.where("itemId").equals(duplicate.id).count()) ||
         duplicate.initialStatus !== "UNSEEN" ||
         (await db.sprintGoals.toArray()).some(
-          (g) => g.itemId === duplicate.id,
+          (g) =>
+            g.itemId === duplicate.id ||
+            g.scope?.itemIds?.includes(duplicate.id),
         ) ||
         (await db.coachQuestions.toArray()).some(
           (q) => q.relatedItemId === duplicate.id,
@@ -290,7 +292,7 @@ export async function assignLesson(
 
 async function saveCatalogSnapshot(current: AppData, courseId: string) {
   const value = {
-    schemaVersion: 3,
+    schemaVersion: 4,
     exportedAt: now(),
     data: {
       ...current,

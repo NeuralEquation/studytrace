@@ -9,7 +9,12 @@ export function unitDeletionInfo(data: AppData, unitId: string) {
     data.attempts.some((a) => ids.has(a.itemId)) ||
     data.studySessions.some((s) => s.itemId && ids.has(s.itemId));
   const hasLinks =
-    data.sprintGoals.some((g) => g.itemId && ids.has(g.itemId)) ||
+    data.sprintGoals.some(
+      (g) =>
+        (g.itemId && ids.has(g.itemId)) ||
+        g.scope?.unitIds?.includes(unitId) ||
+        g.scope?.itemIds?.some((id) => ids.has(id)),
+    ) ||
     data.coachQuestions.some(
       (q) => q.relatedItemId && ids.has(q.relatedItemId),
     ) ||

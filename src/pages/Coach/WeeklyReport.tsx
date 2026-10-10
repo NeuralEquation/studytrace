@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Copy, RefreshCw } from "lucide-react";
 import type { AppData, ReportDraft } from "../../types/model";
 import { subjectNames } from "../../types/model";
@@ -7,8 +7,8 @@ import { PageHeader, Field, Stat } from "../../components/ui";
 import { buildWeeklyProgressReport } from "../../domain/report/formatters";
 import { db } from "../../db/database";
 import { action } from "../../stores/ui";
-import { localDate, now } from "../../utils/time";
-import { DailyStudyTime } from "../Today/DailyStudyTime";
+import { localDate, now, humanTime, shiftDate } from "../../utils/time";
+import { reportedStudyTimes } from "../../features/study/dailyTime";
 export function WeeklyReport({ data }: { data: AppData }) {
   const [params, setParams] = useSearchParams();
   const today = localDate();
@@ -18,10 +18,11 @@ export function WeeklyReport({ data }: { data: AppData }) {
   const coach = [...data.coachSessions]
     .filter((c) => c.date <= today)
     .sort((a, b) => b.date.localeCompare(a.date))[0];
-  const d = new Date();
-  d.setDate(d.getDate() - 6);
   const [start, setStart] = useState(
-    params.get("start") ?? sprint?.startDate ?? coach?.date ?? localDate(d),
+    params.get("start") ??
+      sprint?.startDate ??
+      coach?.date ??
+      shiftDate(today, -6),
   );
   const [end, setEnd] = useState(
     params.get("end") ??
@@ -44,7 +45,13 @@ export function WeeklyReport({ data }: { data: AppData }) {
         title="週間進捗報告"
         description="1週間の変化を、伝わる文章に。確認して、編集して、そのままコピー。"
       />
-      <DailyStudyTime data={data} />
+      <p className="compact-time">
+        この期間の勉強時間：
+        {start && end && start <= end
+          ? humanTime(reportedStudyTimes(data, start, end).total)
+          : "期間を確認"}{" "}
+        · <Link to="/records?tab=time">記録・編集 →</Link>
+      </p>
       <div className="card report-period">
         <Field label="保存した報告">
           <select

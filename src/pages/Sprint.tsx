@@ -1,11 +1,13 @@
 import { useState } from "react";
 import type { AppData, SprintGoal } from "../types/model";
-import { sprintSchema, goalSchema } from "../types/model";
+import { sprintSchema } from "../types/model";
 import { db } from "../db/database";
 import { action } from "../stores/ui";
 import { PageHeader, Field, Progress } from "../components/ui";
 import { uid, localDate } from "../utils/time";
-import { sprintProgress } from "../domain/study";
+import { goalState, goalCourses } from "../domain/planning";
+import { GoalEditor } from "./GoalEditor";
+import { PriorityEditor } from "./PriorityEditor";
 export function SprintPage({ data }: { data: AppData }) {
   const [selected, setSelected] = useState(data.sprints.at(-1)?.id ?? "");
   const [goal, setGoal] = useState<SprintGoal | null>(null);
@@ -99,6 +101,7 @@ export function SprintPage({ data }: { data: AppData }) {
         </Field>
         <button>期間を保存</button>
       </form>
+      <PriorityEditor data={data} />
       {sprint && (
         <>
           <div className="section-heading">
@@ -112,9 +115,8 @@ export function SprintPage({ data }: { data: AppData }) {
                   courseId: data.courses[0].id,
                   kind: "daily_count",
                   title: "",
-                  target: 2,
-                  weekdays: { min: 2, max: 3 },
-                  weekends: { min: 5, max: 6 },
+                  target: undefined,
+                  scope: { courseIds: [] },
                   completed: false,
                 })
               }
@@ -134,32 +136,44 @@ export function SprintPage({ data }: { data: AppData }) {
             {data.sprintGoals
               .filter((g) => g.sprintId === sprint.id)
               .map((g) => {
-                const p = sprintProgress(
-                  g,
-                  data,
-                  sprint.startDate,
-                  sprint.endDate,
-                );
+                const p = goalState(g, data, localDate());
                 return (
                   <article className="card" key={g.id}>
                     <small>
-                      {data.courses.find((c) => c.id === g.courseId)?.name}
+                      {goalCourses(g, data)
+                        .map((c) => c.name)
+                        .join(" / ")}
                     </small>
                     <h3>{g.title}</h3>
                     <p>
-                      {p.actual} / {p.target}{" "}
+                      {p.actual} / {p.configured ? p.target : "未設定"}{" "}
                       {g.kind === "daily_count"
                         ? "（今日）"
                         : g.kind === "course_progress"
                           ? "（累積完了）"
-                          : "（期間内）"}
+                          : g.weeklyPeriod === "calendar"
+                            ? "（今週・月〜日）"
+                            : "（Sprint期間内）"}
                     </p>
                     <Progress value={p.actual} max={p.target} />
+                    <p>
+                      {!p.configured
+                        ? "目標未設定"
+                        : p.achieved
+                          ? "最低目標達成"
+                          : `最低目標まであと${p.remaining}項目`}
+                      {p.max !== undefined ? ` · 推奨上限${p.max}項目` : ""}
+                    </p>
                     {g.kind === "daily_count" && (
                       <p>
-                        平日 {g.weekdays?.min}〜
-                        {g.weekdays?.max ?? g.weekdays?.min} / 土日{" "}
-                        {g.weekends?.min}〜{g.weekends?.max ?? g.weekends?.min}
+                        平日{" "}
+                        {g.weekdays
+                          ? `${g.weekdays.min}${g.weekdays.max !== undefined ? "〜" + g.weekdays.max : ""}`
+                          : (g.target ?? "未設定")}{" "}
+                        / 土日・祝日{" "}
+                        {g.weekends
+                          ? `${g.weekends.min}${g.weekends.max !== undefined ? "〜" + g.weekends.max : ""}`
+                          : (g.target ?? "未設定")}
                       </p>
                     )}
                     <button className="text-button" onClick={() => setGoal(g)}>
@@ -172,143 +186,5 @@ export function SprintPage({ data }: { data: AppData }) {
         </>
       )}
     </>
-  );
-}
-function GoalEditor({
-  value,
-  data,
-  onDone,
-}: {
-  value: SprintGoal;
-  data: AppData;
-  onDone: () => void;
-}) {
-  const [g, set] = useState(value);
-  return (
-    <form
-      className="card form-grid"
-      onSubmit={(e) => {
-        e.preventDefault();
-        void action(async () => {
-          await db.sprintGoals.put(goalSchema.parse(g));
-          onDone();
-        }, "目標を保存しました");
-      }}
-    >
-      <Field label="教材">
-        <select
-          value={g.courseId}
-          onChange={(e) =>
-            set({ ...g, courseId: e.target.value, itemId: undefined })
-          }
-        >
-          {data.courses.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}
-            </option>
-          ))}
-        </select>
-      </Field>
-      <Field label="目標の内容">
-        <input
-          required
-          value={g.title}
-          onChange={(e) => set({ ...g, title: e.target.value })}
-        />
-      </Field>
-      <Field label="目標の種類">
-        <select
-          value={g.kind}
-          onChange={(e) =>
-            set({ ...g, kind: e.target.value as SprintGoal["kind"] })
-          }
-        >
-          <option value="daily_count">1日の項目数</option>
-          <option value="weekly_count">期間内の項目数</option>
-          <option value="course_progress">教材の累積完了数</option>
-          <option value="specific_task">具体的なタスク</option>
-        </select>
-      </Field>
-      <Field label="目標数">
-        <input
-          type="number"
-          min={0}
-          value={g.target}
-          onChange={(e) => set({ ...g, target: +e.target.value })}
-        />
-      </Field>
-      {g.kind === "daily_count" &&
-        (["weekdays", "weekends"] as const).map((key) => (
-          <div key={key}>
-            <Field
-              label={
-                key === "weekdays" ? "平日 最小 / 最大" : "土日 最小 / 最大"
-              }
-            >
-              <div className="actions">
-                <input
-                  aria-label={key + "最小"}
-                  type="number"
-                  min={0}
-                  value={g[key]?.min ?? 0}
-                  onChange={(e) =>
-                    set({ ...g, [key]: { ...g[key], min: +e.target.value } })
-                  }
-                />
-                <input
-                  aria-label={key + "最大"}
-                  type="number"
-                  min={0}
-                  value={g[key]?.max ?? ""}
-                  onChange={(e) =>
-                    set({
-                      ...g,
-                      [key]: {
-                        min: g[key]?.min ?? 0,
-                        max: e.target.value ? +e.target.value : undefined,
-                      },
-                    })
-                  }
-                />
-              </div>
-            </Field>
-          </div>
-        ))}
-      {g.kind === "specific_task" && (
-        <>
-          <Field label="対象項目（任意）">
-            <select
-              value={g.itemId ?? ""}
-              onChange={(e) =>
-                set({ ...g, itemId: e.target.value || undefined })
-              }
-            >
-              <option value="">手動で完了にする</option>
-              {data.studyItems
-                .filter((i) => i.courseId === g.courseId)
-                .map((i) => (
-                  <option key={i.id} value={i.id}>
-                    {i.title}
-                  </option>
-                ))}
-            </select>
-          </Field>
-          <label className="check">
-            <input
-              type="checkbox"
-              checked={g.completed}
-              onChange={(e) => set({ ...g, completed: e.target.checked })}
-            />
-            タスク完了
-          </label>
-        </>
-      )}
-      <div className="actions">
-        <button>保存</button>
-        <button type="button" className="secondary" onClick={onDone}>
-          閉じる
-        </button>
-      </div>
-    </form>
   );
 }

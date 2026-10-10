@@ -4,7 +4,7 @@ import { modeNames, modes, sessionSchema } from "../../types/model";
 import { db } from "../../db/database";
 import { Field } from "../../components/ui";
 import { action } from "../../stores/ui";
-import { localDate, uid } from "../../utils/time";
+import { localDate, uid, japanStamp } from "../../utils/time";
 export function ManualStudy({
   data,
   onDone,
@@ -29,7 +29,7 @@ export function ManualStudy({
       onSubmit={(e) => {
         e.preventDefault();
         void action(async () => {
-          const startedAt = new Date(date + "T" + time).toISOString();
+          const startedAt = japanStamp(date, time);
           await db.studySessions.add(
             sessionSchema.parse({
               id: uid(),

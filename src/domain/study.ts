@@ -7,6 +7,7 @@ import type {
   ModeAttempt,
 } from "../types/model";
 import { inPeriod, localDate } from "../utils/time";
+import { studyDay, calendarWeek } from "./calendar";
 export const chronological = (a: Attempt, b: Attempt) =>
   new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime() ||
   a.id.localeCompare(b.id);
@@ -138,10 +139,9 @@ export function dailyTarget(
   rule: Pick<SprintGoal, "weekdays" | "weekends">,
   date: string,
 ) {
-  const day = new Date(date + "T12:00:00").getDay();
-  return day === 0 || day === 6 ? rule.weekends : rule.weekdays;
+  return studyDay(date).restDay ? rule.weekends : rule.weekdays;
 }
-// Sessions crossing midnight are attributed entirely to their browser-local start date.
+// Sessions crossing midnight are attributed entirely to their Japan-time start date.
 export function studyTimes(
   sessions: StudySession[],
   start: string,
@@ -150,7 +150,8 @@ export function studyTimes(
   const byDay: Record<string, number> = {},
     byCourse: Record<string, number> = {};
   for (const s of sessions) {
-    if (!s.endedAt || !inPeriod(s.startedAt, start, end)) continue;
+    if (s.deletedAt || !s.endedAt || !inPeriod(s.startedAt, start, end))
+      continue;
     const d = localDate(s.startedAt);
     byDay[d] = (byDay[d] ?? 0) + s.durationSeconds;
     byCourse[s.courseId] = (byCourse[s.courseId] ?? 0) + s.durationSeconds;
@@ -164,13 +165,21 @@ export function studyTimes(
 export function attemptsInPeriod(data: AppData, start: string, end: string) {
   return data.attempts.filter((a) => {
     const s = data.studySessions.find((s) => s.id === a.sessionId);
-    return inPeriod(s?.startedAt ?? a.createdAt, start, end);
+    return (
+      !a.deletedAt &&
+      !s?.deletedAt &&
+      inPeriod(s?.startedAt ?? a.createdAt, start, end)
+    );
   });
 }
 export function attemptsAsOf(data: AppData, end: string) {
   return data.attempts.filter((a) => {
     const session = data.studySessions.find((s) => s.id === a.sessionId);
-    return localDate(session?.startedAt ?? a.createdAt) <= end;
+    return (
+      !a.deletedAt &&
+      !session?.deletedAt &&
+      localDate(session?.startedAt ?? a.createdAt) <= end
+    );
   });
 }
 export function sprintProgress(
@@ -180,21 +189,32 @@ export function sprintProgress(
   end: string,
   date = localDate(),
 ) {
-  const courseItems = data.studyItems.filter(
-    (i) => i.courseId === goal.courseId,
-  );
+  const courseItems = goalItems(goal, data);
   const ids = new Set(courseItems.map((i) => i.id));
+  const week = calendarWeek(date);
+  const from =
+    goal.kind === "weekly_count" && goal.weeklyPeriod === "calendar"
+      ? week.start > start
+        ? week.start
+        : start
+      : start;
+  const until =
+    goal.kind === "weekly_count" && goal.weeklyPeriod === "calendar"
+      ? week.end < end
+        ? week.end
+        : end
+      : end;
   const period = attemptsInPeriod(
     data,
-    goal.kind === "daily_count" ? date : start,
-    goal.kind === "daily_count" ? date : end,
+    goal.kind === "daily_count" ? date : from,
+    goal.kind === "daily_count" ? date : until,
   ).filter(
     (a) =>
       ids.has(a.itemId) &&
       (goal.kind !== "daily_count" || (date >= start && date <= end)),
   );
   let actual = 0;
-  let target = goal.target;
+  let target = goal.target ?? 0;
   if (goal.kind === "specific_task") {
     actual =
       goal.completed ||
@@ -207,13 +227,26 @@ export function sprintProgress(
   } else {
     actual = new Set(period.map((a) => a.itemId)).size;
     if (goal.kind === "daily_count")
-      target = dailyTarget(goal, date)?.min ?? goal.target;
+      target = dailyTarget(goal, date)?.min ?? goal.target ?? 0;
+    if (goal.kind === "weekly_count")
+      target = goal.weeklyRange?.min ?? goal.target ?? 0;
   }
   return {
     actual,
     target,
     ratio: target > 0 ? Math.min(1, actual / target) : 0,
   };
+}
+// Explicit scopes are a union: whole courses OR selected units OR selected items.
+// An absent scope retains the old courseId behavior; an empty scope selects nothing.
+export function goalItems(goal: SprintGoal, data: AppData) {
+  return data.studyItems.filter((i) =>
+    goal.scope
+      ? goal.scope.courseIds.includes(i.courseId) ||
+        !!goal.scope.unitIds?.includes(i.unitId) ||
+        !!goal.scope.itemIds?.includes(i.id)
+      : i.courseId === goal.courseId,
+  );
 }
 export function videoPace(
   total: number,

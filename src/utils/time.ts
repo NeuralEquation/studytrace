@@ -1,15 +1,26 @@
 export const uid = () => crypto.randomUUID();
 export const now = () => new Date().toISOString();
 export function localDate(input: Date | string = new Date()): string {
+  if (typeof input === "string" && /^\d{4}-\d{2}-\d{2}$/.test(input))
+    return input;
   const d = typeof input === "string" ? new Date(input) : input;
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  return new Date(d.getTime() + 9 * 3600000).toISOString().slice(0, 10);
+}
+export const japanTime = (stamp: string) =>
+  new Date(new Date(stamp).getTime() + 9 * 3600000).toISOString().slice(11, 16);
+export const japanStamp = (date: string, time: string) =>
+  new Date(date + "T" + time + "+09:00").toISOString();
+export function shiftDate(date: string, days: number) {
+  const d = new Date(date + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
 }
 export function dateRange(start: string, end: string): string[] {
   const out: string[] = [];
-  const d = new Date(start + "T12:00:00");
-  while (Number.isFinite(d.getTime()) && localDate(d) <= end) {
-    out.push(localDate(d));
-    d.setDate(d.getDate() + 1);
+  let d = start;
+  while (d <= end && Number.isFinite(new Date(d).getTime())) {
+    out.push(d);
+    d = shiftDate(d, 1);
   }
   return out;
 }

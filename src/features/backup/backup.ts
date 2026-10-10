@@ -37,7 +37,12 @@ const dataSchema = z.object({
 });
 export const backupSchema = z
   .object({
-    schemaVersion: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+    schemaVersion: z.union([
+      z.literal(1),
+      z.literal(2),
+      z.literal(3),
+      z.literal(4),
+    ]),
     exportedAt: z.string().datetime({ offset: true }),
     data: dataSchema,
   })
@@ -108,13 +113,25 @@ export const backupSchema = z
         !sessions.has(b.attemptId)
       )
         fail("Bottleneckの演習がありません");
-    for (const g of data.sprintGoals)
+    for (const g of data.sprintGoals) {
       if (
         !data.sprints.some((s) => s.id === g.sprintId) ||
         !courses.has(g.courseId) ||
-        (g.itemId && items.get(g.itemId)?.courseId !== g.courseId)
+        g.scope?.courseIds.some((id) => !courses.has(id)) ||
+        g.scope?.unitIds?.some((id) => !units.has(id)) ||
+        g.scope?.itemIds?.some((id) => !items.has(id)) ||
+        (g.itemId &&
+          (!items.has(g.itemId) ||
+            (g.scope
+              ? !(
+                  g.scope.courseIds.includes(items.get(g.itemId)!.courseId) ||
+                  g.scope.unitIds?.includes(items.get(g.itemId)!.unitId) ||
+                  g.scope.itemIds?.includes(g.itemId)
+                )
+              : items.get(g.itemId)?.courseId !== g.courseId)))
       )
         fail("Sprint目標の参照先が不正です");
+    }
     for (const d of data.coachDirectives)
       if (
         !data.coachSessions.some((c) => c.id === d.coachSessionId) ||
@@ -206,7 +223,7 @@ export async function importCourse(value: unknown) {
 }
 export async function makeBackup() {
   return {
-    schemaVersion: 3 as const,
+    schemaVersion: 4 as const,
     exportedAt: now(),
     data: await readData(),
   };

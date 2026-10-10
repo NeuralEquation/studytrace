@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import type { AppData, Attempt, StudySession } from "../../types/model";
 import { modeNames } from "../../types/model";
 import { PageHeader, Empty } from "../../components/ui";
@@ -9,7 +9,7 @@ import { setRecordDeleted } from "../../features/study/records";
 import { startTimedStudy as startStudy } from "../../features/study/session";
 import { timerAllowed } from "../../features/study/timerPolicy";
 import { AddRecord } from "./AddRecord";
-import { DailyStudyTime } from "../Today/DailyStudyTime";
+import { StudyTimePage } from "./StudyTimePage";
 import { action } from "../../stores/ui";
 import { attemptDescription } from "../../features/study/description";
 
@@ -21,6 +21,32 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
   const [editing, setEditing] = useState<string>();
   const [confirm, setConfirm] = useState<string>();
   const navigate = useNavigate();
+  const [params, setParams] = useSearchParams();
+  const tab = itemId
+    ? "history"
+    : params.get("tab") === "history"
+      ? "history"
+      : "time";
+  const tabs = (
+    <div className="record-tabs" role="tablist" aria-label="学習記録の表示">
+      <button
+        role="tab"
+        aria-selected={tab === "time"}
+        aria-controls="record-time"
+        onClick={() => setParams({ tab: "time" })}
+      >
+        勉強時間
+      </button>
+      <button
+        role="tab"
+        aria-selected={tab === "history"}
+        aria-controls="record-history"
+        onClick={() => setParams({ tab: "history" })}
+      >
+        学習履歴
+      </button>
+    </div>
+  );
   const rows: { id: string; attempt?: Attempt; session?: StudySession }[] =
     data.attempts.map((a) => ({
       id: a.id,
@@ -60,8 +86,20 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
         a.session?.startedAt ?? a.attempt!.createdAt,
       ),
     );
+  if (!itemId && tab === "time")
+    return (
+      <section>
+        <PageHeader
+          title="学習記録"
+          eyebrow="RECORDS"
+          description="時間と学習履歴を、ここで記録・編集。"
+        />
+        {tabs}
+        <StudyTimePage data={data} />
+      </section>
+    );
   return (
-    <section className={itemId ? "record-section" : ""}>
+    <section id="record-history" className={itemId ? "record-section" : ""}>
       {itemId ? (
         <h2>学習記録</h2>
       ) : (
@@ -71,7 +109,7 @@ export function Records({ data, itemId }: { data: AppData; itemId?: string }) {
           description="今日・前日以前の記録を追加し、日付・時間・結果を編集できます。"
         />
       )}
-      {!itemId && <DailyStudyTime data={data} />}
+      {!itemId && tabs}
       <button className="secondary" onClick={() => setAdding(!adding)}>
         過去日・今日の記録を追加
       </button>

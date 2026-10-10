@@ -2433,6 +2433,29 @@ details[open] > summary::before {
 .daily-study-time > p { line-height: 1.8; }
 .daily-study-time details { margin-top: 16px; }
 .daily-time-history { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.record-tabs { display:flex; gap:8px; margin:0 0 24px; }
+.record-tabs [aria-selected="false"] { background:var(--surface, #fff); color:var(--text, #234f43); border:1px solid #b8c7bf; }
+.compact-time { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; margin-top:24px; }
+.full-width { grid-column:1 / -1; min-width:0; }
+.priority-list { padding-left:24px; }
+.priority-list li { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:8px 0; }
+.priority-list li > span { overflow-wrap:anywhere; min-width:0; }
+.priority-list .actions { flex-wrap:nowrap; flex-shrink:0; }
+.priority-list button { min-width:44px; min-height:44px; }
+.target-picker details { margin:12px 0; padding-left:8px; border-left:2px solid #e1e8e4; }
+.target-picker summary, .task-group > summary { overflow-wrap:anywhere; padding:12px 0; cursor:pointer; }
+.target-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px; margin:12px 0; }
+.target-items .check { align-items:flex-start; overflow-wrap:anywhere; }
+.task-group { margin:24px 0; }
+.task-group > summary { font-size:1.2rem; font-weight:700; }
+.task-course-links { display:flex; flex-direction:column; gap:8px; margin-top:12px; overflow-wrap:anywhere; }
+.time-summary-list details { padding:12px 0; border-bottom:1px solid #e1e8e4; }
+.task-card h3, .task-card .next-item { overflow-wrap:anywhere; }
+@media (max-width: 600px) {
+  .task-grid { grid-template-columns:minmax(0,1fr); }
+  .target-items { grid-template-columns:minmax(0,1fr); }
+  .record-tabs > button { flex:1; min-height:44px; }
+}
 
 /* Keep controls clear of phone notches and the home indicator in installed mode. */
 @media (max-width: 720px) {

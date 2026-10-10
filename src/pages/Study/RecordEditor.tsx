@@ -5,7 +5,7 @@ import { ModeForm } from "./ModeForm";
 import { addManualRecord, editRecord } from "../../features/study/records";
 import { newAttempt } from "../../features/study/session";
 import { action } from "../../stores/ui";
-import { localDate, uid } from "../../utils/time";
+import { localDate, uid, japanStamp, japanTime } from "../../utils/time";
 
 export function RecordEditor({
   attempt,
@@ -30,7 +30,9 @@ export function RecordEditor({
       ),
   );
   const [date, setDate] = useState(localDate(base));
-  const [time, setTime] = useState(base.toTimeString().slice(0, 8));
+  const [time, setTime] = useState(
+    japanTime(base.toISOString()) + ":" + base.toISOString().slice(17, 19),
+  );
   const duration = session?.durationSeconds ?? attempt?.durationSeconds ?? 0;
   const [minutes, setMinutes] = useState(Math.floor(duration / 60));
   const [seconds, setSeconds] = useState(duration % 60);
@@ -50,7 +52,7 @@ export function RecordEditor({
             await addManualRecord(
               createItem,
               value,
-              new Date(date + "T" + time).toISOString(),
+              japanStamp(date, time),
               minutes * 60 + seconds,
               note,
               pin,
@@ -58,7 +60,7 @@ export function RecordEditor({
           else
             await editRecord(original, {
               attempt: value,
-              startedAt: new Date(date + "T" + time).toISOString(),
+              startedAt: japanStamp(date, time),
               durationSeconds: minutes * 60 + seconds,
               note,
               includeInCoachReport: pin,
