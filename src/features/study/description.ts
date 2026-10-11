@@ -6,7 +6,7 @@ export function attemptDescription(a: Attempt): string {
     case "reproduction":
       return `${resultNames[a.result]} / 再現度 ${a.reproducibility}`;
     case "speed":
-      return `${a.result === "correct" ? "正解" : a.result === "partial" ? "部分正解" : "不正解"} / 正確性 ${a.accuracy}%`;
+      return `${a.result === "correct" ? "正解" : a.result === "partial" ? "部分正解" : "不正解"} / ${a.correctCount !== undefined && a.totalCount !== undefined ? `${a.correctCount}/${a.totalCount}問 · ` : ""}正確性 ${formatAccuracy(a.accuracy)}`;
     case "deep_recall":
       return `白紙再現 ${recallScore(a.checks).overallRecall}%`;
     case "video":
@@ -21,3 +21,4 @@ export function attemptDescription(a: Attempt): string {
       return `${a.result} / 完了 ${a.completion}%`;
   }
 }
+import { formatAccuracy } from "../../studyModes/speed/accuracy";

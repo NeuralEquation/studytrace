@@ -3,6 +3,7 @@ import { attemptSchema, sessionSchema } from "../../types/model";
 import { db } from "../../db/database";
 import { now, uid, elapsed } from "../../utils/time";
 import { canTimeItem } from "./timerPolicy";
+import { validateCountedAccuracy } from "../../studyModes/speed/accuracy";
 export async function startTimedStudy(item: StudyItem) {
   return db.transaction(
     "rw",
@@ -167,6 +168,7 @@ export async function stopStudy(id: string) {
 }
 export async function finishStudy(a: Attempt) {
   const parsed = attemptSchema.parse(a);
+  if (parsed.mode === "speed") validateCountedAccuracy(parsed);
   if (
     parsed.mode === "past_exam" &&
     (parsed.score > parsed.maxScore ||

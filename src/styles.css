@@ -2920,3 +2920,15 @@ details[open] > summary > .disclosure-chevron {
 .study-goals h2 {
   margin-bottom: 0.4rem;
 }
+.correct-count-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 420px;
+}
+.correct-count-input > span {
+  font-size: 1.8rem;
+  padding-top: 1rem;
+  color: var(--muted);
+}

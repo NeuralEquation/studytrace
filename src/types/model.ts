@@ -184,6 +184,8 @@ export const attemptSchema = z.discriminatedUnion("mode", [
     mode: z.literal("speed"),
     result: z.enum(["correct", "partial", "incorrect"]),
     accuracy: z.number().min(0).max(100),
+    correctCount: z.number().int().nonnegative().optional(),
+    totalCount: z.number().int().positive().optional(),
   }),
   z.object({
     ...base,

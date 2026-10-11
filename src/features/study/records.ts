@@ -7,6 +7,7 @@ import type {
   StudyItem,
 } from "../../types/model";
 import { now } from "../../utils/time";
+import { validateCountedAccuracy } from "../../studyModes/speed/accuracy";
 
 export async function addManualRecord(
   item: StudyItem,
@@ -35,6 +36,7 @@ export async function addManualRecord(
       parsed.sections.some((s) => s.score > s.maxScore))
   )
     throw new Error("得点が満点を超えています");
+  if (parsed.mode === "speed") validateCountedAccuracy(parsed);
   const session = sessionSchema.parse({
     id: parsed.id,
     itemId: item.id,
@@ -157,6 +159,7 @@ export async function editRecord(
             parsed.sections.some((x) => x.score > x.maxScore))
         )
           throw new Error("得点が満点を超えています");
+        if (parsed.mode === "speed") validateCountedAccuracy(parsed);
         await db.attempts.put(parsed);
         if (s && (await db.settings.get("runner:" + s.id)))
           await db.settings.put({ key: "runner:" + s.id, value: parsed });
