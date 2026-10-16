@@ -2932,3 +2932,13 @@ details[open] > summary > .disclosure-chevron {
   padding-top: 1rem;
   color: var(--muted);
 }
+.important-badge {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: #fff2d5;
+  color: #7a4a00;
+  font-size: 0.75rem;
+  font-weight: 700;
+}

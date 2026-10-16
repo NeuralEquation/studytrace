@@ -112,6 +112,7 @@ export const itemSchema = z.object({
   unitId: id,
   title: z.string().min(1),
   number: z.number().int().positive().optional(),
+  important: z.boolean().optional(),
   type: z.enum([
     "problem",
     "video",

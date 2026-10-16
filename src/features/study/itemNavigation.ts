@@ -53,21 +53,30 @@ export function itemGoals(data: AppData, item: StudyItem, date: string) {
       goalStudyItems(data, g).some((i) => i.id === item.id),
   );
 }
-export function studyPath(item: StudyItem, goalId?: string) {
+export function studyPath(
+  item: StudyItem,
+  goalId?: string,
+  importantOnly = false,
+) {
+  const params = new URLSearchParams();
+  if (goalId) params.set("goal", goalId);
+  if (importantOnly) params.set("important", "1");
   return (
     "/study/" +
     encodeURIComponent(item.id) +
-    (goalId ? "?goal=" + encodeURIComponent(goalId) : "")
+    (params.size ? "?" + params.toString() : "")
   );
 }
 export function itemNeighbors(
   data: AppData,
   item: StudyItem,
   goal?: SprintGoal,
+  importantOnly = false,
 ) {
-  const items = goal
+  const sequence = goal
     ? goalStudyItems(data, goal)
     : courseStudyItems(data, item.courseId);
+  const items = sequence.filter((i) => !importantOnly || i.important === true);
   const index = items.findIndex((i) => i.id === item.id);
   return {
     index,

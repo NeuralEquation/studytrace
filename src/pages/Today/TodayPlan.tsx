@@ -10,6 +10,8 @@ import { studyDay, holidayCoverage } from "../../domain/calendar";
 import { localDate, humanTime } from "../../utils/time";
 import { reportedStudyTimes } from "../../features/study/dailyTime";
 import { RememberedDetails } from "../../components/RememberedDetails";
+import { readViewState } from "../../features/navigation/viewState";
+import { studyPath } from "../../features/study/itemNavigation";
 export function Today({ data }: { data: AppData }) {
   const today = localDate(),
     day = studyDay(today),
@@ -36,6 +38,13 @@ export function Today({ data }: { data: AppData }) {
     .filter((s) => s.nextSessionAt && new Date(s.nextSessionAt) > new Date())
     .sort((a, b) => a.nextSessionAt!.localeCompare(b.nextSessionAt!))[0];
   function taskCard(t: TodayTask) {
+    const importantOnly =
+      !t.goal &&
+      t.courses.length === 1 &&
+      data.studyItems.some(
+        (i) => i.courseId === t.courses[0].id && i.important !== undefined,
+      ) &&
+      readViewState("library:" + t.courses[0].id + ":important", true);
     const g = t.goal,
       state = g ? goalState(g, data, today) : undefined;
     const items = (
@@ -44,10 +53,12 @@ export function Today({ data }: { data: AppData }) {
         : data.studyItems.filter((i) =>
             t.courses.some((c) => c.id === i.courseId),
           )
-    ).filter(
-      (i) =>
-        !i.archived && !data.units.find((u) => u.id === i.unitId)?.archived,
-    );
+    )
+      .filter(
+        (i) =>
+          !i.archived && !data.units.find((u) => u.id === i.unitId)?.archived,
+      )
+      .filter((i) => !importantOnly || i.important === true);
     const item =
       items.find(
         (i) =>
@@ -117,7 +128,9 @@ export function Today({ data }: { data: AppData }) {
         <Link
           className="button secondary full"
           to={
-            item ? "/study/" + item.id : "/courses/" + (t.courses[0]?.id ?? "")
+            item
+              ? studyPath(item, undefined, importantOnly)
+              : "/courses/" + (t.courses[0]?.id ?? "")
           }
         >
           <Play size={14} />

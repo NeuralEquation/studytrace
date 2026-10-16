@@ -39,6 +39,7 @@ import { Coach } from "../pages/Coach/Coach";
 import { WeeklyReport } from "../pages/Coach/WeeklyReport";
 import { Settings } from "../pages/Settings/Settings";
 import { ViewMemory } from "../features/navigation/ViewMemory";
+import { ensureMeimonBooks, meimonUpdateKey } from "../features/courses/meimon";
 class ErrorBoundary extends Component<
   { children: ReactNode },
   { error: string }
@@ -96,6 +97,18 @@ function Content() {
   const data = rawData ? activeData(rawData) : undefined;
   const location = useLocation();
   const [offline, setOffline] = useState(!navigator.onLine);
+  const needsMeimon =
+    !!data &&
+    (data.courses.length > 0 ||
+      data.settings.some((s) => s.key === "onboarded" && s.value === true)) &&
+    !data.settings.some((s) => s.key === meimonUpdateKey && s.value === true);
+  useEffect(() => {
+    if (needsMeimon)
+      void action(
+        () => ensureMeimonBooks(),
+        "名問の森2冊を追加しました。既存の記録は保持しています。",
+      );
+  }, [needsMeimon]);
   useEffect(() => {
     void action(() => stopDisallowedTimers());
   }, []);

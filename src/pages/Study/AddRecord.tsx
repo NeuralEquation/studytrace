@@ -5,6 +5,7 @@ import { RecordEditor } from "./RecordEditor";
 import { courseStudyItems } from "../../features/study/itemNavigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useViewState } from "../../features/navigation/useViewState";
+import { ImportantFilter } from "../../components/ImportantFilter";
 
 export function AddRecord({
   data,
@@ -31,7 +32,15 @@ export function AddRecord({
   const [version, setVersion] = useState(0);
   const [date, setDate] = useState<string>();
   const [saved, setSaved] = useState(false);
-  const items = courseStudyItems(data, courseId);
+  const [importantOnly, setImportantOnly] = useViewState(
+    viewKey + "important",
+    true,
+  );
+  const allItems = courseStudyItems(data, courseId);
+  const hasImportant = allItems.some((i) => i.important !== undefined);
+  const items = allItems.filter(
+    (i) => !!itemId || !hasImportant || !importantOnly || i.important === true,
+  );
   const item = items.find((i) => i.id === selected);
   const index = items.findIndex((i) => i.id === selected);
   const next = index >= 0 ? items[index + 1] : undefined;
@@ -60,6 +69,19 @@ export function AddRecord({
               ))}
             </select>
           </Field>
+          {hasImportant && (
+            <ImportantFilter
+              value={importantOnly}
+              onChange={(value) => {
+                setImportantOnly(value);
+                if (
+                  value &&
+                  allItems.find((i) => i.id === selected)?.important !== true
+                )
+                  select("");
+              }}
+            />
+          )}
           <Field label="授業を絞り込む">
             <input
               value={search}

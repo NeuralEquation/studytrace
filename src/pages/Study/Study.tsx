@@ -49,8 +49,11 @@ import {
   itemNeighbors,
   itemGoals,
   studyPath,
+  courseStudyItems,
+  goalStudyItems,
 } from "../../features/study/itemNavigation";
 import { StudyGoals } from "./StudyGoals";
+import { ImportantFilter } from "../../components/ImportantFilter";
 export function Study({
   data,
   rawData = data,
@@ -91,7 +94,11 @@ export function Study({
   const date = localDate();
   const goals = itemGoals(data, item, date);
   const goal = goals.find((g) => g.id === params.get("goal"));
-  const { next } = itemNeighbors(data, item, goal);
+  const importantOnly = params.get("important") === "1";
+  const { next } = itemNeighbors(data, item, goal, importantOnly);
+  const hasImportant = data.studyItems.some(
+    (i) => i.courseId === item.courseId && i.important !== undefined,
+  );
   return (
     <>
       <PageHeader
@@ -107,14 +114,60 @@ export function Study({
           />
         }
       />
+      {hasImportant && (
+        <>
+          <p>
+            {item.important ? (
+              <span className="important-badge">重要問題</span>
+            ) : (
+              "通常問題"
+            )}
+          </p>
+          <ImportantFilter
+            value={importantOnly}
+            onChange={(value) => {
+              if (value && !item.important) {
+                const sequence = goal
+                  ? goalStudyItems(data, goal)
+                  : courseStudyItems(data, item.courseId);
+                const index = sequence.findIndex((i) => i.id === item.id);
+                const target =
+                  sequence.slice(index + 1).find((i) => i.important) ??
+                  sequence
+                    .slice(0, index)
+                    .reverse()
+                    .find((i) => i.important);
+                if (target) {
+                  navigate(studyPath(target, goal?.id, true));
+                  return;
+                }
+              }
+              const nextParams = new URLSearchParams(params);
+              if (value) nextParams.set("important", "1");
+              else nextParams.delete("important");
+              setParams(nextParams);
+            }}
+          />
+        </>
+      )}
       <StudyGoals
         data={data}
         goals={goals}
         selected={goal}
         date={date}
-        onSelect={(id) => setParams(id ? { goal: id } : {})}
+        onSelect={(id) => {
+          const nextParams = new URLSearchParams(params);
+          if (id) nextParams.set("goal", id);
+          else nextParams.delete("goal");
+          setParams(nextParams);
+        }}
       />
-      <ItemNavigation data={data} item={item} goal={goal} />
+      <ItemNavigation
+        data={data}
+        item={item}
+        goal={goal}
+        importantOnly={importantOnly}
+      />
       {recorded ? (
         <section
           id="study-saved"
@@ -134,7 +187,7 @@ export function Study({
             {next && (
               <Link
                 className="button"
-                to={studyPath(next, goal?.id)}
+                to={studyPath(next, goal?.id, importantOnly)}
                 aria-label={"次へ：" + next.title}
               >
                 次へ：{next.title}
@@ -163,6 +216,7 @@ export function Study({
               timing={timing}
               nextItem={next}
               goalId={goal?.id}
+              importantOnly={importantOnly}
               onSaved={() => setRecorded(true)}
             />
           ) : !timing ? (
@@ -176,7 +230,9 @@ export function Study({
                 onDone={() => setEntryVersion((n) => n + 1)}
                 onSaved={() => setRecorded(true)}
                 onSaveNext={
-                  next ? () => navigate(studyPath(next, goal?.id)) : undefined
+                  next
+                    ? () => navigate(studyPath(next, goal?.id, importantOnly))
+                    : undefined
                 }
               />
             </section>
@@ -219,7 +275,12 @@ export function Study({
           )}
         </>
       )}
-      <ItemNavigation data={data} item={item} goal={goal} />
+      <ItemNavigation
+        data={data}
+        item={item}
+        goal={goal}
+        importantOnly={importantOnly}
+      />
       {item.studyMode === "speed" &&
         history.filter((a) => a.durationSeconds !== undefined).length > 1 && (
           <section className="card">
@@ -257,6 +318,7 @@ function ActiveStudy({
   timing,
   nextItem,
   goalId,
+  importantOnly,
   onSaved,
 }: {
   item: StudyItem;
@@ -265,6 +327,7 @@ function ActiveStudy({
   timing: boolean;
   nextItem?: StudyItem;
   goalId?: string;
+  importantOnly: boolean;
   onSaved: () => void;
 }) {
   const navigate = useNavigate();
@@ -325,7 +388,8 @@ function ActiveStudy({
         useUI
           .getState()
           .notify("学習を保存しました。今日の積み重ねに反映しました。");
-      if (next && nextItem) navigate(studyPath(nextItem, goalId));
+      if (next && nextItem)
+        navigate(studyPath(nextItem, goalId, importantOnly));
       else onSaved();
     });
     setBusy(false);

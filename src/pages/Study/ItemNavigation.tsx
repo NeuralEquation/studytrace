@@ -7,18 +7,25 @@ export function ItemNavigation({
   data,
   item,
   goal,
+  importantOnly = false,
 }: {
   data: AppData;
   item: StudyItem;
   goal?: SprintGoal;
+  importantOnly?: boolean;
 }) {
-  const { previous, next, index, total } = itemNeighbors(data, item, goal);
+  const { previous, next, index, total } = itemNeighbors(
+    data,
+    item,
+    goal,
+    importantOnly,
+  );
   return (
     <nav className="study-navigation" aria-label="前後の授業・問題">
       {previous ? (
         <Link
           className="button secondary study-step"
-          to={studyPath(previous, goal?.id)}
+          to={studyPath(previous, goal?.id, importantOnly)}
           aria-label={"前へ：" + previous.title}
         >
           <ChevronLeft size={18} />
@@ -43,7 +50,7 @@ export function ItemNavigation({
       {next ? (
         <Link
           className="button secondary study-step next"
-          to={studyPath(next, goal?.id)}
+          to={studyPath(next, goal?.id, importantOnly)}
           aria-label={"次へ：" + next.title}
         >
           <span>

@@ -35,6 +35,8 @@ import {
   unitDeletionInfo,
 } from "../../features/courses/deleteUnit";
 import { useViewState } from "../../features/navigation/useViewState";
+import { ImportantFilter } from "../../components/ImportantFilter";
+import { studyPath } from "../../features/study/itemNavigation";
 export function Courses({ data }: { data: AppData }) {
   const { id } = useParams();
   const [showCatalog, setShowCatalog] = useState(false);
@@ -56,6 +58,10 @@ export function Courses({ data }: { data: AppData }) {
     item?: StudyItem;
   } | null>(null);
   const [search, setSearch] = useViewState(viewKey + "search", "");
+  const [importantOnly, setImportantOnly] = useViewState(
+    viewKey + "important",
+    true,
+  );
   const [showArchived, setShowArchived] = useViewState(
     viewKey + "archived",
     false,
@@ -77,8 +83,13 @@ export function Courses({ data }: { data: AppData }) {
         教材が見つかりません。設定からバックアップを確認してください。
       </Empty>
     );
-  const visible = data.studyItems.filter(
+  const allVisible = data.studyItems.filter(
     (i) => i.courseId === id && (showArchived || !i.archived),
+  );
+  const hasImportant = allVisible.some((i) => i.important !== undefined);
+  const filteringImportant = hasImportant && importantOnly;
+  const visible = allVisible.filter(
+    (i) => !filteringImportant || i.important === true,
   );
   const activeItems = visible.filter(
     (i) => !data.units.find((u) => u.id === i.unitId)?.archived,
@@ -99,7 +110,9 @@ export function Courses({ data }: { data: AppData }) {
         title={course?.name ?? "講座・授業"}
         description={
           course
-            ? "章と節から授業を選び、学習時間と結果を記録。"
+            ? hasImportant
+              ? "分野・単元から問題を選び、学習結果を記録。"
+              : "章と節から授業を選び、学習時間と結果を記録。"
             : "学習する講座を選んでください。"
         }
         actions={
@@ -253,7 +266,33 @@ export function Courses({ data }: { data: AppData }) {
                       <ArrowRight size={18} />
                     </div>
                     <Progress value={p.attempted} max={p.total} />
-                    <small>取り組み済み · 完了 {p.completed}授業</small>
+                    <small>
+                      取り組み済み · 完了 {p.completed}
+                      {data.studyItems.some(
+                        (i) => i.courseId === c.id && i.important !== undefined,
+                      )
+                        ? "題"
+                        : "授業"}
+                    </small>
+                    {data.studyItems.some(
+                      (i) => i.courseId === c.id && i.important !== undefined,
+                    ) && (
+                      <small>
+                        {(() => {
+                          const important = courseProgress(
+                            data.studyItems.filter(
+                              (i) =>
+                                i.courseId === c.id &&
+                                i.important &&
+                                !data.units.find((u) => u.id === i.unitId)
+                                  ?.archived,
+                            ),
+                            data.attempts,
+                          );
+                          return `重要問題 ${important.total}題 · 学習済み ${important.attempted}題 · 残り ${important.remaining}題`;
+                        })()}
+                      </small>
+                    )}
                   </div>
                 </Link>
               );
@@ -264,8 +303,23 @@ export function Courses({ data }: { data: AppData }) {
         </div>
       ) : (
         <>
+          {hasImportant && (
+            <>
+              <ImportantFilter
+                value={importantOnly}
+                onChange={setImportantOnly}
+              />
+              <p className="muted">
+                {filteringImportant ? "重要問題のみ" : "すべての問題"}
+                の進捗。学習済みは記録のある問題、完了は既存の学習状態から判定します。
+              </p>
+            </>
+          )}
           <div className="stats-grid library-progress">
-            <Stat label="取り組み済み" value={`${p.attempted} / ${p.total}`} />
+            <Stat
+              label={hasImportant ? "学習済み" : "取り組み済み"}
+              value={`${p.attempted} / ${p.total}`}
+            />
             <Stat label="完了" value={p.completed} />
             {course.subject === "mathematics" ? (
               <>
@@ -273,7 +327,10 @@ export function Courses({ data }: { data: AppData }) {
                 <Stat label="安定" value={p.stable} />
               </>
             ) : (
-              <Stat label="未着手" value={p.remaining} />
+              <Stat
+                label={hasImportant ? "残り（未学習）" : "未着手"}
+                value={p.remaining}
+              />
             )}
           </div>
           {course.subject === "information" && (
@@ -344,6 +401,8 @@ export function Courses({ data }: { data: AppData }) {
                     (u) =>
                       u.courseId === id &&
                       (showArchived || !u.archived) &&
+                      (!filteringImportant ||
+                        visible.some((i) => i.unitId === u.id)) &&
                       (!search ||
                         visible.some(
                           (i) =>
@@ -380,11 +439,30 @@ export function Courses({ data }: { data: AppData }) {
                         (u) =>
                           u.courseId === id &&
                           (u.chapter || "その他・既存の登録") === chapter &&
-                          (showArchived || !u.archived),
+                          (showArchived || !u.archived) &&
+                          (!filteringImportant ||
+                            visible.some((i) => i.unitId === u.id)),
                       ).length
                     }
                     節
                   </span>
+                  {hasImportant && (
+                    <small className="disclosure-meta">
+                      {(() => {
+                        const progress = courseProgress(
+                          activeItems.filter((i) =>
+                            data.units.some(
+                              (u) =>
+                                u.id === i.unitId &&
+                                (u.chapter || "その他・既存の登録") === chapter,
+                            ),
+                          ),
+                          data.attempts,
+                        );
+                        return `学習済み ${progress.attempted} / ${progress.total}題 · 残り ${progress.remaining}題`;
+                      })()}
+                    </small>
+                  )}
                 </summary>
                 {data.units
                   .filter(
@@ -392,6 +470,8 @@ export function Courses({ data }: { data: AppData }) {
                       u.courseId === id &&
                       (u.chapter || "その他・既存の登録") === chapter &&
                       (showArchived || !u.archived) &&
+                      (!filteringImportant ||
+                        visible.some((i) => i.unitId === u.id)) &&
                       (!search ||
                         visible.some(
                           (i) =>
@@ -571,8 +651,13 @@ export function Courses({ data }: { data: AppData }) {
                                       : "")
                                 }
                               />
-                              <Link to={"/study/" + i.id}>
+                              <Link
+                                to={studyPath(i, undefined, filteringImportant)}
+                              >
                                 <strong>{i.title}</strong>
+                                {i.important && (
+                                  <span className="important-badge">重要</span>
+                                )}
                                 <small>
                                   {modeNames[i.studyMode]} ·{" "}
                                   {i.studyMode === "reproduction"
@@ -627,7 +712,7 @@ export function Courses({ data }: { data: AppData }) {
                               <Link
                                 className="icon-button"
                                 aria-label={i.title + "を開始"}
-                                to={"/study/" + i.id}
+                                to={studyPath(i, undefined, filteringImportant)}
                               >
                                 <ArrowRight size={18} />
                               </Link>
