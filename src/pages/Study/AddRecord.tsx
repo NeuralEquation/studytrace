@@ -6,6 +6,7 @@ import { courseStudyItems } from "../../features/study/itemNavigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useViewState } from "../../features/navigation/useViewState";
 import { ImportantFilter } from "../../components/ImportantFilter";
+import { isChemistryPractice } from "../../domain/studySelection";
 
 export function AddRecord({
   data,
@@ -32,14 +33,22 @@ export function AddRecord({
   const [version, setVersion] = useState(0);
   const [date, setDate] = useState<string>();
   const [saved, setSaved] = useState(false);
+  const [practiceOnly, setPracticeOnly] = useViewState(
+    viewKey + "practice",
+    true,
+  );
   const [importantOnly, setImportantOnly] = useViewState(
     viewKey + "important",
     true,
   );
   const allItems = courseStudyItems(data, courseId);
   const hasImportant = allItems.some((i) => i.important !== undefined);
+  const hasPractice = allItems.some((i) => isChemistryPractice(i, data));
   const items = allItems.filter(
-    (i) => !!itemId || !hasImportant || !importantOnly || i.important === true,
+    (i) =>
+      !!itemId ||
+      ((!hasImportant || !importantOnly || i.important === true) &&
+        (!hasPractice || !practiceOnly || isChemistryPractice(i, data))),
   );
   const item = items.find((i) => i.id === selected);
   const index = items.findIndex((i) => i.id === selected);
@@ -69,6 +78,23 @@ export function AddRecord({
               ))}
             </select>
           </Field>
+          {hasPractice && (
+            <ImportantFilter
+              value={practiceOnly}
+              onlyLabel="実践問題のみ"
+              allLabel="すべての授業"
+              onChange={(value) => {
+                setPracticeOnly(value);
+                if (
+                  value &&
+                  !allItems.some(
+                    (i) => i.id === selected && isChemistryPractice(i, data),
+                  )
+                )
+                  select("");
+              }}
+            />
+          )}
           {hasImportant && (
             <ImportantFilter
               value={importantOnly}

@@ -17,7 +17,7 @@ export function WeeklyReport({ data }: { data: AppData }) {
   const [params, setParams] = useSearchParams();
   const today = localDate();
   const sprint = data.sprints
-    .filter((s) => s.startDate <= today && s.endDate >= today)
+    .filter((s) => !s.ongoing && s.startDate <= today && s.endDate >= today)
     .sort((a, b) => b.startDate.localeCompare(a.startDate))[0];
   const coach = [...data.coachSessions]
     .filter((c) => c.date <= today)

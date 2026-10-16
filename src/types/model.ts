@@ -284,6 +284,8 @@ export const goalSchema = z.object({
   weekends: target.optional(),
   itemId: id.optional(),
   completed: z.boolean().default(false),
+  selection: z.enum(["chemistry-practice", "important"]).optional(),
+  inactiveFrom: date.optional(),
 });
 export const sprintSchema = z
   .object({
@@ -292,6 +294,7 @@ export const sprintSchema = z
     startDate: date,
     endDate: date,
     coachSessionId: id.optional(),
+    ongoing: z.boolean().optional(),
   })
   .refine((v) => v.endDate >= v.startDate, "終了日は開始日以降にしてください");
 export const coachSchema = z.object({

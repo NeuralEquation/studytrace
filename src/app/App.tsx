@@ -40,6 +40,11 @@ import { WeeklyReport } from "../pages/Coach/WeeklyReport";
 import { Settings } from "../pages/Settings/Settings";
 import { ViewMemory } from "../features/navigation/ViewMemory";
 import { ensureMeimonBooks, meimonUpdateKey } from "../features/courses/meimon";
+import {
+  ensureRoutinePlan,
+  routineSignature,
+  routinePlanKey,
+} from "../features/study/routinePlan";
 class ErrorBoundary extends Component<
   { children: ReactNode },
   { error: string }
@@ -109,6 +114,21 @@ function Content() {
         "名問の森2冊を追加しました。既存の記録は保持しています。",
       );
   }, [needsMeimon]);
+  const planSignature = data ? routineSignature(data) : "";
+  const needsRoutine =
+    !!data?.settings.some(
+      (s) => s.key === meimonUpdateKey && s.value === true,
+    ) &&
+    !data.settings.some(
+      (s) => s.key === routinePlanKey && s.value === planSignature,
+    );
+  useEffect(() => {
+    if (needsRoutine)
+      void action(
+        () => ensureRoutinePlan(),
+        "ノルマの対象を更新しました。既存の学習記録は保持しています。",
+      );
+  }, [needsRoutine, planSignature]);
   useEffect(() => {
     void action(() => stopDisallowedTimers());
   }, []);

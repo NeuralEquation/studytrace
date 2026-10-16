@@ -13,7 +13,13 @@ export function canTimeItem(
   return (
     course?.subject === "chemistry" &&
     /(?:実践|発展)問題/.test(
-      [item.title, unit?.name, unit?.chapter, item.sourcePath].join(" "),
+      [
+        course?.name,
+        item.title,
+        unit?.name,
+        unit?.chapter,
+        item.sourcePath,
+      ].join(" "),
     )
   );
 }

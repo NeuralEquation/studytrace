@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowRight,
@@ -36,7 +36,13 @@ import {
 } from "../../features/courses/deleteUnit";
 import { useViewState } from "../../features/navigation/useViewState";
 import { ImportantFilter } from "../../components/ImportantFilter";
-import { studyPath } from "../../features/study/itemNavigation";
+import {
+  studyPath,
+  courseStudyEntry,
+} from "../../features/study/itemNavigation";
+import { localDate } from "../../utils/time";
+import { isChemistryPractice } from "../../domain/studySelection";
+import { writeViewState } from "../../features/navigation/viewState";
 export function Courses({ data }: { data: AppData }) {
   const { id } = useParams();
   const [showCatalog, setShowCatalog] = useState(false);
@@ -66,8 +72,27 @@ export function Courses({ data }: { data: AppData }) {
     viewKey + "archived",
     false,
   );
+  const [practiceOnly, setPracticeOnly] = useViewState(
+    viewKey + "practice",
+    true,
+  );
   const [deletingUnit, setDeletingUnit] = useState<string | null>(null);
   const course = data.courses.find((c) => c.id === id);
+  useEffect(() => {
+    if (!course || course.archived) return;
+    const entry = courseStudyEntry(
+      data,
+      course.id,
+      localDate(),
+      importantOnly,
+      practiceOnly,
+    );
+    if (entry.item) {
+      writeViewState("study-cursor:last", entry.item.id);
+      if (entry.goal)
+        writeViewState("study-cursor:goal:" + entry.goal.id, entry.item.id);
+    }
+  }, [course?.id, importantOnly, practiceOnly, data]);
   function setAll(open: boolean) {
     const rows = data.units.filter((u) => u.courseId === id);
     setChapters(
@@ -87,14 +112,27 @@ export function Courses({ data }: { data: AppData }) {
     (i) => i.courseId === id && (showArchived || !i.archived),
   );
   const hasImportant = allVisible.some((i) => i.important !== undefined);
+  const hasPractice = allVisible.some((i) => isChemistryPractice(i, data));
+  const filteringPractice = hasPractice && practiceOnly;
   const filteringImportant = hasImportant && importantOnly;
   const visible = allVisible.filter(
-    (i) => !filteringImportant || i.important === true,
+    (i) =>
+      (!filteringImportant || i.important === true) &&
+      (!filteringPractice || isChemistryPractice(i, data)),
   );
   const activeItems = visible.filter(
     (i) => !data.units.find((u) => u.id === i.unitId)?.archived,
   );
   const p = courseProgress(activeItems, data.attempts);
+  const entry = course
+    ? courseStudyEntry(
+        data,
+        course.id,
+        localDate(),
+        importantOnly,
+        practiceOnly,
+      )
+    : undefined;
   const videoProgress = courseProgress(
     activeItems.filter((i) => i.studyMode === "video"),
     data.attempts,
@@ -303,6 +341,24 @@ export function Courses({ data }: { data: AppData }) {
         </div>
       ) : (
         <>
+          {hasPractice && (
+            <ImportantFilter
+              value={practiceOnly}
+              onChange={setPracticeOnly}
+              onlyLabel="実践問題のみ"
+              allLabel="すべての授業"
+            />
+          )}
+          {entry?.item && (
+            <p>
+              <Link
+                className="button"
+                to={studyPath(entry.item, entry.goal?.id, filteringImportant)}
+              >
+                続きから学習：{entry.item.title}
+              </Link>
+            </p>
+          )}
           {hasImportant && (
             <>
               <ImportantFilter
@@ -652,7 +708,11 @@ export function Courses({ data }: { data: AppData }) {
                                 }
                               />
                               <Link
-                                to={studyPath(i, undefined, filteringImportant)}
+                                to={studyPath(
+                                  i,
+                                  entry?.goal?.id,
+                                  filteringImportant,
+                                )}
                               >
                                 <strong>{i.title}</strong>
                                 {i.important && (
@@ -712,7 +772,11 @@ export function Courses({ data }: { data: AppData }) {
                               <Link
                                 className="icon-button"
                                 aria-label={i.title + "を開始"}
-                                to={studyPath(i, undefined, filteringImportant)}
+                                to={studyPath(
+                                  i,
+                                  entry?.goal?.id,
+                                  filteringImportant,
+                                )}
                               >
                                 <ArrowRight size={18} />
                               </Link>

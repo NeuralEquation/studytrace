@@ -8,6 +8,7 @@ import type {
 } from "../types/model";
 import { inPeriod, localDate } from "../utils/time";
 import { studyDay, calendarWeek } from "./calendar";
+import { isChemistryPractice } from "./studySelection";
 export const chronological = (a: Attempt, b: Attempt) =>
   new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime() ||
   a.id.localeCompare(b.id);
@@ -240,13 +241,21 @@ export function sprintProgress(
 // Explicit scopes are a union: whole courses OR selected units OR selected items.
 // An absent scope retains the old courseId behavior; an empty scope selects nothing.
 export function goalItems(goal: SprintGoal, data: AppData) {
-  return data.studyItems.filter((i) =>
-    goal.scope
-      ? goal.scope.courseIds.includes(i.courseId) ||
-        !!goal.scope.unitIds?.includes(i.unitId) ||
-        !!goal.scope.itemIds?.includes(i.id)
-      : i.courseId === goal.courseId,
-  );
+  return data.studyItems
+    .filter((i) =>
+      goal.scope
+        ? goal.scope.courseIds.includes(i.courseId) ||
+          !!goal.scope.unitIds?.includes(i.unitId) ||
+          !!goal.scope.itemIds?.includes(i.id)
+        : i.courseId === goal.courseId,
+    )
+    .filter((i) => gSelection(goal.selection, i));
+  function gSelection(selection: SprintGoal["selection"], item: StudyItem) {
+    if (selection === "chemistry-practice")
+      return isChemistryPractice(item, data);
+    if (selection === "important") return item.important === true;
+    return true;
+  }
 }
 export function videoPace(
   total: number,

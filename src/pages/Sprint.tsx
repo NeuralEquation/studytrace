@@ -9,7 +9,9 @@ import { goalState, goalCourses } from "../domain/planning";
 import { GoalEditor } from "./GoalEditor";
 import { PriorityEditor } from "./PriorityEditor";
 export function SprintPage({ data }: { data: AppData }) {
-  const [selected, setSelected] = useState(data.sprints.at(-1)?.id ?? "");
+  const [selected, setSelected] = useState(
+    data.sprints.find((s) => s.ongoing)?.id ?? data.sprints.at(-1)?.id ?? "",
+  );
   const [goal, setGoal] = useState<SprintGoal | null>(null);
   const sprint = data.sprints.find((s) => s.id === selected);
   return (
@@ -45,62 +47,71 @@ export function SprintPage({ data }: { data: AppData }) {
           新規作成
         </button>
       </div>
-      <form
-        key={selected}
-        className="card form-grid"
-        onSubmit={(e) => {
-          e.preventDefault();
-          const f = new FormData(e.currentTarget);
-          void action(async () => {
-            const id = sprint?.id ?? uid();
-            await db.sprints.put(
-              sprintSchema.parse({
-                id,
-                title: f.get("title"),
-                startDate: f.get("start"),
-                endDate: f.get("end"),
-                coachSessionId: f.get("coach") || undefined,
-              }),
-            );
-            setSelected(id);
-          }, "Sprintを保存しました");
-        }}
-      >
-        <Field label="Sprint名">
-          <input
-            name="title"
-            required
-            defaultValue={sprint?.title ?? "今週の学習"}
-          />
-        </Field>
-        <Field label="開始日">
-          <input
-            name="start"
-            type="date"
-            required
-            defaultValue={sprint?.startDate ?? localDate()}
-          />
-        </Field>
-        <Field label="終了日">
-          <input
-            name="end"
-            type="date"
-            required
-            defaultValue={sprint?.endDate ?? localDate()}
-          />
-        </Field>
-        <Field label="関連する指導">
-          <select name="coach" defaultValue={sprint?.coachSessionId ?? ""}>
-            <option value="">なし</option>
-            {data.coachSessions.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.date} {c.title}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <button>期間を保存</button>
-      </form>
+      {sprint?.ongoing ? (
+        <section className="card">
+          <h2>継続ノルマ</h2>
+          <p>
+            期間切れで「その他」に戻らない毎日のノルマです。数量・対象は下の「目標を編集」から変更できます。
+          </p>
+        </section>
+      ) : (
+        <form
+          key={selected}
+          className="card form-grid"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const f = new FormData(e.currentTarget);
+            void action(async () => {
+              const id = sprint?.id ?? uid();
+              await db.sprints.put(
+                sprintSchema.parse({
+                  id,
+                  title: f.get("title"),
+                  startDate: f.get("start"),
+                  endDate: f.get("end"),
+                  coachSessionId: f.get("coach") || undefined,
+                }),
+              );
+              setSelected(id);
+            }, "Sprintを保存しました");
+          }}
+        >
+          <Field label="Sprint名">
+            <input
+              name="title"
+              required
+              defaultValue={sprint?.title ?? "今週の学習"}
+            />
+          </Field>
+          <Field label="開始日">
+            <input
+              name="start"
+              type="date"
+              required
+              defaultValue={sprint?.startDate ?? localDate()}
+            />
+          </Field>
+          <Field label="終了日">
+            <input
+              name="end"
+              type="date"
+              required
+              defaultValue={sprint?.endDate ?? localDate()}
+            />
+          </Field>
+          <Field label="関連する指導">
+            <select name="coach" defaultValue={sprint?.coachSessionId ?? ""}>
+              <option value="">なし</option>
+              {data.coachSessions.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.date} {c.title}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <button>期間を保存</button>
+        </form>
+      )}
       <PriorityEditor data={data} />
       {sprint && (
         <>
@@ -145,6 +156,11 @@ export function SprintPage({ data }: { data: AppData }) {
                         .join(" / ")}
                     </small>
                     <h3>{g.title}</h3>
+                    {g.inactiveFrom && (
+                      <p className="muted">
+                        旧ノルマ（{g.inactiveFrom}に継続ノルマへ切替済み）
+                      </p>
+                    )}
                     <p>
                       {p.actual} / {p.configured ? p.target : "未設定"}{" "}
                       {g.kind === "daily_count"

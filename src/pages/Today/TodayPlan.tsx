@@ -3,7 +3,7 @@ import { ArrowRight, Play, Timer } from "lucide-react";
 import type { AppData } from "../../types/model";
 import { subjectNames } from "../../types/model";
 import { PageHeader, Progress, Empty } from "../../components/ui";
-import { attemptsInPeriod, goalItems, itemComplete } from "../../domain/study";
+import { attemptsInPeriod } from "../../domain/study";
 import { goalState, todayTasks } from "../../domain/planning";
 import type { TodayTask } from "../../domain/planning";
 import { studyDay, holidayCoverage } from "../../domain/calendar";
@@ -11,7 +11,11 @@ import { localDate, humanTime } from "../../utils/time";
 import { reportedStudyTimes } from "../../features/study/dailyTime";
 import { RememberedDetails } from "../../components/RememberedDetails";
 import { readViewState } from "../../features/navigation/viewState";
-import { studyPath } from "../../features/study/itemNavigation";
+import {
+  studyPath,
+  goalStudyItems,
+  nextStudyItem,
+} from "../../features/study/itemNavigation";
 export function Today({ data }: { data: AppData }) {
   const today = localDate(),
     day = studyDay(today),
@@ -39,17 +43,18 @@ export function Today({ data }: { data: AppData }) {
     .sort((a, b) => a.nextSessionAt!.localeCompare(b.nextSessionAt!))[0];
   function taskCard(t: TodayTask) {
     const importantOnly =
-      !t.goal &&
-      t.courses.length === 1 &&
-      data.studyItems.some(
-        (i) => i.courseId === t.courses[0].id && i.important !== undefined,
-      ) &&
-      readViewState("library:" + t.courses[0].id + ":important", true);
+      t.goal?.selection === "important" ||
+      (!t.goal &&
+        t.courses.length === 1 &&
+        data.studyItems.some(
+          (i) => i.courseId === t.courses[0].id && i.important !== undefined,
+        ) &&
+        readViewState("library:" + t.courses[0].id + ":important", true));
     const g = t.goal,
       state = g ? goalState(g, data, today) : undefined;
     const items = (
       g
-        ? goalItems(g, data)
+        ? goalStudyItems(data, g)
         : data.studyItems.filter((i) =>
             t.courses.some((c) => c.id === i.courseId),
           )
@@ -59,14 +64,7 @@ export function Today({ data }: { data: AppData }) {
           !i.archived && !data.units.find((u) => u.id === i.unitId)?.archived,
       )
       .filter((i) => !importantOnly || i.important === true);
-    const item =
-      items.find(
-        (i) =>
-          i.initialStatus === "UNSEEN" &&
-          !data.attempts.some((a) => a.itemId === i.id && !a.deletedAt),
-      ) ??
-      items.find((i) => !itemComplete(i, data.attempts)) ??
-      items[0];
+    const item = nextStudyItem(data, items, g?.id);
     const count = new Set(
       attemptsInPeriod(data, today, today)
         .filter((a) => items.some((i) => i.id === a.itemId))
@@ -129,7 +127,7 @@ export function Today({ data }: { data: AppData }) {
           className="button secondary full"
           to={
             item
-              ? studyPath(item, undefined, importantOnly)
+              ? studyPath(item, g?.id, importantOnly)
               : "/courses/" + (t.courses[0]?.id ?? "")
           }
         >
@@ -139,9 +137,23 @@ export function Today({ data }: { data: AppData }) {
         {g && (
           <div className="task-course-links">
             {t.courses.map((c) => (
-              <Link key={c.id} to={"/courses/" + c.id}>
-                {c.name} →
-              </Link>
+              <div key={c.id}>
+                <Link to={"/courses/" + c.id}>{c.name} →</Link>
+                {(() => {
+                  const next = nextStudyItem(
+                    data,
+                    items.filter((i) => i.courseId === c.id),
+                  );
+                  return next ? (
+                    <Link
+                      className="button secondary"
+                      to={studyPath(next, g.id, importantOnly)}
+                    >
+                      {c.name}の続き：{next.title}
+                    </Link>
+                  ) : null;
+                })()}
+              </div>
             ))}
           </div>
         )}

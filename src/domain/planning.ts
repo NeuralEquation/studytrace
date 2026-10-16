@@ -24,23 +24,33 @@ export const planPresets = [
   },
   {
     id: "chemistry",
-    title: "化学（実戦問題・3分野合算）",
+    title: "化学（実践問題・3分野合算）",
     kind: "daily_count",
     weekdays: { min: 2 },
     weekends: { min: 7, max: 8 },
     target: 2,
   },
-  ...["力学", "電磁気", "熱", "波動"].map((field, n) => ({
+  {
+    id: "physics-meimon",
+    title: "名問の森（分野合算）",
+    kind: "daily_count",
+    weekdays: { min: 2 },
+    weekends: { min: 2 },
+  },
+] as const;
+// Retained for reading/testing older preset IDs, but no longer offered in the UI.
+const legacyPhysicsPresets = ["力学", "電磁気", "熱", "波動"].map(
+  (field, n) => ({
     id: "physics-" + n,
     title: "物理・" + field,
     kind: "weekly_count" as const,
     target: 1,
     weeklyRange: { min: 1, max: 2 },
     weeklyPeriod: "calendar" as const,
-  })),
-] as const;
+  }),
+);
 export function presetChanges(id: string): Partial<SprintGoal> {
-  const p = planPresets.find((p) => p.id === id)!;
+  const p = [...planPresets, ...legacyPhysicsPresets].find((p) => p.id === id)!;
   const { id: unused, ...fields } = p;
   void unused;
   return {
@@ -97,26 +107,34 @@ export type TodayTask = {
   deadline: string;
   unmet: number;
 };
-export function todayTasks(data: AppData, date: string): TodayTask[] {
+export function activeGoals(data: AppData, date: string) {
   const active = new Set(
     data.sprints
       .filter((s) => s.startDate <= date && s.endDate >= date)
       .map((s) => s.id),
   );
-  const goals = data.sprintGoals.filter((g) => active.has(g.sprintId));
+  return data.sprintGoals.filter(
+    (g) => active.has(g.sprintId) && (!g.inactiveFrom || date < g.inactiveFrom),
+  );
+}
+export function todayTasks(data: AppData, date: string): TodayTask[] {
+  const goals = activeGoals(data, date);
   const tasks: TodayTask[] = goals.map((g) => {
     const state = goalState(g, data, date);
     return {
       id: g.id,
       goal: g,
       courses: goalCourses(g, data),
-      category: !state.configured
-        ? 3
-        : state.achieved
-          ? 2
-          : g.kind === "daily_count"
-            ? 0
-            : 1,
+      category:
+        !state.configured && g.id.startsWith("routine-goal:")
+          ? 0
+          : !state.configured
+            ? 3
+            : state.achieved
+              ? 2
+              : g.kind === "daily_count"
+                ? 0
+                : 1,
       deadline: data.sprints.find((s) => s.id === g.sprintId)!.endDate,
       unmet: 0,
     };

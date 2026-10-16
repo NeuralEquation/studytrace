@@ -54,6 +54,7 @@ import {
 } from "../../features/study/itemNavigation";
 import { StudyGoals } from "./StudyGoals";
 import { ImportantFilter } from "../../components/ImportantFilter";
+import { writeViewState } from "../../features/navigation/viewState";
 export function Study({
   data,
   rawData = data,
@@ -66,6 +67,15 @@ export function Study({
   const [params, setParams] = useSearchParams();
   const [entryVersion, setEntryVersion] = useState(0);
   const [recorded, setRecorded] = useState(false);
+  const currentItem = data.studyItems.find((i) => i.id === id);
+  useEffect(() => {
+    if (currentItem) {
+      writeViewState("study-cursor:" + currentItem.courseId, currentItem.id);
+      writeViewState("study-cursor:last", currentItem.id);
+      for (const goal of itemGoals(data, currentItem, localDate()))
+        writeViewState("study-cursor:goal:" + goal.id, currentItem.id);
+    }
+  }, [currentItem?.id, currentItem?.courseId, data.sprintGoals]);
   useEffect(() => {
     if (recorded) {
       const saved = document.getElementById("study-saved");

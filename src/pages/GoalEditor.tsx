@@ -150,6 +150,24 @@ export function GoalEditor({
           onChange={(e) => set({ ...g, title: e.target.value })}
         />
       </Field>
+      <Field label="集計対象の絞り込み">
+        <select
+          value={g.selection ?? ""}
+          onChange={(e) =>
+            set({
+              ...g,
+              selection: (e.target.value ||
+                undefined) as SprintGoal["selection"],
+            })
+          }
+        >
+          <option value="">選択範囲のすべて</option>
+          <option value="chemistry-practice">
+            化学の実践問題のみ（発展問題・講義は除外）
+          </option>
+          <option value="important">重要問題のみ</option>
+        </select>
+      </Field>
       <Field label="目標の種類">
         <select
           value={g.kind}

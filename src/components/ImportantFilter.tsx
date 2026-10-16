@@ -1,9 +1,13 @@
 export function ImportantFilter({
   value,
   onChange,
+  onlyLabel = "重要問題のみ",
+  allLabel = "すべての問題",
 }: {
   value: boolean;
   onChange: (value: boolean) => void;
+  onlyLabel?: string;
+  allLabel?: string;
 }) {
   return (
     <div className="actions" aria-label="問題の表示範囲">
@@ -13,7 +17,7 @@ export function ImportantFilter({
         aria-pressed={value}
         onClick={() => onChange(true)}
       >
-        重要問題のみ
+        {onlyLabel}
       </button>
       <button
         type="button"
@@ -21,7 +25,7 @@ export function ImportantFilter({
         aria-pressed={!value}
         onClick={() => onChange(false)}
       >
-        すべての問題
+        {allLabel}
       </button>
     </div>
   );
